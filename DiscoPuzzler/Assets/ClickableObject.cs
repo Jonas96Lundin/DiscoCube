@@ -22,11 +22,6 @@ public class ClickableObject : MonoBehaviour
             anim.Play("CubeAnimation");
         }
     }
-    private void OnMouseOver()
-    {
-        
-    }
-
     private void OnMouseExit()
     {
         if (null != anim)
