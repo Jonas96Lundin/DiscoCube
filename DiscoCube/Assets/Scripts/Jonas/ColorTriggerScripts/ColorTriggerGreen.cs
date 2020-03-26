@@ -6,7 +6,7 @@ public class ColorTriggerGreen : MonoBehaviour
 
     void OnTriggerEnter()
     {
-        FindObjectOfType<ColorManager>().currentColor = ColorManager.Colors.green;
+        FindObjectOfType<ColorManager>().currentColor = ColorManager.CubeColors.green;
         FindObjectOfType<ColorManager>().CheckColorCollision();
     }
 }
