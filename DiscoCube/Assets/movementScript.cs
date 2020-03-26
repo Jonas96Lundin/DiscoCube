@@ -18,15 +18,16 @@ public class movementScript : MonoBehaviour
 
     public float speed = 0.01f;
     public float inputDelay = 5f;
+
     bool input = true;
 
     void Update()
     {
         inputDelay++;
-        //TODO: Kan behöva modifiera delaytimer för att få en mer responsive movement.
+        //TODO: May have to change the delaytimer, so the movement feels more responsive.
         if(input == true && inputDelay >= 60)
         {
-            //TODO: Hitta ett sätt att Up inte alltid är dominant.
+            //TODO: Maybe find a way so that Up is not allways dominant when multiple keys are pressed down at the same time.
             if (Input.GetKey(KeyCode.UpArrow))
             {
                 StartCoroutine("MoveUp");
@@ -48,6 +49,7 @@ public class movementScript : MonoBehaviour
                 input = false;
             }
         }
+
     }
 
     IEnumerator MoveUp()
@@ -97,5 +99,6 @@ public class movementScript : MonoBehaviour
         inputDelay = 0f;
         input = true;
     }
+
 
 }
