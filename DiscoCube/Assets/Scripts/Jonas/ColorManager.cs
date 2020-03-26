@@ -38,7 +38,7 @@ public class ColorManager : MonoBehaviour
         switch (currentLevelColor)
         {
             case LevelColors.blue:
-                Debug.Log("You stepped on" + currentLevelColor.ToString() + "Cube top color should be green");
+                Debug.Log("You stepped on " + currentLevelColor.ToString() + ". Cube top color should be green");
                 break;
             case LevelColors.green:
                 Debug.Log("You stepped on " + currentLevelColor.ToString() + ". Cube top color should be blue");
