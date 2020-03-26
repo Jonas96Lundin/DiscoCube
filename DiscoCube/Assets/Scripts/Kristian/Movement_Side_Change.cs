@@ -21,13 +21,13 @@ public class Movement_Side_Change : MonoBehaviour
 
     bool input = true;
 
-    private Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
+    public Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
 
     void Update()
     {
-        inputDelay++;
+        inputDelay += Time.deltaTime;
         //TODO: May have to change the delaytimer, so the movement feels more responsive.
-        if (input == true && inputDelay >= 60)
+        if (input == true && inputDelay >= 0.25)
         {
             //TODO: Maybe find a way so that Up is not allways dominant when multiple keys are pressed down at the same time.
             if (Input.GetKey(KeyCode.UpArrow))
