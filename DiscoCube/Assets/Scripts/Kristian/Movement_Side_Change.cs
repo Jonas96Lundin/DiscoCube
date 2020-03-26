@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement_Side_change : MonoBehaviour
+public class Movement_Side_Change : MonoBehaviour
 {
     private Vector3 offset;
 
@@ -21,7 +21,7 @@ public class Movement_Side_change : MonoBehaviour
 
     bool input = true;
 
-    private Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0 - 1), rotateLeft = new Vector3(0, 0, 1);
+    private Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
 
     void Update()
     {
@@ -150,7 +150,7 @@ public class Movement_Side_change : MonoBehaviour
         center.transform.rotation = Quaternion.Euler(0, 0, -90);
         rotateUp = new Vector3(0, -1, 0);
         rotateDown = new Vector3(0, 1, 0);
-        rotateRight = new Vector3(0, 0 - 1);
+        rotateRight = new Vector3(0, 0, -1);
         rotateLeft = new Vector3(0, 0, 1);
     }
 
@@ -159,7 +159,7 @@ public class Movement_Side_change : MonoBehaviour
         center.transform.rotation = Quaternion.Euler(0, 0, 90);
         rotateUp = new Vector3(0, 1, 0);
         rotateDown = new Vector3(0, -1, 0);
-        rotateRight = new Vector3(0, 0 - 1);
+        rotateRight = new Vector3(0, 0, -1);
         rotateLeft = new Vector3(0, 0, 1);
     }
 
@@ -169,7 +169,7 @@ public class Movement_Side_change : MonoBehaviour
         center.transform.rotation = Quaternion.Euler(0, 0, 0);
         rotateUp = new Vector3(1, 0, 0);
         rotateDown = new Vector3(-1, 0, 0);
-        rotateRight = new Vector3(0, 0 - 1);
+        rotateRight = new Vector3(0, 0, -1);
         rotateLeft = new Vector3(0, 0, 1);
     }
 }
