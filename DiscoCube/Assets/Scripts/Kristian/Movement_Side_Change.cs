@@ -8,6 +8,8 @@ public class Movement_Side_Change : MonoBehaviour
 
     public GameObject player;
 
+    public WinAnimation winAnimation; // For the winning animation
+
     public GameObject center;
     public GameObject right;
     public GameObject left;
@@ -134,6 +136,8 @@ public class Movement_Side_Change : MonoBehaviour
         rotateDown = new Vector3(-1, 0, 0);
         rotateRight = new Vector3(0, 1, 0);
         rotateLeft = new Vector3(0, -1, 0);
+
+        winAnimation.SetOrientation(new Vector3(0, 0, -4)); // Jonas test
     }
 
     public void OnTriggerFlipDown(GameObject center)
@@ -143,6 +147,8 @@ public class Movement_Side_Change : MonoBehaviour
         rotateDown = new Vector3(-1, 0, 0);
         rotateRight = new Vector3(0, -1, 0);
         rotateLeft = new Vector3(0, 1, 0);
+
+        winAnimation.SetOrientation(new Vector3(0, 0, 4)); // Jonas test
     }
 
     public void OnTriggerFlipRight(GameObject center)
@@ -152,6 +158,8 @@ public class Movement_Side_Change : MonoBehaviour
         rotateDown = new Vector3(0, 1, 0);
         rotateRight = new Vector3(0, 0, -1);
         rotateLeft = new Vector3(0, 0, 1);
+
+        winAnimation.SetOrientation(new Vector3(-4, 0, 0)); // Jonas test
     }
 
     public void OnTriggerFlipLeft(GameObject center)
@@ -161,6 +169,8 @@ public class Movement_Side_Change : MonoBehaviour
         rotateDown = new Vector3(0, -1, 0);
         rotateRight = new Vector3(0, 0, -1);
         rotateLeft = new Vector3(0, 0, 1);
+
+        winAnimation.SetOrientation(new Vector3(4, 0, 0)); // Jonas test
     }
 
     //Reset all values on Empty Objects
@@ -171,5 +181,7 @@ public class Movement_Side_Change : MonoBehaviour
         rotateDown = new Vector3(-1, 0, 0);
         rotateRight = new Vector3(0, 0, -1);
         rotateLeft = new Vector3(0, 0, 1);
+
+        winAnimation.SetOrientation(new Vector3(0, -4, 0)); // Jonas test
     }
 }

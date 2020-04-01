@@ -57,4 +57,8 @@ public class ColorManager : MonoBehaviour
                 break;
         }
     }
+    public CubeColors GetCurrentColor()
+    {
+        return currentColor;
+    }
 }
