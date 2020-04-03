@@ -9,7 +9,7 @@ public class Movement_Side_Change : MonoBehaviour
     public GameObject player;
 
     public WinAnimation winAnimation; // For the winning animation
-    public GameObject rightEdge;
+    //public GameObject rightEdge;
     enum Direction { right, left, up, down};
     Direction currentDirection = Direction.up;
 
@@ -86,15 +86,15 @@ public class Movement_Side_Change : MonoBehaviour
 
     public void SetFlipOrientation()
     {
-        Debug.Log(currentDirection);
-        if (player.GetComponent<BoxCollider>().bounds.Intersects(rightEdge.GetComponent<BoxCollider>().bounds) && currentDirection != Direction.right)
-        {
-            //Debug.Log("Hit edge");
-            //Debug.Log(currentDirection);
-            currentDirection = Direction.right;
-            player.transform.position = new Vector3(4, -4, 0);
-            //OnTriggerFlipRight(center);
-        }
+        //Debug.Log(currentDirection);
+        //if (player.GetComponent<BoxCollider>().bounds.Intersects(rightEdge.GetComponent<BoxCollider>().bounds) && currentDirection != Direction.right)
+        //{
+        //    //Debug.Log("Hit edge");
+        //    //Debug.Log(currentDirection);
+        //    currentDirection = Direction.right;
+        //    player.transform.position = new Vector3(4, -4, 0);
+        //    //OnTriggerFlipRight(center);
+        //}
         //if (direction == "Down")
         //{
         //    OnTriggerFlipDown(center);
