@@ -1,19 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Threading;
 public class WinAnimation : MonoBehaviour
 {
     Vector3 endPos;
     Vector3 startPos;
     Vector3 endPosOrientation;
     float moveSpeed;
-    bool isWinning = false;
-
+    public bool isWinning = false;
     public ColorManager colorManager;
+    public GameObject goal;
+
+
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         // Declares start and end position for the cube win movement
         startPos = transform.position;
@@ -22,7 +24,7 @@ public class WinAnimation : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (!isWinning && colorManager.currentLevelColor == ColorManager.LevelColors.blue && colorManager.currentColor == ColorManager.CubeColors.green)
         {
@@ -33,12 +35,19 @@ public class WinAnimation : MonoBehaviour
         {
             moveSpeed += 0.01f; //Adjust this for how fast you want it to be.
             transform.position = Vector3.Lerp(transform.position, endPos, moveSpeed);
+            FindObjectOfType<Victory>().GoalTrigger();
+
 
         }
+
+
+
     }
     
+
     public void SetOrientation(Vector3 orientation)
     {
         endPosOrientation = orientation;
+
     }
 }
