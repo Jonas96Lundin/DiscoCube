@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2209412162367555073}
+  winAnimation: {fileID: 0}
+  rightEdge: {fileID: 0}
   center: {fileID: 7874117756199988818}
   right: {fileID: 7874117756038294985}
   left: {fileID: 7874117754910565033}
@@ -21,6 +23,10 @@ MonoBehaviour:
   step: 9
   speed: 0.01
   inputDelay: 5
+  rotateUp: {x: 1, y: 0, z: 0}
+  rotateDown: {x: -1, y: 0, z: 0}
+  rotateRight: {x: 0, y: 0, z: -1}
+  rotateLeft: {x: 0, y: 0, z: 1}
 --- !u!1 &7874117754910565033
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,6 +235,19 @@ MonoBehaviour:
   step: 9
   speed: 0.01
   inputDelay: 5
+--- !u!114 &5906743176499374480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8198946055474003120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce59ef391837d94ba051888db6dd19e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  completeLevelUI: {fileID: 0}
 --- !u!1001 &7874117754561370096
 PrefabInstance:
   m_ObjectHideFlags: 0

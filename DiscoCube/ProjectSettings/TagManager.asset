@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ColorManager
   - MiddleOfCube
+  - Goal
   layers:
   - Default
   - TransparentFX
