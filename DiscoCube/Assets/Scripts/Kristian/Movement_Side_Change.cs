@@ -89,8 +89,8 @@ public class Movement_Side_Change : MonoBehaviour
         Debug.Log(currentDirection);
         if (player.GetComponent<BoxCollider>().bounds.Intersects(rightEdge.GetComponent<BoxCollider>().bounds) && currentDirection != Direction.right)
         {
-            Debug.Log("Hit edge");
-            Debug.Log(currentDirection);
+            //Debug.Log("Hit edge");
+            //Debug.Log(currentDirection);
             currentDirection = Direction.right;
             player.transform.position = new Vector3(4, -4, 0);
             //OnTriggerFlipRight(center);
