@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class Victory : MonoBehaviour
 {
-
-    
-
     public void OnTriggerEnter(Collider Goal)
     {
+
         Win();
     }
     public GameObject completeLevelUI;
