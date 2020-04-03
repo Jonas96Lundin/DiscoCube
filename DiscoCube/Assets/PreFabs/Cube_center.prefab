@@ -41,8 +41,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 45460d7715af6a245a8f81b0eab86b38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   currentColor: 4
   currentLevelColor: 4
 --- !u!114 &3483506591436698089
@@ -55,8 +55,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0c53fd0c1aff91b48bd2a1ea91025f8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   player: {fileID: 2209412162367555073}
   winAnimation: {fileID: 1985119817349561235}
   center: {fileID: 7874117756199988818}
@@ -81,8 +81,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3c37579051121241a4c8e2201a8bd29, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   colorManager: {fileID: 8159917135253647475}
 --- !u!1 &7874117754910565033
 GameObject:
@@ -282,8 +282,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39387ccfc6edc4e439524b27129e85fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_Name:
+  m_EditorClassIdentifier:
   player: {fileID: 8198946055474003120}
   center: {fileID: 7874117756199988818}
   right: {fileID: 7874117756038294985}
@@ -293,6 +293,19 @@ MonoBehaviour:
   step: 9
   speed: 0.01
   inputDelay: 5
+--- !u!114 &5906743176499374480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8198946055474003120}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce59ef391837d94ba051888db6dd19e, type: 3}
+  m_Name:
+  m_EditorClassIdentifier:
+  completeLevelUI: {fileID: 0}
 --- !u!1001 &7874117754561370096
 PrefabInstance:
   m_ObjectHideFlags: 0
