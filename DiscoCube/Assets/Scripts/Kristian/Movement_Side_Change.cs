@@ -23,10 +23,10 @@ public class Movement_Side_Change : MonoBehaviour
 
     public float speed = 0.01f;
     public float inputDelay = 5f;
-
+    [SerializeField]
     bool input = true;
-
-    public Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
+    public bool movning = false;
+    private Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
 
     void Update()
     {
@@ -119,6 +119,8 @@ public class Movement_Side_Change : MonoBehaviour
 
     IEnumerator MoveUp()
     {
+        movning = true;
+        Debug.Log(movning);
         for (int i = 0; i < 90 / step; i++)
         {
             player.transform.RotateAround(up.transform.position, rotateUp, step);
@@ -127,10 +129,13 @@ public class Movement_Side_Change : MonoBehaviour
         center.transform.position = player.transform.position;
         inputDelay = 0f;
         input = true;
+        movning = false;
+        Debug.Log(movning);
     }
 
     IEnumerator MoveDown()
     {
+        movning = true;
         for (int i = 0; i < 90 / step; i++)
         {
             player.transform.RotateAround(down.transform.position, rotateDown, step);
@@ -139,6 +144,7 @@ public class Movement_Side_Change : MonoBehaviour
         center.transform.position = player.transform.position;
         inputDelay = 0f;
         input = true;
+        movning = false;
     }
 
     IEnumerator MoveRight()
@@ -181,6 +187,7 @@ public class Movement_Side_Change : MonoBehaviour
     public void OnTriggerFlipDown(GameObject center)
     {
         center.transform.rotation = Quaternion.Euler(-90, 0, 0);
+        //center.transform.position = new Vector3(0, 0, 0);
         rotateUp = new Vector3(1, 0, 0);
         rotateDown = new Vector3(-1, 0, 0);
         rotateRight = new Vector3(0, -1, 0);
