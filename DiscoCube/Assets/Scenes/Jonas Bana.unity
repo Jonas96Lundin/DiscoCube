@@ -457,6 +457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce59ef391837d94ba051888db6dd19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goal: {fileID: 0}
   completeLevelUI: {fileID: 1844532679}
 --- !u!1 &1124839619
 GameObject:
@@ -545,6 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce59ef391837d94ba051888db6dd19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goal: {fileID: 0}
   completeLevelUI: {fileID: 0}
 --- !u!1 &1844532679 stripped
 GameObject:
@@ -572,7 +574,7 @@ PrefabInstance:
     - target: {fileID: 2382677930064311570, guid: 1806df935a74b1949b509ac65a613ac5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 20.17
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 2382677930064311570, guid: 1806df935a74b1949b509ac65a613ac5,
         type: 3}
@@ -853,6 +855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce59ef391837d94ba051888db6dd19e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  goal: {fileID: 0}
   completeLevelUI: {fileID: 0}
 --- !u!1 &2022107202
 GameObject:
@@ -1030,6 +1033,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2142782748}
   offset: {x: 0, y: 5, z: -10}
+--- !u!1 &2026568772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2209412162367555073, guid: f2f4f87d6d224a2499e9da827fae442c,
+    type: 3}
+  m_PrefabInstance: {fileID: 223161226}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2026568779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026568772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce59ef391837d94ba051888db6dd19e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goal: {fileID: 0}
+  completeLevelUI: {fileID: 1844532679}
 --- !u!4 &2142782748 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2209412162367555077, guid: f2f4f87d6d224a2499e9da827fae442c,
