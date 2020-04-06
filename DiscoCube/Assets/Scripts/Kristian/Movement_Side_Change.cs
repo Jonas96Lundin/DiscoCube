@@ -8,7 +8,7 @@ public class Movement_Side_Change : MonoBehaviour
 
     public GameObject player;
 
-    public WinAnimation winAnimation; // For the winning animation
+    public WinAnimation winAnimation; // For the winning animation. /Jonas
     //public GameObject rightEdge;
     enum Direction { right, left, up, down};
     Direction currentDirection = Direction.up;
@@ -54,6 +54,12 @@ public class Movement_Side_Change : MonoBehaviour
             {
                 StartCoroutine("MoveLeft");
                 input = false;
+            }
+
+            // If the cube is moving, play the sound. /Jonas
+            if (!input)
+            {
+                FindObjectOfType<AudioManager>().Play("ChestDrawer");
             }
         }
 
