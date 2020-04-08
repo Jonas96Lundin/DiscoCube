@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class movementScript : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class movementScript : MonoBehaviour
     public GameObject left;
     public GameObject up;
     public GameObject down;
+
 
     public int step = 9;
 
