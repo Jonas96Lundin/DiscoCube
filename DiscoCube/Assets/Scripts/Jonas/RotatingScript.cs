@@ -6,16 +6,20 @@ public class RotatingScript : MonoBehaviour
 {
     public GameObject cube;
     public GameObject center;
-    string rotateToColor;
+    public string rotateToColor;
 
     // Update is called once per frame
     void Update()
     {
-        RotateWhenPressingButton();
+        if (FindObjectOfType<Movement_Side_Change>().movning == false)
+        {
+            RotateWhenPressingButton();
+        }
+        
     }
 
     // Use numpad to change rotation to the side with the color "rotation"
-    void RotateWhenPressingButton()
+    public void RotateWhenPressingButton()
     {
         if (Input.GetKeyDown(KeyCode.Keypad8) || rotateToColor == "green")
         {
@@ -40,7 +44,7 @@ public class RotatingScript : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Keypad4) || rotateToColor == "yellow")
         {
-            Debug.Log("Rotating to yellow");
+            //Debug.Log("Rotating to yellow");
             rotateToColor = "yellow";
             cube.transform.rotation = Quaternion.RotateTowards(cube.transform.rotation, Quaternion.Euler(0, 0, -90), Time.deltaTime * 100f);
             if (cube.transform.rotation == Quaternion.Euler(0, 0, -90))
@@ -60,7 +64,7 @@ public class RotatingScript : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Keypad5) || rotateToColor == "teal")
         {
-            Debug.Log("Rotating to teal");
+            //Debug.Log("Rotating to teal");
             rotateToColor = "teal";
             cube.transform.rotation = Quaternion.RotateTowards(cube.transform.rotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * 100f);
             if (cube.transform.rotation == Quaternion.Euler(0, 0, 0))

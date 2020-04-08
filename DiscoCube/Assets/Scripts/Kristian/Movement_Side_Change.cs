@@ -23,7 +23,7 @@ public class Movement_Side_Change : MonoBehaviour
 
     public float speed = 0.01f;
     public float inputDelay = 5f;
-    [SerializeField]
+   
     bool input = true;
     public bool movning = false;
     private Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
@@ -87,40 +87,6 @@ public class Movement_Side_Change : MonoBehaviour
             OnTriggerReset(center);
         }
 
-        SetFlipOrientation();
-    }
-
-    public void SetFlipOrientation()
-    {
-        //Debug.Log(currentDirection);
-        //if (player.GetComponent<BoxCollider>().bounds.Intersects(rightEdge.GetComponent<BoxCollider>().bounds) && currentDirection != Direction.right)
-        //{
-        //    //Debug.Log("Hit edge");
-        //    //Debug.Log(currentDirection);
-        //    currentDirection = Direction.right;
-        //    player.transform.position = new Vector3(4, -4, 0);
-        //    //OnTriggerFlipRight(center);
-        //}
-        //if (direction == "Down")
-        //{
-        //    OnTriggerFlipDown(center);
-        //}
-        //else if (direction == "Right")
-        //{
-        //    OnTriggerFlipRight(center);
-        //}
-        //else if (direction == "Left")
-        //{
-        //    OnTriggerFlipLeft(center);
-        //}
-        //else if (direction == "Up")
-        //{
-        //    OnTriggerFlipUp(center);
-        //}
-        //else if (direction == "Reset")
-        //{
-        //    OnTriggerReset(center);
-        //}
     }
 
     IEnumerator MoveUp()
@@ -136,7 +102,7 @@ public class Movement_Side_Change : MonoBehaviour
         inputDelay = 0f;
         input = true;
         movning = false;
-        Debug.Log(movning);
+        
     }
 
     IEnumerator MoveDown()
@@ -155,6 +121,7 @@ public class Movement_Side_Change : MonoBehaviour
 
     IEnumerator MoveRight()
     {
+        movning = true;
         for (int i = 0; i < 90 / step; i++)
         {
             player.transform.RotateAround(right.transform.position, rotateRight, step);
@@ -163,10 +130,13 @@ public class Movement_Side_Change : MonoBehaviour
         center.transform.position = player.transform.position;
         inputDelay = 0f;
         input = true;
+        movning = false;
     }
 
     IEnumerator MoveLeft()
     {
+        movning = true;
+        Debug.Log("moving = "+movning);
         for (int i = 0; i < 90 / step; i++)
         {
             player.transform.RotateAround(left.transform.position, rotateLeft, step);
@@ -175,6 +145,8 @@ public class Movement_Side_Change : MonoBehaviour
         center.transform.position = player.transform.position;
         inputDelay = 0f;
         input = true;
+        movning = false;
+        Debug.Log("moving = "+movning);
     }
 
 
