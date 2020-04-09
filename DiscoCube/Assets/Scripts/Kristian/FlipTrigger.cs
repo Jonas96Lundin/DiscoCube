@@ -26,9 +26,12 @@ public class FlipTrigger : MonoBehaviour
         //Debug.Log("oldTriggerColor = " + oldTriggerColor);
         if (activated && FindObjectOfType<Movement_Side_Change>().movning == false && /*oldTriggerColor == FindObjectOfType<ColorManager>().currentLevelColor.ToString() &&*/ FindObjectOfType<ColorManager>().isOnGround == false)
         {
+            //oldTriggerColor = FindObjectOfType<ColorManager>().currentLevelColor.ToString();
             //Debug.Log(" UPDATE oldTriggerColor = " + oldTriggerColor);
             FlipDirection();
         }
+        //if(oldTriggerColor != FindObjectOfType<ColorManager>().currentLevelColor.ToString())
+        //{
         //    oldTriggerColor = FindObjectOfType<ColorManager>().currentLevelColor.ToString();
         //}
     }
