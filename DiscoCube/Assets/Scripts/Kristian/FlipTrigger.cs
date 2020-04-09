@@ -9,7 +9,7 @@ public class FlipTrigger : MonoBehaviour
     public GameObject center;
     public string triggerColor1;
     public string triggerColor2;
-    string oldTriggerColor;
+    string oldTriggerColor = "teal";
     //Movement_Side_Change msc = GameObject.FindObjectOfType<Movement_Side_Change>();
 
     private bool activated;
@@ -22,13 +22,15 @@ public class FlipTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        if (activated && FindObjectOfType<Movement_Side_Change>().movning == false)
+        //Debug.Log(oldTriggerColor != FindObjectOfType<ColorManager>().currentLevelColor.ToString());
+        //Debug.Log("oldTriggerColor = " + oldTriggerColor);
+        if (activated && FindObjectOfType<Movement_Side_Change>().movning == false && /*oldTriggerColor == FindObjectOfType<ColorManager>().currentLevelColor.ToString() &&*/ FindObjectOfType<ColorManager>().isOnGround == false)
         {
-            oldTriggerColor = FindObjectOfType<ColorManager>().currentLevelColor.ToString();
-            Debug.Log("oldTriggerColor = " + oldTriggerColor);
+            //Debug.Log(" UPDATE oldTriggerColor = " + oldTriggerColor);
             FlipDirection();
         }
+        //    oldTriggerColor = FindObjectOfType<ColorManager>().currentLevelColor.ToString();
+        //}
     }
 
     void FlipDirection()
@@ -38,7 +40,7 @@ public class FlipTrigger : MonoBehaviour
             //activated = false;
             FindObjectOfType<RotatingScript>().rotateToColor = triggerColor2;
             FindObjectOfType<Movement_Side_Change>().OnTriggerReset(center);
-            Debug.Log("I just flipped to " + triggerColor2);
+            //Debug.Log("I just flipped to " + triggerColor2);
             
         }
         else if(FindObjectOfType<ColorManager>().currentLevelColor.ToString() == triggerColor2)
@@ -46,7 +48,7 @@ public class FlipTrigger : MonoBehaviour
             //activated = false;
             FindObjectOfType<RotatingScript>().rotateToColor = triggerColor1;
             FindObjectOfType<Movement_Side_Change>().OnTriggerReset(center);
-            Debug.Log("I just flipped to " + triggerColor1);
+            //Debug.Log("I just flipped to " + triggerColor1);
         }
         //Debug.Log("I just flipper my center!");
         //activated = false;
@@ -55,14 +57,14 @@ public class FlipTrigger : MonoBehaviour
     
     void OnTriggerEnter(Collider other)
     {
-        
+        FindObjectOfType<ColorManager>().isOnGround = false;
         activated = true;
-        Debug.Log("Activated!");
-        if(FindObjectOfType<Movement_Side_Change>().movning==false && oldTriggerColor != FindObjectOfType<ColorManager>().currentLevelColor.ToString())
-        {
-            Debug.Log("Unactivated!"); 
-            activated = false;
-        }
+        //Debug.Log("Activated!");
+        //if(FindObjectOfType<Movement_Side_Change>().movning==false && oldTriggerColor != FindObjectOfType<ColorManager>().currentLevelColor.ToString())
+        //{
+        //    Debug.Log("Unactivated!"); 
+        //    activated = false;
+        //}
     }
 
     
