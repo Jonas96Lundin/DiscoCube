@@ -7,16 +7,20 @@ public class FlipTrigger : MonoBehaviour
 
     public GameObject triggerGO;
     public GameObject center;
-    public string triggerColor1;
-    public string triggerColor2;
-    string oldTriggerColor = "teal";
+    [SerializeField]
+    string triggerColor1;
+    [SerializeField]
+    string triggerColor2;
+    string savedTriggerColor1, savedTriggerColor2;
+    string oldLevelColor = "teal";
     //Movement_Side_Change msc = GameObject.FindObjectOfType<Movement_Side_Change>();
 
     private bool activated;
     private bool ready;
     void Start()
     {
-        
+        savedTriggerColor1 = triggerColor1;
+        savedTriggerColor2 = triggerColor2;
     }
 
     // Update is called once per frame
@@ -30,15 +34,23 @@ public class FlipTrigger : MonoBehaviour
             //Debug.Log(" UPDATE oldTriggerColor = " + oldTriggerColor);
             FlipDirection();
         }
-        //if(oldTriggerColor != FindObjectOfType<ColorManager>().currentLevelColor.ToString())
+        //if(FindObjectOfType<ColorManager>().isOnGround == true)
         //{
-        //    oldTriggerColor = FindObjectOfType<ColorManager>().currentLevelColor.ToString();
+        //    oldLevelColor = FindObjectOfType<ColorManager>().currentLevelColor.ToString();
         //}
+        if(oldLevelColor != FindObjectOfType<ColorManager>().currentLevelColor.ToString())
+        {
+            activated = false;
+            oldLevelColor = FindObjectOfType<ColorManager>().currentLevelColor.ToString();
+        }
     }
 
     void FlipDirection()
     {
-        if(FindObjectOfType<ColorManager>().currentLevelColor.ToString() == triggerColor1)
+        Debug.Log("triggerColor1 = " + triggerColor1);
+        Debug.Log("triggerColor2 = " + triggerColor2);
+        Debug.Log("THIS particular script is on " + gameObject.name);
+        if (FindObjectOfType<ColorManager>().currentLevelColor.ToString() == triggerColor1)
         {
             //activated = false;
             FindObjectOfType<RotatingScript>().rotateToColor = triggerColor2;
@@ -54,12 +66,14 @@ public class FlipTrigger : MonoBehaviour
             //Debug.Log("I just flipped to " + triggerColor1);
         }
         //Debug.Log("I just flipper my center!");
-        //activated = false;
-
+        activated = false;
+        //ResetTriggerColors();
     }
     
     void OnTriggerEnter(Collider other)
     {
+        triggerColor1 = savedTriggerColor1;
+        triggerColor2 = savedTriggerColor2;
         FindObjectOfType<ColorManager>().isOnGround = false;
         activated = true;
         //Debug.Log("Activated!");
@@ -70,5 +84,9 @@ public class FlipTrigger : MonoBehaviour
         //}
     }
 
-    
+    public void ResetTriggerColors()
+    {
+        triggerColor1 = "";
+        triggerColor2 = "";
+    }
 }

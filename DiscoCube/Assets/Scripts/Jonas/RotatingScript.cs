@@ -23,7 +23,7 @@ public class RotatingScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Keypad8) || rotateToColor == "green")
         {
-            Debug.Log("Rotating to green");
+            //Debug.Log("Rotating to green");
             rotateToColor = "green";
             cube.transform.rotation = Quaternion.RotateTowards(cube.transform.rotation, Quaternion.Euler(-90,0,0), Time.deltaTime * 100f);
             if(cube.transform.rotation == Quaternion.Euler(-90, 0, 0))
@@ -34,7 +34,7 @@ public class RotatingScript : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Keypad6) || rotateToColor == "purple")
         {
-            Debug.Log("Rotating to purple");
+            //Debug.Log("Rotating to purple");
             rotateToColor = "purple";
             cube.transform.rotation = Quaternion.RotateTowards(cube.transform.rotation, Quaternion.Euler(0, 0, 90), Time.deltaTime * 100f);
             if (cube.transform.rotation == Quaternion.Euler(0, 0, 90))
@@ -54,7 +54,7 @@ public class RotatingScript : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Keypad2) || rotateToColor == "blue")
         {
-            Debug.Log("Rotating to blue");
+            //Debug.Log("Rotating to blue");
             rotateToColor = "blue";
             cube.transform.rotation = Quaternion.RotateTowards(cube.transform.rotation, Quaternion.Euler(90, 0, 0), Time.deltaTime * 100f);
             if (cube.transform.rotation == Quaternion.Euler(90, 0, 0))
@@ -74,7 +74,7 @@ public class RotatingScript : MonoBehaviour
         }
         else if (Input.GetKeyDown(KeyCode.Keypad0) || rotateToColor == "red")
         {
-            Debug.Log("Rotate to red");
+            //Debug.Log("Rotate to red");
             rotateToColor = "red";
             cube.transform.rotation = Quaternion.RotateTowards(cube.transform.rotation, Quaternion.Euler(180, 0, 0), Time.deltaTime * 100f);
             if (cube.transform.rotation == Quaternion.Euler(180, 0, 0))
