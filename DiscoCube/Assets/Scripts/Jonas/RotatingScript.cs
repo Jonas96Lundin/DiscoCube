@@ -7,11 +7,16 @@ public class RotatingScript : MonoBehaviour
     public GameObject cube;
     public GameObject center;
     public string rotateToColor;
+    private Movement_Side_Change moveScript;
 
+    private void Start()
+    {
+        moveScript = FindObjectOfType<Movement_Side_Change>();
+    }
     // Update is called once per frame
     void Update()
     {
-        if (FindObjectOfType<Movement_Side_Change>().movning == false)
+        if (moveScript.movning == false)
         {
             RotateWhenPressingButton();
         }
@@ -28,8 +33,8 @@ public class RotatingScript : MonoBehaviour
             cube.transform.rotation = Quaternion.RotateTowards(cube.transform.rotation, Quaternion.Euler(-90,0,0), Time.deltaTime * 100f);
             if(cube.transform.rotation == Quaternion.Euler(-90, 0, 0))
             {
-                Debug.Log("rotation reseted");
                 rotateToColor = "";
+                moveScript.RotateEdgeStep();
             }
         }
         else if (Input.GetKeyDown(KeyCode.Keypad6) || rotateToColor == "purple")
@@ -76,8 +81,8 @@ public class RotatingScript : MonoBehaviour
         {
             //Debug.Log("Rotate to red");
             rotateToColor = "red";
-            cube.transform.rotation = Quaternion.RotateTowards(cube.transform.rotation, Quaternion.Euler(180, 0, 0), Time.deltaTime * 100f);
-            if (cube.transform.rotation == Quaternion.Euler(180, 0, 0))
+            cube.transform.rotation = Quaternion.RotateTowards(cube.transform.rotation, Quaternion.Euler(180, 180, 0), Time.deltaTime * 100f);
+            if (cube.transform.rotation == Quaternion.Euler(180, 180, 0))
             {
                 rotateToColor = "";
             }

@@ -39,21 +39,25 @@ public class Movement_Side_Change : MonoBehaviour
             {
                 StartCoroutine("MoveUp");
                 input = false;
+                currentDirection = Direction.up;
             }
             else if (Input.GetKey(KeyCode.DownArrow))
             {
                 StartCoroutine("MoveDown");
                 input = false;
+                currentDirection = Direction.down;
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
                 StartCoroutine("MoveRight");
                 input = false;
+                currentDirection = Direction.right;
             }
             else if (Input.GetKey(KeyCode.LeftArrow))
             {
                 StartCoroutine("MoveLeft");
                 input = false;
+                currentDirection = Direction.left;
             }
 
             // If the cube is moving, play the sound. /Jonas
@@ -206,5 +210,29 @@ public class Movement_Side_Change : MonoBehaviour
         rotateLeft = new Vector3(0, 0, 1);
 
         winAnimation.SetOrientation(new Vector3(0, -4, 0)); // Jonas test
+    }
+
+    public void RotateEdgeStep()
+    {
+        if (currentDirection == Direction.up)
+        {
+            StartCoroutine("MoveUp");
+            input = false;
+        }
+        else if (currentDirection == Direction.down)
+        {
+            StartCoroutine("MoveDown");
+            input = false;
+        }
+        else if (currentDirection == Direction.right)
+        {
+            StartCoroutine("MoveRight");
+            input = false;
+        }
+        else if (currentDirection == Direction.left)
+        {
+            StartCoroutine("MoveLeft");
+            input = false;
+        }
     }
 }
