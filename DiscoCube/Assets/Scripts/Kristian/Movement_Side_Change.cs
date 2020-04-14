@@ -39,21 +39,25 @@ public class Movement_Side_Change : MonoBehaviour
             {
                 StartCoroutine("MoveUp");
                 input = false;
+                StepCounter.stepCounter++;
             }
             else if (Input.GetKey(KeyCode.DownArrow))
             {
                 StartCoroutine("MoveDown");
                 input = false;
+                StepCounter.stepCounter++;
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
                 StartCoroutine("MoveRight");
                 input = false;
+                StepCounter.stepCounter++;
             }
             else if (Input.GetKey(KeyCode.LeftArrow))
             {
                 StartCoroutine("MoveLeft");
                 input = false;
+                StepCounter.stepCounter++;
             }
 
             // If the cube is moving, play the sound. /Jonas
