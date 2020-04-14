@@ -23,7 +23,7 @@ public class Movement_Side_Change : MonoBehaviour
 
     public float speed = 0.01f;
     public float inputDelay = 5f;
-   
+
     bool input = true;
     public bool movning = false;
     private Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
@@ -106,7 +106,7 @@ public class Movement_Side_Change : MonoBehaviour
         inputDelay = 0f;
         input = true;
         movning = false;
-        
+
     }
 
     IEnumerator MoveDown()
@@ -210,5 +210,29 @@ public class Movement_Side_Change : MonoBehaviour
         rotateLeft = new Vector3(0, 0, 1);
 
         winAnimation.SetOrientation(new Vector3(0, -4, 0)); // Jonas test
+    }
+
+    public void RotateEdgeStep()
+    {
+        if (currentDirection == Direction.up)
+        {
+            StartCoroutine("MoveUp");
+            input = false;
+        }
+        else if (currentDirection == Direction.down)
+        {
+            StartCoroutine("MoveDown");
+            input = false;
+        }
+        else if (currentDirection == Direction.right)
+        {
+            StartCoroutine("MoveRight");
+            input = false;
+        }
+        else if (currentDirection == Direction.left)
+        {
+            StartCoroutine("MoveLeft");
+            input = false;
+        }
     }
 }
