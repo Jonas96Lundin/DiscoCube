@@ -4,43 +4,40 @@ using UnityEngine;
 
 public class Victory : MonoBehaviour
 {
-    public GameObject goal;
-    bool activated = false;
+  
+    public GameObject completeLevelUI;
+    bool isActivated = false; 
     float animationDelay;
     public void OnTriggerEnter(Collider collision)
     {
         
         if (collision.gameObject.tag == "Goal" )
         {
-            activated = true;
-            //animationDelay = 0;
+            animationDelay = 0;
+            //TODO           
+            //Lås movement så att man inte kan fortsätta röra på sig efter victory animation har påbörjats. Koordinera med Kristians movement script.
+            isActivated = true;
+            
         }
     }
-
-    private void Update()
+    
+    public void Update()
     {
+        animationDelay += 1 * Time.deltaTime;
         Debug.Log(animationDelay);
-        animationDelay += Time.deltaTime;
-
-    }
-    public void GoalTrigger()
-    {
-       
-        
-        if (activated && animationDelay >= 2f)
+        if (isActivated && animationDelay >= 1f)
         {
-            Debug.Log("Hallååå");
             Win();
         }
-    }
+        if(isActivated && animationDelay >= 2f)
+        {
+            animationDelay = 0;
+        }
 
-    public GameObject completeLevelUI;
-   
-   
+    }
     public void Win()
     {
         completeLevelUI.SetActive(true);
 
     }
-
 }
