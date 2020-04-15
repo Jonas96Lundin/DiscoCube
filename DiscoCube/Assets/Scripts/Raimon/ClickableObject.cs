@@ -4,10 +4,11 @@ using UnityEngine.Events;
 public class ClickableObject : MonoBehaviour
 {
     private GameObject definedButton;
+    [SerializeField]
+    private ParticleSystem particleSystem;
     public UnityEvent OnClick = new UnityEvent();
     public Animator anim;
-
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +18,7 @@ public class ClickableObject : MonoBehaviour
 
     private void OnMouseEnter()
     {
+        particleSystem.Play();
         if (null != anim)
         {
             anim.Play("CubeAnimation");
@@ -24,6 +26,7 @@ public class ClickableObject : MonoBehaviour
     }
     private void OnMouseExit()
     {
+        particleSystem.Stop();
         if (null != anim)
         {
             anim.Play("CubeStill");

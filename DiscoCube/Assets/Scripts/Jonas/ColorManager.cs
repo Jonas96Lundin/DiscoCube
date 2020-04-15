@@ -9,6 +9,8 @@ public class ColorManager : MonoBehaviour
     public enum LevelColors { blue, green, purple, yellow, red, teal };
     public LevelColors currentLevelColor = LevelColors.red;
 
+    public bool isOnGround;
+
     public void CheckColorCollision()
     {
         switch (currentColor)
@@ -39,21 +41,27 @@ public class ColorManager : MonoBehaviour
         {
             case LevelColors.blue:
                 Debug.Log("You stepped on " + currentLevelColor.ToString() + ". Cube top color should be green");
+                isOnGround = true;
                 break;
             case LevelColors.green:
                 Debug.Log("You stepped on " + currentLevelColor.ToString() + ". Cube top color should be blue");
+                isOnGround = true;
                 break;
             case LevelColors.purple:
                 Debug.Log("You stepped on " + currentLevelColor.ToString() + ". Cube top color should be yellow");
+                isOnGround = true;
                 break;
             case LevelColors.yellow:
                 Debug.Log("You stepped on " + currentLevelColor.ToString() + ". Cube top color should be purple");
+                isOnGround = true;
                 break;
             case LevelColors.red:
                 Debug.Log("You stepped on " + currentLevelColor.ToString() + ". Cube top color should be teal");
+                isOnGround = true;
                 break;
             case LevelColors.teal:
                 Debug.Log("You stepped on " + currentLevelColor.ToString() + ". Cube top color should be red");
+                isOnGround = true;
                 break;
         }
     }

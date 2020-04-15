@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class movementScript : MonoBehaviour
 {
@@ -14,12 +15,14 @@ public class movementScript : MonoBehaviour
     public GameObject up;
     public GameObject down;
 
+
     public int step = 9;
 
     public float speed = 0.01f;
     public float inputDelay = 5f;
 
     bool input = true;
+    public int stepCounter = 0;
 
     void Update()
     {
@@ -47,9 +50,9 @@ public class movementScript : MonoBehaviour
             {
                 StartCoroutine("MoveLeft");
                 input = false;
+                
             }
         }
-
     }
 
     IEnumerator MoveUp()

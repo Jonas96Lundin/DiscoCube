@@ -5,10 +5,10 @@ using UnityEngine;
 public class Movement_Side_Change : MonoBehaviour
 {
     private Vector3 offset;
-
+    
     public GameObject player;
 
-    public WinAnimation winAnimation; // For the winning animation
+    public WinAnimation winAnimation; // For the winning animation. /Jonas
     //public GameObject rightEdge;
     enum Direction { right, left, up, down};
     Direction currentDirection = Direction.up;
@@ -23,8 +23,8 @@ public class Movement_Side_Change : MonoBehaviour
 
     public float speed = 0.01f;
     public float inputDelay = 5f;
-    [SerializeField]
-    bool input = true;
+
+    public bool input = true;
     public bool movning = false;
     private Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
 
@@ -35,25 +35,35 @@ public class Movement_Side_Change : MonoBehaviour
         if (input == true && inputDelay >= 0.25)
         {
             //TODO: Maybe find a way so that Up is not allways dominant when multiple keys are pressed down at the same time.
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Vertical") > 0)
             {
                 StartCoroutine("MoveUp");
                 input = false;
+                StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.DownArrow))
+            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("Vertical") < 0) 
             {
                 StartCoroutine("MoveDown");
                 input = false;
+                StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.RightArrow))
+            else if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("Horizontal") > 0)
             {
                 StartCoroutine("MoveRight");
                 input = false;
+                StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.LeftArrow))
+            else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < 0)
             {
                 StartCoroutine("MoveLeft");
                 input = false;
+                StepCounter.stepCounter++;
+            }
+
+            // If the cube is moving, play the sound. /Jonas
+            if (!input)
+            {
+                FindObjectOfType<AudioManager>().Play("ChestDrawer");
             }
         }
 
@@ -81,40 +91,6 @@ public class Movement_Side_Change : MonoBehaviour
             OnTriggerReset(center);
         }
 
-        SetFlipOrientation();
-    }
-
-    public void SetFlipOrientation()
-    {
-        //Debug.Log(currentDirection);
-        //if (player.GetComponent<BoxCollider>().bounds.Intersects(rightEdge.GetComponent<BoxCollider>().bounds) && currentDirection != Direction.right)
-        //{
-        //    //Debug.Log("Hit edge");
-        //    //Debug.Log(currentDirection);
-        //    currentDirection = Direction.right;
-        //    player.transform.position = new Vector3(4, -4, 0);
-        //    //OnTriggerFlipRight(center);
-        //}
-        //if (direction == "Down")
-        //{
-        //    OnTriggerFlipDown(center);
-        //}
-        //else if (direction == "Right")
-        //{
-        //    OnTriggerFlipRight(center);
-        //}
-        //else if (direction == "Left")
-        //{
-        //    OnTriggerFlipLeft(center);
-        //}
-        //else if (direction == "Up")
-        //{
-        //    OnTriggerFlipUp(center);
-        //}
-        //else if (direction == "Reset")
-        //{
-        //    OnTriggerReset(center);
-        //}
     }
 
     IEnumerator MoveUp()
@@ -130,7 +106,7 @@ public class Movement_Side_Change : MonoBehaviour
         inputDelay = 0f;
         input = true;
         movning = false;
-        Debug.Log(movning);
+
     }
 
     IEnumerator MoveDown()
@@ -149,6 +125,7 @@ public class Movement_Side_Change : MonoBehaviour
 
     IEnumerator MoveRight()
     {
+        movning = true;
         for (int i = 0; i < 90 / step; i++)
         {
             player.transform.RotateAround(right.transform.position, rotateRight, step);
@@ -157,10 +134,13 @@ public class Movement_Side_Change : MonoBehaviour
         center.transform.position = player.transform.position;
         inputDelay = 0f;
         input = true;
+        movning = false;
     }
 
     IEnumerator MoveLeft()
     {
+        movning = true;
+        Debug.Log("moving = "+movning);
         for (int i = 0; i < 90 / step; i++)
         {
             player.transform.RotateAround(left.transform.position, rotateLeft, step);
@@ -169,6 +149,8 @@ public class Movement_Side_Change : MonoBehaviour
         center.transform.position = player.transform.position;
         inputDelay = 0f;
         input = true;
+        movning = false;
+        Debug.Log("moving = "+movning);
     }
 
 
@@ -228,5 +210,29 @@ public class Movement_Side_Change : MonoBehaviour
         rotateLeft = new Vector3(0, 0, 1);
 
         winAnimation.SetOrientation(new Vector3(0, -4, 0)); // Jonas test
+    }
+    // Takes one extra step after rotation so that it looks more like one animation.
+    public void RotateEdgeStep()
+    {
+        if (currentDirection == Direction.up)
+        {
+            StartCoroutine("MoveUp");
+            input = false;
+        }
+        else if (currentDirection == Direction.down)
+        {
+            StartCoroutine("MoveDown");
+            input = false;
+        }
+        else if (currentDirection == Direction.right)
+        {
+            StartCoroutine("MoveRight");
+            input = false;
+        }
+        else if (currentDirection == Direction.left)
+        {
+            StartCoroutine("MoveLeft");
+            input = false;
+        }
     }
 }
