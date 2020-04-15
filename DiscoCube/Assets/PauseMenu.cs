@@ -7,16 +7,21 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
 
-    public static bool GameIsPaused = false;
+    public static bool gameIsPaused = false;
     public GameObject pauseMenuUI;
     public GameObject settingsMenuUI;
     public GameObject guideMenuUI;
 
     public Dropdown resolutionDrowdown;
-    Resolution[] resolutions;
+    Resolution[] resolutions; 
 
 
     void Start()
+    {
+        ScreenResolution();
+    }
+
+    private void ScreenResolution()
     {
         resolutions = Screen.resolutions;
         resolutionDrowdown.ClearOptions();
@@ -44,11 +49,17 @@ public class PauseMenu : MonoBehaviour
         Resolution resolution = resolutions[resolutionIndex];
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
+
+    public void SetFullscren(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if(GameIsPaused)
+            if(gameIsPaused)
             {
                 Resume();
             }
@@ -58,56 +69,62 @@ public class PauseMenu : MonoBehaviour
             }
         }
     }
+
     public void SetVolume(float volume)
     {
+        // TODO 
+        // Connect music to method
+    }
 
-    }
-    public void SetFullscren(bool isFullscreen)
-    {
-        Screen.fullScreen = isFullscreen;
-    }
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
+        gameIsPaused = false;
     }
+
     void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
-        GameIsPaused = true;
+        gameIsPaused = true;
     }
+
     public void Restart()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
-        GameIsPaused = false;
+        gameIsPaused = false;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         StepCounter.stepCounter = 0;
     }
+
     public void LoadMenu()
     {
         pauseMenuUI.SetActive(false);
         settingsMenuUI.SetActive(true);
 
     }
+
     public void GuideMenu()
     {
         pauseMenuUI.SetActive(false);
         guideMenuUI.SetActive(true);
     }
+
     public void GuideMenuReturn()
     {
         pauseMenuUI.SetActive(true);
         guideMenuUI.SetActive(false);
     }
-    public void Return()
+
+    public void GuideReturn()
     {
         settingsMenuUI.SetActive(false);
         pauseMenuUI.SetActive(true);
     }
+
     public void QuitGame()
     {
         UnityEditor.EditorApplication.isPlaying = false;
