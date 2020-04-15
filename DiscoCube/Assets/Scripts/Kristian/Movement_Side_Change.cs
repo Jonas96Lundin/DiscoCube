@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement_Side_Change : MonoBehaviour
 {
     private Vector3 offset;
-
+    
     public GameObject player;
 
     public WinAnimation winAnimation; // For the winning animation. /Jonas
@@ -24,7 +24,7 @@ public class Movement_Side_Change : MonoBehaviour
     public float speed = 0.01f;
     public float inputDelay = 5f;
 
-    bool input = true;
+    public bool input = true;
     public bool movning = false;
     private Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
 
@@ -35,25 +35,25 @@ public class Movement_Side_Change : MonoBehaviour
         if (input == true && inputDelay >= 0.25)
         {
             //TODO: Maybe find a way so that Up is not allways dominant when multiple keys are pressed down at the same time.
-            if (Input.GetKey(KeyCode.UpArrow))
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Vertical") > 0)
             {
                 StartCoroutine("MoveUp");
                 input = false;
                 StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.DownArrow))
+            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("Vertical") < 0) 
             {
                 StartCoroutine("MoveDown");
                 input = false;
                 StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.RightArrow))
+            else if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("Horizontal") > 0)
             {
                 StartCoroutine("MoveRight");
                 input = false;
                 StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.LeftArrow))
+            else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < 0)
             {
                 StartCoroutine("MoveLeft");
                 input = false;
@@ -211,7 +211,7 @@ public class Movement_Side_Change : MonoBehaviour
 
         winAnimation.SetOrientation(new Vector3(0, -4, 0)); // Jonas test
     }
-
+    // Takes one extra step after rotation so that it looks more like one animation.
     public void RotateEdgeStep()
     {
         if (currentDirection == Direction.up)
