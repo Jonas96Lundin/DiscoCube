@@ -9,6 +9,9 @@ public class ColorManager : MonoBehaviour
     public enum LevelColors { blue, green, purple, yellow, red, teal };
     public LevelColors currentLevelColor = LevelColors.red;
 
+    public enum WinningColors { blue, green, purple, yellow, red, teal };
+    public WinningColors currentWinningColor = WinningColors.red;
+
     public bool isOnGround;
 
     public void CheckColorCollision()
@@ -41,26 +44,32 @@ public class ColorManager : MonoBehaviour
         {
             case LevelColors.blue:
                 Debug.Log("You stepped on " + currentLevelColor.ToString() + ". Cube top color should be green");
+                currentWinningColor = WinningColors.green;
                 isOnGround = true;
                 break;
             case LevelColors.green:
                 Debug.Log("You stepped on " + currentLevelColor.ToString() + ". Cube top color should be blue");
+                currentWinningColor = WinningColors.blue;
                 isOnGround = true;
                 break;
             case LevelColors.purple:
                 Debug.Log("You stepped on " + currentLevelColor.ToString() + ". Cube top color should be yellow");
+                currentWinningColor = WinningColors.yellow;
                 isOnGround = true;
                 break;
             case LevelColors.yellow:
                 Debug.Log("You stepped on " + currentLevelColor.ToString() + ". Cube top color should be purple");
+                currentWinningColor = WinningColors.purple;
                 isOnGround = true;
                 break;
             case LevelColors.red:
                 Debug.Log("You stepped on " + currentLevelColor.ToString() + ". Cube top color should be teal");
+                currentWinningColor = WinningColors.teal;
                 isOnGround = true;
                 break;
             case LevelColors.teal:
                 Debug.Log("You stepped on " + currentLevelColor.ToString() + ". Cube top color should be red");
+                currentWinningColor = WinningColors.red;
                 isOnGround = true;
                 break;
         }

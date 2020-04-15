@@ -11,7 +11,8 @@ public class WinAnimation : MonoBehaviour
     public bool isWinning = false;
     public ColorManager colorManager;
     public GameObject goal;
-
+    [SerializeField]
+    ColorManager.LevelColors winColor;
 
 
     // Start is called before the first frame update
@@ -26,7 +27,7 @@ public class WinAnimation : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        if (!isWinning && colorManager.currentLevelColor == ColorManager.LevelColors.blue && colorManager.currentColor == ColorManager.CubeColors.green)
+        if (!isWinning && colorManager.currentLevelColor == winColor && colorManager.currentColor.ToString() == colorManager.currentWinningColor.ToString())
         {
             endPos = transform.position + endPosOrientation;
             isWinning = true;
@@ -36,15 +37,8 @@ public class WinAnimation : MonoBehaviour
             moveSpeed += 0.01f; //Adjust this for how fast you want it to be.
             transform.position = Vector3.Lerp(transform.position, endPos, moveSpeed);
             //FindObjectOfType<Victory>().GoalTrigger();
-
-
         }
-
-
-
     }
-    
-
     public void SetOrientation(Vector3 orientation)
     {
         endPosOrientation = orientation;
