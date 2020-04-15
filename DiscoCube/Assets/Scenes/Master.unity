@@ -402,12 +402,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1434066171}
   levelCenter: {fileID: 1500216339}
-  offset: {x: 0, y: 0, z: 0}
+  offset: {x: 30, y: 20, z: -10}
   mouseSensitivity: 4
   scrollSensitivity: 2
   orbitDampening: 10
   scrollDampening: 6
-  freelookActivated: 1
 --- !u!1001 &598262172
 PrefabInstance:
   m_ObjectHideFlags: 0

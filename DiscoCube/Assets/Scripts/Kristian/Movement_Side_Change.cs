@@ -35,25 +35,25 @@ public class Movement_Side_Change : MonoBehaviour
         if (input == true && inputDelay >= 0.25)
         {
             //TODO: Maybe find a way so that Up is not allways dominant when multiple keys are pressed down at the same time.
-            if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("LeftVertical") > 0)
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("LeftStickVertical") > 0)
             {
                 StartCoroutine("MoveUp");
                 input = false;
                 StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("LeftVertical") < 0) 
+            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("LeftStickVertical") < 0) 
             {
                 StartCoroutine("MoveDown");
                 input = false;
                 StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("LeftHorizontal") > 0)
+            else if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("LeftStickHorizontal") > 0)
             {
                 StartCoroutine("MoveRight");
                 input = false;
                 StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("LeftHorizontal") < 0)
+            else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("LeftStickHorizontal") < 0)
             {
                 StartCoroutine("MoveLeft");
                 input = false;

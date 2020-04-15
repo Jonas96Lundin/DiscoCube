@@ -4,46 +4,45 @@ using UnityEngine;
 
 public class FlipTrigger : MonoBehaviour
 {
-
-    public GameObject triggerGO;
-    public GameObject center;
     [SerializeField]
-    string triggerColor1;
+    GameObject triggerGameObject, center;
+
     [SerializeField]
-    string triggerColor2;
-    string savedTriggerColor1, savedTriggerColor2;
-    string oldLevelColor = "teal";
+    string triggerColor1, triggerColor2;
+    string savedTriggerColor1, savedTriggerColor2, oldLevelColor;
 
-    private bool activated;
-    private bool ready;
+    bool triggerActivated;
 
-    private Movement_Side_Change moveScript;
-    private ColorManager colorScript;
-    private RotatingScript rotateScript;
+    Movement_Side_Change moveScript;
+    ColorManager colorScript;
+    RotatingScript rotateScript;
     void Start()
     {
-        savedTriggerColor1 = triggerColor1;
-        savedTriggerColor2 = triggerColor2;
         moveScript = FindObjectOfType<Movement_Side_Change>();
         colorScript = FindObjectOfType<ColorManager>();
         rotateScript = FindObjectOfType<RotatingScript>();
+        savedTriggerColor1 = triggerColor1;
+        savedTriggerColor2 = triggerColor2;
+        oldLevelColor = colorScript.currentLevelColor.ToString();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (activated && moveScript.movning == false && colorScript.isOnGround == false)
+        if (triggerActivated && moveScript.movning == false && colorScript.isOnGround == false)
         {
             FlipDirection();
         }
 
         if(oldLevelColor != colorScript.currentLevelColor.ToString())
         {
-            activated = false;
+            triggerActivated = false;
             oldLevelColor = colorScript.currentLevelColor.ToString();
         }
     }
 
+    //TODO
+    //Can we make thís more general so that it is not dependent on colors too much?
     void FlipDirection()
     {
         Debug.Log("triggerColor1 = " + triggerColor1);
@@ -60,7 +59,7 @@ public class FlipTrigger : MonoBehaviour
             rotateScript.rotateToColor = triggerColor1;
             moveScript.OnTriggerReset(center);
         }
-        activated = false;
+        triggerActivated = false;
     }
     
     void OnTriggerEnter(Collider other)
@@ -68,7 +67,7 @@ public class FlipTrigger : MonoBehaviour
         triggerColor1 = savedTriggerColor1;
         triggerColor2 = savedTriggerColor2;
         colorScript.isOnGround = false;
-        activated = true;
+        triggerActivated = true;
     }
 
     public void ResetTriggerColors()
