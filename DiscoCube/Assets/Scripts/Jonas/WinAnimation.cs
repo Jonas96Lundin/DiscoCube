@@ -35,7 +35,7 @@ public class WinAnimation : MonoBehaviour
         {
             moveSpeed += 0.01f; //Adjust this for how fast you want it to be.
             transform.position = Vector3.Lerp(transform.position, endPos, moveSpeed);
-            FindObjectOfType<Victory>().GoalTrigger();
+            //FindObjectOfType<Victory>().GoalTrigger();
 
 
         }
