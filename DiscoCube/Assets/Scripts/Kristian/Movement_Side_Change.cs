@@ -13,6 +13,8 @@ public class Movement_Side_Change : MonoBehaviour
     enum Direction { right, left, up, down};
     Direction currentDirection = Direction.up;
 
+    PauseMenu pauseMenu;
+
     public GameObject center;
     public GameObject right;
     public GameObject left;
@@ -28,32 +30,37 @@ public class Movement_Side_Change : MonoBehaviour
     public bool movning = false;
     private Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
 
+    private void Start()
+    {
+        pauseMenu = FindObjectOfType<PauseMenu>();
+    }
+
     void Update()
     {
         inputDelay += Time.deltaTime;
         //TODO: May have to change the delaytimer, so the movement feels more responsive.
-        if (input == true && inputDelay >= 0.25)
+        if (input == true && inputDelay >= 0.25 && !pauseMenu.gameIsPaused)
         {
             //TODO: Maybe find a way so that Up is not allways dominant when multiple keys are pressed down at the same time.
-            if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("LeftStickVertical") > 0)
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("LeftStickVertical") > 0 || Input.GetAxis("D-PadVertical") > 0 )
             {
                 StartCoroutine("MoveUp");
                 input = false;
                 StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("LeftStickVertical") < 0) 
+            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("LeftStickVertical") < 0 || Input.GetAxis("D-PadVertical") < 0)
             {
                 StartCoroutine("MoveDown");
                 input = false;
                 StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("LeftStickHorizontal") > 0)
+            else if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("LeftStickHorizontal") > 0 || Input.GetAxis("D-PadHorizontal") > 0)
             {
                 StartCoroutine("MoveRight");
                 input = false;
                 StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("LeftStickHorizontal") < 0)
+            else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("LeftStickHorizontal") < 0 || Input.GetAxis("D-PadHorizontal") < 0)
             {
                 StartCoroutine("MoveLeft");
                 input = false;
