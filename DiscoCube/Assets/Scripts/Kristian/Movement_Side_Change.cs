@@ -13,6 +13,8 @@ public class Movement_Side_Change : MonoBehaviour
     enum Direction { right, left, up, down};
     Direction currentDirection = Direction.up;
 
+    PauseMenu pauseMenu;
+
     public GameObject center;
     public GameObject right;
     public GameObject left;
@@ -28,11 +30,16 @@ public class Movement_Side_Change : MonoBehaviour
     public bool movning = false;
     private Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
 
+    private void Start()
+    {
+        pauseMenu = FindObjectOfType<PauseMenu>();
+    }
+
     void Update()
     {
         inputDelay += Time.deltaTime;
         //TODO: May have to change the delaytimer, so the movement feels more responsive.
-        if (input == true && inputDelay >= 0.25)
+        if (input == true && inputDelay >= 0.25 && !pauseMenu.gameIsPaused)
         {
             //TODO: Maybe find a way so that Up is not allways dominant when multiple keys are pressed down at the same time.
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Vertical") > 0)
@@ -41,7 +48,7 @@ public class Movement_Side_Change : MonoBehaviour
                 input = false;
                 StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("Vertical") < 0) 
+            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("Vertical") < 0)
             {
                 StartCoroutine("MoveDown");
                 input = false;
@@ -65,32 +72,12 @@ public class Movement_Side_Change : MonoBehaviour
             {
                 FindObjectOfType<AudioManager>().Play("ChestDrawer");
             }
-        }
 
-
-        //Changes the different directions the cube will rotate depending on orientation.
-        //TODO: Make these changes with a trigger in game.
-        if (Input.GetKey(KeyCode.S))
-        {
-            OnTriggerFlipDown(center);
+            if(inputDelay >= 100)
+            {
+                inputDelay = 0f;
+            }
         }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            OnTriggerFlipRight(center);
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            OnTriggerFlipLeft(center);
-        }
-        else if (Input.GetKey(KeyCode.W))
-        {
-            OnTriggerFlipUp(center);
-        }
-        else if (Input.GetKey(KeyCode.Space))
-        {
-            OnTriggerReset(center);
-        }
-
     }
 
     IEnumerator MoveUp()
@@ -153,53 +140,7 @@ public class Movement_Side_Change : MonoBehaviour
         Debug.Log("moving = "+movning);
     }
 
-
     //TEST: A trigger that changes the Vector3 values of the different directions.
-    public void OnTriggerFlipUp(GameObject center)
-    {
-        center.transform.rotation = Quaternion.Euler(90, 0, 0);
-        rotateUp = new Vector3(1, 0, 0);
-        rotateDown = new Vector3(-1, 0, 0);
-        rotateRight = new Vector3(0, 1, 0);
-        rotateLeft = new Vector3(0, -1, 0);
-
-        winAnimation.SetOrientation(new Vector3(0, 0, -4)); // Jonas test
-    }
-
-    public void OnTriggerFlipDown(GameObject center)
-    {
-        center.transform.rotation = Quaternion.Euler(-90, 0, 0);
-        //center.transform.position = new Vector3(0, 0, 0);
-        rotateUp = new Vector3(1, 0, 0);
-        rotateDown = new Vector3(-1, 0, 0);
-        rotateRight = new Vector3(0, -1, 0);
-        rotateLeft = new Vector3(0, 1, 0);
-
-        winAnimation.SetOrientation(new Vector3(0, 0, 4)); // Jonas test
-    }
-
-    public void OnTriggerFlipRight(GameObject center)
-    {
-        center.transform.rotation = Quaternion.Euler(0, 0, -90);
-        rotateUp = new Vector3(0, -1, 0);
-        rotateDown = new Vector3(0, 1, 0);
-        rotateRight = new Vector3(0, 0, -1);
-        rotateLeft = new Vector3(0, 0, 1);
-
-        winAnimation.SetOrientation(new Vector3(-4, 0, 0)); // Jonas test
-    }
-
-    public void OnTriggerFlipLeft(GameObject center)
-    {
-        center.transform.rotation = Quaternion.Euler(0, 0, 90);
-        rotateUp = new Vector3(0, 1, 0);
-        rotateDown = new Vector3(0, -1, 0);
-        rotateRight = new Vector3(0, 0, -1);
-        rotateLeft = new Vector3(0, 0, 1);
-
-        winAnimation.SetOrientation(new Vector3(4, 0, 0)); // Jonas test
-    }
-
     //Reset all values on Empty Objects
     public void OnTriggerReset(GameObject center)
     {

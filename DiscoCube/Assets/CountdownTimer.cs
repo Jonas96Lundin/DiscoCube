@@ -6,15 +6,14 @@ using UnityEngine.UI;
 public class CountdownTimer : MonoBehaviour
 {
     float currentTime = 0f;
-    [SerializeField] float startingTime;
 
+    [SerializeField] float totalTime;
     [SerializeField] Text countdownText;
 
     void Start()
     {
-        currentTime = startingTime;
+        currentTime = totalTime;
     }
-
 
     void Update()
     {
