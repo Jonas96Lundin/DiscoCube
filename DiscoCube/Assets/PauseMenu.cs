@@ -12,6 +12,8 @@ public class PauseMenu : MonoBehaviour
     public GameObject settingsMenuUI;
     public GameObject guideMenuUI;
 
+    StepCounter stepCounterScript;
+
     public Dropdown resolutionDrowdown;
     Resolution[] resolutions; 
 
@@ -19,6 +21,7 @@ public class PauseMenu : MonoBehaviour
     void Start()
     {
         ScreenResolution();
+        stepCounterScript = FindObjectOfType<StepCounter>();
     }
 
     private void ScreenResolution()
@@ -69,6 +72,11 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
+        if(guideMenuUI == true && Input.GetButtonDown("Cancel"))
+        {
+            GuideMenuReturn();
+            SettingsMenuReturn();
+        }
     }
 
     public void SetVolume(float volume)
@@ -96,11 +104,13 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         pauseMenuUI.SetActive(false);
+        settingsMenuUI.SetActive(false);
+        guideMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        StepCounter.stepCounter = 0;
+        SceneManager.LoadScene(/*SceneManager.GetActiveScene().name*/"Master");
+        stepCounterScript.stepCounter = 0;
     }
 
     public void LoadMenu()
@@ -122,7 +132,7 @@ public class PauseMenu : MonoBehaviour
         guideMenuUI.SetActive(false);
     }
 
-    public void GuideReturn()
+    public void SettingsMenuReturn()
     {
         settingsMenuUI.SetActive(false);
         pauseMenuUI.SetActive(true);

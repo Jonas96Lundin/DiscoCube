@@ -14,6 +14,7 @@ public class Movement_Side_Change : MonoBehaviour
     Direction currentDirection = Direction.up;
 
     PauseMenu pauseMenu;
+    StepCounter stepCounterScript;
 
     public GameObject center;
     public GameObject right;
@@ -33,6 +34,7 @@ public class Movement_Side_Change : MonoBehaviour
     private void Start()
     {
         pauseMenu = FindObjectOfType<PauseMenu>();
+        stepCounterScript = FindObjectOfType<StepCounter>();
     }
 
     void Update()
@@ -46,25 +48,25 @@ public class Movement_Side_Change : MonoBehaviour
             {
                 StartCoroutine("MoveUp");
                 input = false;
-                StepCounter.stepCounter++;
+                stepCounterScript.stepCounter++;
             }
             else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("Vertical") < 0)
             {
                 StartCoroutine("MoveDown");
                 input = false;
-                StepCounter.stepCounter++;
+                stepCounterScript.stepCounter++;
             }
             else if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("Horizontal") > 0)
             {
                 StartCoroutine("MoveRight");
                 input = false;
-                StepCounter.stepCounter++;
+                stepCounterScript.stepCounter++;
             }
             else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < 0)
             {
                 StartCoroutine("MoveLeft");
                 input = false;
-                StepCounter.stepCounter++;
+                stepCounterScript.stepCounter++;
             }
 
             // If the cube is moving, play the sound. /Jonas

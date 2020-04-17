@@ -11,7 +11,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Jonas Bana.unity
     guid: ebd48452081659b42bd9d40e16aea85b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/David.unity
     guid: b05b63d595748424aaec0a5b1b95276a
+  - enabled: 1
+    path: Assets/Scenes/Master.unity
+    guid: c0c6fef4c5474394ab848efde0f88de0
   m_configObjects: {}

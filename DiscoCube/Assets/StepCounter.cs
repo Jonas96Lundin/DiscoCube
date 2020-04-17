@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class StepCounter : MonoBehaviour
 {
-    public static int stepCounter = 0;
+    public int stepCounter = 0;
     [SerializeField]
     Text stepsCounterText;
 
