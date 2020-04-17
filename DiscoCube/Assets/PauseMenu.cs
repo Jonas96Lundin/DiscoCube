@@ -68,6 +68,7 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
+
     }
 
     public void SetVolume(float volume)

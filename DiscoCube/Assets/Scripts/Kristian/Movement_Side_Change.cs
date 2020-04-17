@@ -42,25 +42,25 @@ public class Movement_Side_Change : MonoBehaviour
         if (input == true && inputDelay >= 0.25 && !pauseMenu.gameIsPaused)
         {
             //TODO: Maybe find a way so that Up is not allways dominant when multiple keys are pressed down at the same time.
-            if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("LeftStickVertical") > 0 || Input.GetAxis("D-PadVertical") > 0 )
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Vertical") > 0)
             {
                 StartCoroutine("MoveUp");
                 input = false;
                 StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("LeftStickVertical") < 0 || Input.GetAxis("D-PadVertical") < 0)
+            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("Vertical") < 0)
             {
                 StartCoroutine("MoveDown");
                 input = false;
                 StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("LeftStickHorizontal") > 0 || Input.GetAxis("D-PadHorizontal") > 0)
+            else if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("Horizontal") > 0)
             {
                 StartCoroutine("MoveRight");
                 input = false;
                 StepCounter.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("LeftStickHorizontal") < 0 || Input.GetAxis("D-PadHorizontal") < 0)
+            else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < 0)
             {
                 StartCoroutine("MoveLeft");
                 input = false;
