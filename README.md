@@ -6,6 +6,7 @@ Detta är ett spel som är menat för människor i alla åldrar som har en kärl
 Instruktioner:
 Starta scenen "Master", klicka på play-knappen.
 Spelet styrs antingen med piltangenterna eller med en Xbox-kontroll (både med vänstra handkontrollspaken eller D-pad).
+(OBS! Endast Xbox-kontroller fungerar och om du använder någon annan handkontroll eller har den inkopplad så kan spelet beté sig konstigt).
 Vill man kontrollera kameran så trycker man på Left Shift eller R3 på kontroll, därefter kan man styra kameran med musen eller den högra handkontrollspaken. Vill man återgå till styrningen så trycker man på kamerakontrollknappen igen.
 
 Tryck på ESC (Startknappen/eller vad den nu kallas på Xbox) för att komma till pausmenyn.
