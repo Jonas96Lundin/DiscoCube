@@ -8,10 +8,11 @@ public class RotatingScript : MonoBehaviour
     public GameObject center;
     public string rotateToColor;
     private Movement_Side_Change moveScript;
-
+    private ColorManager colorManagerScript;
     private void Start()
     {
         moveScript = FindObjectOfType<Movement_Side_Change>();
+        colorManagerScript = FindObjectOfType<ColorManager>();
     }
     // Update is called once per frame
     void Update()
@@ -20,12 +21,12 @@ public class RotatingScript : MonoBehaviour
         {
             RotateWhenPressingButton();
         }
-        
     }
 
     // Use numpad to change rotation to the side with the color "rotation"
     public void RotateWhenPressingButton()
     {
+
         if (Input.GetKeyDown(KeyCode.Keypad8) || rotateToColor == "green")
         {
             moveScript.input = false;
@@ -35,7 +36,27 @@ public class RotatingScript : MonoBehaviour
             {
                 moveScript.input = true;
                 rotateToColor = "";
-                //moveScript.RotateEdgeStep();
+                //Checks which color you rotated from, and moves you one rotation onto the new color.
+                if (colorManagerScript.currentLevelColor.ToString() == "yellow")
+                {
+                    moveScript.StartCoroutine("MoveRight");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "teal")
+                {
+                    moveScript.StartCoroutine("MoveUp");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "red")
+                {
+                    moveScript.StartCoroutine("MoveDown");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "purple")
+                {
+                    moveScript.StartCoroutine("MoveLeft");
+                    moveScript.input = false;
+                }
             }
         }
         else if (Input.GetKeyDown(KeyCode.Keypad6) || rotateToColor == "purple")
@@ -47,6 +68,26 @@ public class RotatingScript : MonoBehaviour
             {
                 moveScript.input = true;
                 rotateToColor = "";
+                if (colorManagerScript.currentLevelColor.ToString() == "teal")
+                {
+                    moveScript.StartCoroutine("MoveRight");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "blue")
+                {
+                    moveScript.StartCoroutine("MoveUp");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "green")
+                {
+                    moveScript.StartCoroutine("MoveDown");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "red")
+                {
+                    moveScript.StartCoroutine("MoveLeft");
+                    moveScript.input = false;
+                }
             }
         }
         else if (Input.GetKeyDown(KeyCode.Keypad4) || rotateToColor == "yellow")
@@ -58,42 +99,120 @@ public class RotatingScript : MonoBehaviour
             {
                 moveScript.input = true;
                 rotateToColor = "";
+                if (colorManagerScript.currentLevelColor.ToString() == "red")
+                {
+                    moveScript.StartCoroutine("MoveRight");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "blue")
+                {
+                    moveScript.StartCoroutine("MoveUp");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "green")
+                {
+                    moveScript.StartCoroutine("MoveDown");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "teal")
+                {
+                    moveScript.StartCoroutine("MoveLeft");
+                    moveScript.input = false;
+                }
+
             }
         }
         else if (Input.GetKeyDown(KeyCode.Keypad2) || rotateToColor == "blue")
         {
             moveScript.input = false;
-            //Debug.Log("Rotating to blue");
             rotateToColor = "blue";
             cube.transform.rotation = Quaternion.RotateTowards(cube.transform.rotation, Quaternion.Euler(90, 0, 0), Time.deltaTime * 100f);
             if (cube.transform.rotation == Quaternion.Euler(90, 0, 0))
             {
                 moveScript.input = true;
                 rotateToColor = "";
+                if (colorManagerScript.currentLevelColor.ToString() == "yellow")
+                {
+                    moveScript.StartCoroutine("MoveRight");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "red")
+                {
+                    moveScript.StartCoroutine("MoveUp");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "teal")
+                {
+                    moveScript.StartCoroutine("MoveDown");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "purple")
+                {
+                    moveScript.StartCoroutine("MoveLeft");
+                    moveScript.input = false;
+                }
             }
         }
         else if (Input.GetKeyDown(KeyCode.Keypad5) || rotateToColor == "teal")
         {
             moveScript.input = false;
-            //Debug.Log("Rotating to teal");
             rotateToColor = "teal";
             cube.transform.rotation = Quaternion.RotateTowards(cube.transform.rotation, Quaternion.Euler(0, 0, 0), Time.deltaTime * 100f);
             if (cube.transform.rotation == Quaternion.Euler(0, 0, 0))
             {
                 moveScript.input = true;
                 rotateToColor = "";
+                if(colorManagerScript.currentLevelColor.ToString() == "yellow")
+                {
+                    moveScript.StartCoroutine("MoveRight");
+                    moveScript.input = false;
+                }
+                else if(colorManagerScript.currentLevelColor.ToString()== "blue")
+                {
+                    moveScript.StartCoroutine("MoveUp");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "green")
+                {
+                    moveScript.StartCoroutine("MoveDown");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "purple")
+                {
+                    moveScript.StartCoroutine("MoveLeft");
+                    moveScript.input = false;
+                }
             }
         }
         else if (Input.GetKeyDown(KeyCode.Keypad0) || rotateToColor == "red")
         {
             moveScript.input = false;
-            //Debug.Log("Rotate to red");
             rotateToColor = "red";
             cube.transform.rotation = Quaternion.RotateTowards(cube.transform.rotation, Quaternion.Euler(180, 180, 0), Time.deltaTime * 100f);
             if (cube.transform.rotation == Quaternion.Euler(180, 180, 0))
             {
                 moveScript.input = true;
                 rotateToColor = "";
+                if (colorManagerScript.currentLevelColor.ToString() == "purple")
+                {
+                    moveScript.StartCoroutine("MoveRight");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "blue")
+                {
+                    moveScript.StartCoroutine("MoveUp");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "green")
+                {
+                    moveScript.StartCoroutine("MoveDown");
+                    moveScript.input = false;
+                }
+                else if (colorManagerScript.currentLevelColor.ToString() == "yellow")
+                {
+                    moveScript.StartCoroutine("MoveLeft");
+                    moveScript.input = false;
+                }
             }
         }
         else if (Input.GetKeyDown(KeyCode.Space))
