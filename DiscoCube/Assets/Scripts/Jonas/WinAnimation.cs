@@ -40,7 +40,6 @@ public class WinAnimation : MonoBehaviour
         currentColor = colorManager.currentColor.ToString();
         currentWinningColor = colorManager.currentWinningColor.ToString();
 
-        Debug.LogError(oldColor/*"CurrentColor: " + currentColor + "CurrentWinColor: " + currentWinningColor*/);
         //Jonas
         if (triggerIsActive)
         {
