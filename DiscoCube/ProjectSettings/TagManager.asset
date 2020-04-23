@@ -7,6 +7,8 @@ TagManager:
   - ColorManager
   - MiddleOfCube
   - Goal
+  - Teal
+  - ColorPlane
   layers:
   - Default
   - TransparentFX
