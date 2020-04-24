@@ -929,7 +929,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 5b0a9d5a4f9a27d48b91bc326f925513, type: 2}
+  - {fileID: 2100000, guid: 9bf3950a46e29954896ea58a0cd09e62, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -983,11 +983,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: add81fee169cc824da777a865f59b4a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  floor1: {fileID: 2100000, guid: 5b0a9d5a4f9a27d48b91bc326f925513, type: 2}
-  floor2: {fileID: 2100000, guid: e61e7fc8e965a9b48be6c863e17c3465, type: 2}
-  floor3: {fileID: 2100000, guid: a34c833342b167943915439ba9b665a0, type: 2}
-  floor4: {fileID: 2100000, guid: fe97f21c632ee0a4da7d8611cef6168d, type: 2}
-  floor5: {fileID: 2100000, guid: a27851ebeded40d4d99732b0246802b0, type: 2}
+  floor1: {fileID: 2100000, guid: 9bf3950a46e29954896ea58a0cd09e62, type: 2}
+  floor2: {fileID: 2100000, guid: 90ca23995c1a18f409f6266ef94b2fef, type: 2}
+  floor3: {fileID: 2100000, guid: 4f53f64c51a8ddd46922c178596e2bf0, type: 2}
+  floor4: {fileID: 2100000, guid: ec8553aa07a5f0b40be3e9da8bc8a0e6, type: 2}
+  floor5: {fileID: 2100000, guid: a03316d37f9990e45a1319f04e49f794, type: 2}
 --- !u!1 &1130858949 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7874117756199988818, guid: f2f4f87d6d224a2499e9da827fae442c,
