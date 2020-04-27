@@ -6,15 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
-
+    [HideInInspector]
     public bool gameIsPaused = false;
-    public GameObject pauseMenuUI;
-    public GameObject settingsMenuUI;
-    public GameObject guideMenuUI;
+    [SerializeField]
+    GameObject pauseMenuUI, settingsMenuUI, guideMenuUI;
 
     StepCounter stepCounterScript;
 
-    public Dropdown resolutionDrowdown;
+    [SerializeField]
+    Dropdown resolutionDropdown;
     Resolution[] resolutions; 
 
 
@@ -27,7 +27,7 @@ public class PauseMenu : MonoBehaviour
     private void ScreenResolution()
     {
         resolutions = Screen.resolutions;
-        resolutionDrowdown.ClearOptions();
+        resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;
@@ -42,9 +42,9 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        resolutionDrowdown.AddOptions(options);
-        resolutionDrowdown.value = currentResolutionIndex;
-        resolutionDrowdown.RefreshShownValue();
+        resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
     }
 
     public void SetResolution (int resolutionIndex)

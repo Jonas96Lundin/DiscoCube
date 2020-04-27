@@ -181,6 +181,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 51.034004, y: 107.324005, z: 67.957}
+--- !u!1 &135288528 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5201819130134705619, guid: 3a32dbe811c360744880e9f8412d6336,
+    type: 3}
+  m_PrefabInstance: {fileID: 1564804420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &200621796
 GameObject:
   m_ObjectHideFlags: 0
@@ -911,6 +917,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 598262172}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1328732270 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5201819130275439971, guid: 3a32dbe811c360744880e9f8412d6336,
+    type: 3}
+  m_PrefabInstance: {fileID: 1564804420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1368630816 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2209412162367555073, guid: f2f4f87d6d224a2499e9da827fae442c,
@@ -967,6 +979,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1509921057 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5201819130698181295, guid: 3a32dbe811c360744880e9f8412d6336,
+    type: 3}
+  m_PrefabInstance: {fileID: 1564804420}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 853051423, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1564804420
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1244,6 +1268,21 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5201819131150392485, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: settingsMenuUI
+      value: 
+      objectReference: {fileID: 135288528}
+    - target: {fileID: 5201819131150392485, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: guideMenuUI
+      value: 
+      objectReference: {fileID: 1328732270}
+    - target: {fileID: 5201819131150392485, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: resolutionDrowdown
+      value: 
+      objectReference: {fileID: 1509921057}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a32dbe811c360744880e9f8412d6336, type: 3}
 --- !u!1001 &1622069743
