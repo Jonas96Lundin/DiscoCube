@@ -19,6 +19,10 @@ public class WinAnimation : MonoBehaviour
     [SerializeField]
     ColorManager.LevelColors winColor;
 
+    string currentColor, currentWinningColor;
+    bool triggerIsActive;
+    string oldColor;
+
 
     // Start is called before the first frame update
     public void Start()
@@ -33,6 +37,26 @@ public class WinAnimation : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        currentColor = colorManager.currentColor.ToString();
+        currentWinningColor = colorManager.currentWinningColor.ToString();
+
+        //Jonas
+        if (triggerIsActive)
+        {
+            if (colorManager.currentLevelColor == winColor && currentColor == currentWinningColor)
+            {
+                animationDelay = 0;
+                //TODO           
+                //Lås movement så att man inte kan fortsätta röra på sig efter victory animation har påbörjats. Koordinera med Kristians movement script.
+                isActivated = true;
+            }
+        }
+        //Jonas
+        if (oldColor != currentColor)
+        {
+            triggerIsActive = false;
+        }
+
         // TODO: When the Restart function is called, the winning trigger is never activated.
         if (!isWinning && isActivated/*colorManager.currentLevelColor == winColor && colorManager.currentColor.ToString() == colorManager.currentWinningColor.ToString()*/)
         {
@@ -42,12 +66,19 @@ public class WinAnimation : MonoBehaviour
         if (isWinning)
         {
             //victoryScript.Win();
-            moveSpeed += 0.01f; //Adjust this for how fast you want it to be.
+            moveSpeed += 0.01f; //Adjust this for how fast you want the cube to fall into the hole.
             transform.position = Vector3.Lerp(transform.position, endPos, moveSpeed);
+
             //FindObjectOfType<Victory>().GoalTrigger();
             //Rasmus kod:
             animationDelay += 1 * Time.deltaTime;
-            if (isActivated && animationDelay >= 1f)
+
+            if (/*isActivated && animationDelay >= 1f*/transform.position==endPos) // jonas kod
+            {
+                colorManager.SetGlowingColors(winColor);
+            }
+            // Rasmus kod
+            if (isActivated && animationDelay >= 2f)
             {
                 Win();
             }
@@ -66,14 +97,21 @@ public class WinAnimation : MonoBehaviour
     // Rasmus kod:
     public void OnTriggerEnter(Collider collision)
     {
-
-        if (collision.gameObject.tag == "Goal" && colorManager.currentLevelColor == winColor && colorManager.currentColor.ToString() == colorManager.currentWinningColor.ToString())
+        //Debug.LogError("CurrentColor: " + currentColor + "CurrentWinColor: " + currentWinningColor);
+        //if (collision.gameObject.tag == "Goal" && colorManager.currentLevelColor == winColor && /*colorManager.currentColor.ToString()*/currentColor == currentWinningColor/*colorManager.currentWinningColor.ToString()*/)
+        //{
+        //    animationDelay = 0;
+        //    //TODO           
+        //    //Lås movement så att man inte kan fortsätta röra på sig efter victory animation har påbörjats. Koordinera med Kristians movement script.
+        //    isActivated = true;
+        //    Debug.LogError("IT IS WINNING");
+        //}
+      
+        //Jonas
+        if (collision.gameObject.tag == "Goal")
         {
-            animationDelay = 0;
-            //TODO           
-            //Lås movement så att man inte kan fortsätta röra på sig efter victory animation har påbörjats. Koordinera med Kristians movement script.
-            isActivated = true;
-
+            triggerIsActive = true;
+            oldColor = currentColor;
         }
     }
 

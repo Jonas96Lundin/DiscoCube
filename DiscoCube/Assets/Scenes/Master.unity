@@ -1447,6 +1447,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CompletePlaneCube5x5x5
       objectReference: {fileID: 0}
+    - target: {fileID: 3395239713906241194, guid: a16bd717d6d489e4fb8bb14f5a7f344d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5218858554492961050, guid: a16bd717d6d489e4fb8bb14f5a7f344d,
         type: 3}
       propertyPath: m_IsActive
@@ -1462,7 +1467,18 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 3.8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 7808699931633171528, guid: a16bd717d6d489e4fb8bb14f5a7f344d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8896342168768866248, guid: a16bd717d6d489e4fb8bb14f5a7f344d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3395239713906241194, guid: a16bd717d6d489e4fb8bb14f5a7f344d, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: a16bd717d6d489e4fb8bb14f5a7f344d, type: 3}
 --- !u!1001 &3227675062987120981
 PrefabInstance:

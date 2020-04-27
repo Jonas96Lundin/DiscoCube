@@ -8,7 +8,7 @@ public class FlipTrigger : MonoBehaviour
     GameObject triggerGameObject, center;
 
     [SerializeField]
-    string triggerColor1, triggerColor2;
+    public string triggerColor1, triggerColor2;
     string savedTriggerColor1, savedTriggerColor2, oldLevelColor;
 
     bool triggerActivated;
@@ -32,6 +32,7 @@ public class FlipTrigger : MonoBehaviour
         if (triggerActivated && moveScript.movning == false && colorScript.isOnGround == false)
         {
             FlipDirection();
+            
         }
 
         if(oldLevelColor != colorScript.currentLevelColor.ToString())
@@ -39,6 +40,9 @@ public class FlipTrigger : MonoBehaviour
             triggerActivated = false;
             oldLevelColor = colorScript.currentLevelColor.ToString();
         }
+
+        
+
     }
 
     //TODO
@@ -47,6 +51,8 @@ public class FlipTrigger : MonoBehaviour
     {
         Debug.Log("triggerColor1 = " + triggerColor1);
         Debug.Log("triggerColor2 = " + triggerColor2);
+        Debug.Log("savedTriggerColor1 = " + savedTriggerColor1);
+        Debug.Log("savedTriggerColor2 = " + savedTriggerColor2);
         Debug.Log("THIS particular script is on " + gameObject.name);
 
         if (colorScript.currentLevelColor.ToString() == triggerColor1)
@@ -60,6 +66,7 @@ public class FlipTrigger : MonoBehaviour
             moveScript.OnTriggerReset(center);
         }
         triggerActivated = false;
+        
     }
     
     void OnTriggerEnter(Collider other)
@@ -75,4 +82,16 @@ public class FlipTrigger : MonoBehaviour
         triggerColor1 = "";
         triggerColor2 = "";
     }
+
+    public void ContinueMovementAfterRotation()
+    {
+        if (triggerColor1 == "yellow" && triggerColor2 == "teal" && colorScript.currentLevelColor.ToString() == "teal")
+        {
+            Debug.LogError("How did I get here?");
+            moveScript.StartCoroutine("MoveLeft");
+            moveScript.input = false;
+        }
+    }
+
+
 }
