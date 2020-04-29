@@ -4,12 +4,11 @@ public class UITweenSpriteAnimator : MonoBehaviour
 {
     public RectTransform rectTransform;
     public Sprite[] sprites;
-    public float timer;
+    public int timer;
 
-    void Update()
+    private void Start()
     {
-        //TODO
-        //Find out why there is such a big delay on startup.
-        LeanTween.play(gameObject.GetComponent<RectTransform>(), sprites).setLoopPingPong();
+        LeanTween.play(rectTransform, sprites).setLoopPingPong(-1);
     }
+
 }
