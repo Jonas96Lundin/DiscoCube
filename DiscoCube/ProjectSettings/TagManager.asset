@@ -4,15 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ColorManager
-  - MiddleOfCube
-  - Goal
-  - Teal
-  - ColorPlane
-  - Start
-  - Settings
-  - Exit
-  - Help
+  - TutorialDialogue
+  - TutorialArrow
   layers:
   - Default
   - TransparentFX
@@ -22,9 +15,9 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - Player
-  - WorldUI
+  - 
+  - 
+  - 
   - 
   - 
   - 

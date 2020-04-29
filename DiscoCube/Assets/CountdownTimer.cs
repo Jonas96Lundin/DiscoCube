@@ -10,6 +10,8 @@ public class CountdownTimer : MonoBehaviour
     [SerializeField] float totalTime;
     [SerializeField] Text countdownText;
 
+    public bool isActive; // Jonas kod
+
     void Start()
     {
         currentTime = totalTime;
@@ -17,12 +19,15 @@ public class CountdownTimer : MonoBehaviour
 
     void Update()
     {
-        currentTime -= 1 * Time.deltaTime;
-        countdownText.text = currentTime.ToString("0");
-
-        if(currentTime <= 0)
+        if (isActive) // Jonas kod
         {
-            currentTime = 0;
+            currentTime -= 1 * Time.deltaTime;
+            countdownText.text = currentTime.ToString("0");
+
+            if (currentTime <= 0)
+            {
+                currentTime = 0;
+            }
         }
     }
 }
