@@ -50,6 +50,11 @@ public class WinAnimation : MonoBehaviour
                 //Lås movement så att man inte kan fortsätta röra på sig efter victory animation har påbörjats. Koordinera med Kristians movement script.
                 isActivated = true;
             }
+            else if(!(colorManager.currentLevelColor == winColor && currentColor == currentWinningColor) && !isActivated)
+            {
+                Debug.Log("You walked with the wrong color on goal!");
+                FindObjectOfType<WrongColorDialogue>().DialoguePopUp();
+            }
         }
         //Jonas
         if (oldColor != currentColor)

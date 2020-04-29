@@ -9,6 +9,8 @@ TagManager:
   - Goal
   - Teal
   - ColorPlane
+  - TutorialDialogue
+  - TutorialArrow
   layers:
   - Default
   - TransparentFX
