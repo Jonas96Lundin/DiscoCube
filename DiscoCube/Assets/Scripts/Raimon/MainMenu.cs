@@ -4,16 +4,21 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField]
-    string levelToLoad;
-    [SerializeField]
-    SceneFader sceneFader;
+    //Owner: Raimon
+    //Code from: David
+
+    public static bool UIMenuActive;
     [SerializeField]
     GameObject settingsMenuUI, guideMenuUI;
     [SerializeField]
     Dropdown resolutionDropdown;
     Resolution[] resolutions;
     
+    void Awake()
+    {
+        UIMenuActive = false;
+    }
+
     void Start()
     {
         ScreenResolution();
@@ -23,7 +28,6 @@ public class MainMenu : MonoBehaviour
     {
         resolutions = Screen.resolutions;
         resolutionDropdown.ClearOptions();
-
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;
         for (int i = 0; i < resolutions.Length; i++)
@@ -64,33 +68,26 @@ public class MainMenu : MonoBehaviour
 
     public void SettingsMenu()
     {
+        UIMenuActive = true;
         settingsMenuUI.SetActive(true);
     }
 
     public void GuideMenu()
     {
+        UIMenuActive = true;
         guideMenuUI.SetActive(true);
     }
 
     public void GuideMenuReturn()
     {
+        UIMenuActive = false;
         guideMenuUI.SetActive(false);
     }
 
     public void SettingsMenuReturn()
     {
+        UIMenuActive = false;
         settingsMenuUI.SetActive(false);
     }
 
-    public void Play()
-    {
-        sceneFader.FadeTo(levelToLoad);
-        
-    }
-
-    public void Quit()
-    {
-        Debug.Log("I'm out!");
-        Application.Quit();
-    }
 }

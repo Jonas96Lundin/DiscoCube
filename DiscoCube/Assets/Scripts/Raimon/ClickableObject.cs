@@ -3,6 +3,8 @@ using UnityEngine.Events;
 
 public class ClickableObject : MonoBehaviour
 {
+    //Owner: Raimon
+
     [SerializeField]
     private ParticleSystem particleSystemToUse;
     [SerializeField]
@@ -12,16 +14,20 @@ public class ClickableObject : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        canvasText.SetActive(true);
-        foreach (Transform transform in transform.parent)
+        if (!MainMenu.UIMenuActive)
         {
-            if (transform.tag == this.tag)
+            canvasText.SetActive(true);
+            foreach (Transform transform in transform.parent)
             {
-                ClickableObject temp = transform.GetComponent<ClickableObject>();
-                temp.particleSystemToUse.Play();
+                if (transform.tag == this.tag)
+                {
+                    ClickableObject temp = transform.GetComponent<ClickableObject>();
+                    temp.particleSystemToUse.Play();
+                }
+
             }
-            
         }
+       
     }
     private void OnMouseExit()
     {
@@ -42,9 +48,9 @@ public class ClickableObject : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
 
-            if (Physics.Raycast(ray, out Hit) && Hit.collider.gameObject == gameObject)
+            if (Physics.Raycast(ray, out Hit) && Hit.collider.gameObject == gameObject && !MainMenu.UIMenuActive)
             {
-                Debug.Log("Hit cube.");
+                Debug.Log("Clicking Cube registered.");
                 OnClick.Invoke();
             }
         }

@@ -9,6 +9,10 @@ TagManager:
   - Goal
   - Teal
   - ColorPlane
+  - Start
+  - Settings
+  - Exit
+  - Help
   layers:
   - Default
   - TransparentFX
@@ -20,7 +24,7 @@ TagManager:
   - 
   - PostProcessing
   - Player
-  - 
+  - WorldUI
   - 
   - 
   - 
