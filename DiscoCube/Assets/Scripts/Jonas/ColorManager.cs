@@ -12,6 +12,10 @@ public class ColorManager : MonoBehaviour
     public enum WinningColors { blue, green, purple, yellow, red, teal };
     public WinningColors currentWinningColor;
 
+    enum GlowingColorChoice { allColorsGlow, winningColorGlow, noColorGlow};
+    [SerializeField]
+    GlowingColorChoice currentGlowingColorChoice;
+
     public bool isOnGround;
 
     public void CheckColorCollision()
@@ -81,62 +85,72 @@ public class ColorManager : MonoBehaviour
 
     public void SetGlowingColors(LevelColors color)
     {
-        //Debug.Log("Current winning color: " + color.ToString());
-        //FindObjectOfType<ColorChanger>().SetColorToGlow(color.ToString());
+        ;
         GameObject[] cubePlane = GameObject.FindGameObjectsWithTag("ColorPlane");
-        //foreach (GameObject go in cubePlane)
-        //{
-        //    if (go.name == "Teal Plane")
-        //    {
-        //        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("TealGlow", typeof(Material)) as Material;
-        //    }
-        //    else if (go.name == "Red Plane")
-        //    {
-        //        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("RedGlow", typeof(Material)) as Material;
-        //    }
-        //    else if (go.name == "Blue Plane")
-        //    {
-        //        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("BlueGlow", typeof(Material)) as Material;
-        //    }
-        //    else if (go.name == "Green Plane")
-        //    {
-        //        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("GreenGlow", typeof(Material)) as Material;
-        //    }
-        //    else if (go.name == "Yellow Plane")
-        //    {
-        //        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("YellowGlow", typeof(Material)) as Material;
-        //    }
-        //    else if (go.name == "Purple Plane")
-        //    {
-        //        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("PurpleGlow", typeof(Material)) as Material;
-        //    }
-        //}
-        foreach (GameObject go in cubePlane)
+        switch (currentGlowingColorChoice)
         {
-            if (color.ToString() == "teal")
-            {
-                go.GetComponent<Renderer>().sharedMaterial = Resources.Load("TealGlow", typeof(Material)) as Material;
-            }
-            else if (color.ToString() == "red")
-            {
-                go.GetComponent<Renderer>().sharedMaterial = Resources.Load("RedGlow", typeof(Material)) as Material;
-            }
-            else if (color.ToString() == "blue")
-            {
-                go.GetComponent<Renderer>().sharedMaterial = Resources.Load("BlueGlow", typeof(Material)) as Material;
-            }
-            else if (color.ToString() == "green")
-            {
-                go.GetComponent<Renderer>().sharedMaterial = Resources.Load("GreenGlow", typeof(Material)) as Material;
-            }
-            else if (color.ToString() == "yellow")
-            {
-                go.GetComponent<Renderer>().sharedMaterial = Resources.Load("YellowGlow", typeof(Material)) as Material;
-            }
-            else if (color.ToString() == "purple")
-            {
-                go.GetComponent<Renderer>().sharedMaterial = Resources.Load("PurpleGlow", typeof(Material)) as Material;
-            }
+            case GlowingColorChoice.noColorGlow:
+                break;
+            case GlowingColorChoice.winningColorGlow:
+                foreach (GameObject go in cubePlane)
+                {
+                    if (color.ToString() == "teal")
+                    {
+                        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("TealGlow", typeof(Material)) as Material;
+                    }
+                    else if (color.ToString() == "red")
+                    {
+                        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("RedGlow", typeof(Material)) as Material;
+                    }
+                    else if (color.ToString() == "blue")
+                    {
+                        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("BlueGlow", typeof(Material)) as Material;
+                    }
+                    else if (color.ToString() == "green")
+                    {
+                        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("GreenGlow", typeof(Material)) as Material;
+                    }
+                    else if (color.ToString() == "yellow")
+                    {
+                        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("YellowGlow", typeof(Material)) as Material;
+                    }
+                    else if (color.ToString() == "purple")
+                    {
+                        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("PurpleGlow", typeof(Material)) as Material;
+                    }
+                }
+                break;
+            case GlowingColorChoice.allColorsGlow:
+                foreach (GameObject go in cubePlane)
+                {
+                    if (go.name == "Teal Plane")
+                    {
+                        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("TealGlow", typeof(Material)) as Material;
+                    }
+                    else if (go.name == "Red Plane")
+                    {
+                        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("RedGlow", typeof(Material)) as Material;
+                    }
+                    else if (go.name == "Blue Plane")
+                    {
+                        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("BlueGlow", typeof(Material)) as Material;
+                    }
+                    else if (go.name == "Green Plane")
+                    {
+                        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("GreenGlow", typeof(Material)) as Material;
+                    }
+                    else if (go.name == "Yellow Plane")
+                    {
+                        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("YellowGlow", typeof(Material)) as Material;
+                    }
+                    else if (go.name == "Purple Plane")
+                    {
+                        go.GetComponent<Renderer>().sharedMaterial = Resources.Load("PurpleGlow", typeof(Material)) as Material;
+                    }
+                }
+                break;
         }
+        
+        
     }
 }

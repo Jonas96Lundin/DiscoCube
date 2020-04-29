@@ -10,6 +10,8 @@ public class PauseMenu : MonoBehaviour
     public bool gameIsPaused = false;
     [SerializeField]
     GameObject pauseMenuUI, settingsMenuUI, guideMenuUI;
+    [SerializeField]
+    SceneFader sceneFader;
 
     StepCounter stepCounterScript;
 
@@ -109,7 +111,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         gameIsPaused = false;
 
-        SceneManager.LoadScene(/*SceneManager.GetActiveScene().name*/"Master");
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        sceneFader.FadeToFast(SceneManager.GetActiveScene().name);
         stepCounterScript.stepCounter = 0;
     }
 
@@ -140,6 +143,8 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        //Swap to this before build
+        //Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
     }
 }
