@@ -24,6 +24,8 @@ public class Movement_Side_Change : MonoBehaviour
 
     public int step = 9;
 
+    public string inputVertical, inputHorizontal; //Gives the ability to change the controller with the ControllerSetup script /Kristian.
+
     public float speed = 0.01f;
     public float inputDelay = 5f;
 
@@ -35,6 +37,8 @@ public class Movement_Side_Change : MonoBehaviour
     {
         pauseMenu = FindObjectOfType<PauseMenu>();
         stepCounterScript = FindObjectOfType<StepCounter>();
+        inputVertical = "Vertical";
+        inputHorizontal = "Horizontal";
     }
 
     void Update()
@@ -44,25 +48,25 @@ public class Movement_Side_Change : MonoBehaviour
         if (input == true && inputDelay >= 0.25 && !pauseMenu.gameIsPaused)
         {
             //TODO: Maybe find a way so that Up is not allways dominant when multiple keys are pressed down at the same time.
-            if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Vertical") > 0)
+            if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Vertical") > 0 || Input.GetAxis(inputVertical) > 0)
             {
                 StartCoroutine("MoveUp");
                 input = false;
                 stepCounterScript.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("Vertical") < 0)
+            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("Vertical") < 0 || Input.GetAxis(inputVertical) < 0)
             {
                 StartCoroutine("MoveDown");
                 input = false;
                 stepCounterScript.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("Horizontal") > 0)
+            else if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("Horizontal") > 0 || Input.GetAxis(inputHorizontal) > 0)
             {
                 StartCoroutine("MoveRight");
                 input = false;
                 stepCounterScript.stepCounter++;
             }
-            else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < 0)
+            else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < 0 || Input.GetAxis(inputHorizontal) < 0)
             {
                 StartCoroutine("MoveLeft");
                 input = false;
@@ -154,28 +158,5 @@ public class Movement_Side_Change : MonoBehaviour
 
         winAnimation.SetOrientation(new Vector3(0, -4, 0)); // Jonas test
     }
-    // Takes one extra step after rotation so that it looks more like one animation.
-    public void RotateEdgeStep()
-    {
-        if (currentDirection == Direction.up)
-        {
-            StartCoroutine("MoveUp");
-            input = false;
-        }
-        else if (currentDirection == Direction.down)
-        {
-            StartCoroutine("MoveDown");
-            input = false;
-        }
-        else if (currentDirection == Direction.right)
-        {
-            StartCoroutine("MoveRight");
-            input = false;
-        }
-        else if (currentDirection == Direction.left)
-        {
-            StartCoroutine("MoveLeft");
-            input = false;
-        }
-    }
+   
 }

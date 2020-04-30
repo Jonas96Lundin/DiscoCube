@@ -16,6 +16,8 @@ public class FollowPlayer : MonoBehaviour
     float mouseSensitivity, scrollSensitivity, orbitDampening, scrollDampening;
     private float cameraDistance = 50f;
 
+    public string inputRSVertical, inputRSHorizontal;
+
     bool freelookActivated = false;
 
     private void Start()
@@ -23,22 +25,11 @@ public class FollowPlayer : MonoBehaviour
         this.cameraTransform = this.transform;
         this.levelCenter = this.levelCenter.transform;
         localRotation = offset;
+        inputRSVertical = "Xbox RS Vertical";
+        inputRSHorizontal = "Xbox RS Horizontal";
+
         //BehindPlayer();
     }
-
-    //private void Update()
-    //{
-    //    if (Input.GetKey(KeyCode.Return))
-    //    {
-    //        RevolveAroundLevel();
-    //    }
-    //    else
-    //    {
-    //        BehindPlayer();
-    //    }
-        
-    //    Zoom();
-    //}
 
     private void LateUpdate()
     {
@@ -51,12 +42,13 @@ public class FollowPlayer : MonoBehaviour
         //Rotation of the camera based on Mouse Coordinatied
         if (freelookActivated)
         {
-            if(Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0 || Input.GetAxis("RightStickHorizontal") != 0 || Input.GetAxis("RightStickVertical") != 0)
+            if(Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0 || Input.GetAxis(inputRSHorizontal) != 0 || Input.GetAxis(inputRSVertical) != 0)
             {
                 localRotation.x += Input.GetAxis("Mouse X") * mouseSensitivity;
                 localRotation.y -= Input.GetAxis("Mouse Y") * mouseSensitivity;
-                localRotation.x += Input.GetAxis("RightStickHorizontal") * mouseSensitivity;
-                localRotation.y -= Input.GetAxis("RightStickVertical") * mouseSensitivity;
+
+                localRotation.x += Input.GetAxis(inputRSHorizontal) * mouseSensitivity;
+                localRotation.y -= Input.GetAxis(inputRSVertical) * mouseSensitivity;
 
                 //TODO 
                 //Test if Mathf.Clamp works instead.
@@ -66,7 +58,6 @@ public class FollowPlayer : MonoBehaviour
                 else if (localRotation.y > 90f)
                     localRotation.y = 90f;
             }
-
            
             if(Input.GetAxis("Mouse ScrollWheel") != 0f)
             {
@@ -93,23 +84,4 @@ public class FollowPlayer : MonoBehaviour
             this.cameraTransform.localPosition = new Vector3(0f, 0f, Mathf.Lerp(this.cameraTransform.localPosition.z, this.cameraDistance * -1f, Time.deltaTime * scrollDampening));
         }
     }
-
-    //private void Zoom()
-    //{
-    //    if(Input.mouseScrollDelta.y > 0)
-    //    {
-    //        offset.z++;
-    //    }
-    //    else if(Input.mouseScrollDelta.y < 0)
-    //    {
-    //        offset.z--;
-    //    }
-    //}
-
-    //private void BehindPlayer()
-    //{
-    //    transform.position = player.position + offset;
-    //    transform.rotation = Quaternion.Euler(15, 0, 0);
-    //}
-    
 }

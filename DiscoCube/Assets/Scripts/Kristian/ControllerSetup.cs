@@ -5,23 +5,28 @@ using UnityEngine;
 
 public class ControllerSetup : MonoBehaviour
 {
+    Movement_Side_Change moveScript;
+    FollowPlayer cameraScript;
+    
     private bool xboxActivated, pS4Activated;
 
-    public string inputVertical;
-
-    private string xboxVertical, ps4Vertical;
-
-
+    private string xboxVertical, xboxHorizontal, xboxRSVertical, xboxRSHorizontal, ps4Vertical, ps4Horizontal, ps4RSVertical, ps4RSHorizontal;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-        xboxVertical = "joystick 1 Vertical";
+        moveScript = FindObjectOfType<Movement_Side_Change>();
+        cameraScript = FindObjectOfType<FollowPlayer>();
 
-        
-        ps4Vertical = "joystick 2 Vertical";
+        xboxVertical = "Xbox Vertical";
+        xboxHorizontal = "Xbox Horizontal";
+        xboxRSVertical = "Xbox RS Vertical";
+        xboxRSHorizontal = "Xbox RS Horizontal";
 
+        ps4Vertical = "PS4 Vertical";
+        ps4Horizontal = "PS4 Horizontal";
+        ps4RSVertical = "PS4 RS Vertical";
+        ps4RSHorizontal = "PS4 RS Horizontal";
     }
 
     // Update is called once per frame
@@ -31,7 +36,6 @@ public class ControllerSetup : MonoBehaviour
         {
             XboxControlConfiguration();
             pS4Activated = false;
-
         }
         else if (pS4Activated)
         {
@@ -44,19 +48,28 @@ public class ControllerSetup : MonoBehaviour
 
     public void XboxControlConfiguration()
     {
-        inputVertical = xboxVertical;
-
-
-
+        moveScript.inputVertical = xboxVertical;
+        moveScript.inputHorizontal = xboxHorizontal;
+        cameraScript.inputRSVertical = xboxRSVertical;
+        cameraScript.inputRSHorizontal = xboxRSHorizontal;
     }
 
     public void PS4ControlConfiguration()
     {
-        inputVertical = ps4Vertical;
+        moveScript.inputVertical = ps4Vertical;
+        moveScript.inputHorizontal = ps4Horizontal;
+        cameraScript.inputRSVertical = ps4RSVertical;
+        cameraScript.inputRSHorizontal = ps4RSHorizontal;
+    }
 
+    public void OnClickActivatePS4()
+    {
+        pS4Activated = true;
+    }
 
-
-
+    public void OnClickActivateXbox()
+    {
+        xboxActivated = true;
     }
 
 }
