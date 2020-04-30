@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -17,8 +18,8 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField]
     Dropdown resolutionDropdown;
-    Resolution[] resolutions; 
-
+    Resolution[] resolutions;
+    AudioMixer audioMixer;
 
     void Start()
     {
@@ -83,8 +84,7 @@ public class PauseMenu : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        // TODO 
-        // Connect music to method
+        audioMixer.SetFloat("volume", volume);
     }
 
     public void Resume()
