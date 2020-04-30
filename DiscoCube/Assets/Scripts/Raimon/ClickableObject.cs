@@ -3,33 +3,39 @@ using UnityEngine.Events;
 
 public class ClickableObject : MonoBehaviour
 {
-    private GameObject definedButton;
+    //Owner: Raimon
+
     [SerializeField]
-    private ParticleSystem particleSystem;
-    public UnityEvent OnClick = new UnityEvent();
-    public Animator anim;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        definedButton = this.gameObject;
-        anim = GetComponent<Animator>();
-    }
+    private ParticleSystem particleSystemToUse;
+    [SerializeField]
+    private GameObject canvasText;
+    [SerializeField]
+    private UnityEvent OnClick = new UnityEvent();
 
     private void OnMouseEnter()
     {
-        particleSystem.Play();
-        if (null != anim)
+        if (!MainMenu.UIMenuActive)
         {
-            anim.Play("CubeAnimation");
+            canvasText.SetActive(true);
+            foreach (Transform transform in transform.parent)
+            {
+                if (transform.tag == this.tag)
+                {
+                    ClickableObject temp = transform.GetComponent<ClickableObject>();
+                    temp.particleSystemToUse.Play();
+                }
+
+            }
         }
+       
     }
     private void OnMouseExit()
     {
-        particleSystem.Stop();
-        if (null != anim)
+        canvasText.SetActive(false);
+        foreach (Transform transform in transform.parent)
         {
-            anim.Play("CubeStill");
+            ClickableObject temp = transform.GetComponent<ClickableObject>();
+            temp.particleSystemToUse.Stop();
         }
     }
 
@@ -42,9 +48,9 @@ public class ClickableObject : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
 
-            if (Physics.Raycast(ray, out Hit) && Hit.collider.gameObject == gameObject)
+            if (Physics.Raycast(ray, out Hit) && Hit.collider.gameObject == gameObject && !MainMenu.UIMenuActive)
             {
-                Debug.Log("Hit cube.");
+                Debug.Log("Clicking Cube registered.");
                 OnClick.Invoke();
             }
         }

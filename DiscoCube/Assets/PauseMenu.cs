@@ -7,25 +7,30 @@ using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
 {
-
+    [HideInInspector]
     public bool gameIsPaused = false;
-    public GameObject pauseMenuUI;
-    public GameObject settingsMenuUI;
-    public GameObject guideMenuUI;
+    [SerializeField]
+    GameObject pauseMenuUI, settingsMenuUI, guideMenuUI;
+    [SerializeField]
+    SceneFader sceneFader;
 
-    public Dropdown resolutionDrowdown;
+    StepCounter stepCounterScript;
+
+    [SerializeField]
+    Dropdown resolutionDropdown;
     Resolution[] resolutions;
-    public AudioMixer audioMixer;
+    AudioMixer audioMixer;
 
     void Start()
     {
         ScreenResolution();
+        stepCounterScript = FindObjectOfType<StepCounter>();
     }
 
     private void ScreenResolution()
     {
         resolutions = Screen.resolutions;
-        resolutionDrowdown.ClearOptions();
+        resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
         int currentResolutionIndex = 0;
@@ -40,9 +45,9 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        resolutionDrowdown.AddOptions(options);
-        resolutionDrowdown.value = currentResolutionIndex;
-        resolutionDrowdown.RefreshShownValue();
+        resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
     }
 
     public void SetResolution (int resolutionIndex)
@@ -70,6 +75,11 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
+        if(guideMenuUI == true && Input.GetButtonDown("Cancel"))
+        {
+            GuideMenuReturn();
+            SettingsMenuReturn();
+        }
     }
 
     public void SetVolume(float volume)
@@ -96,11 +106,14 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         pauseMenuUI.SetActive(false);
+        settingsMenuUI.SetActive(false);
+        guideMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        StepCounter.stepCounter = 0;
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        sceneFader.FadeToFast(SceneManager.GetActiveScene().name);
+        stepCounterScript.stepCounter = 0;
     }
 
     public void LoadMenu()
@@ -122,7 +135,7 @@ public class PauseMenu : MonoBehaviour
         guideMenuUI.SetActive(false);
     }
 
-    public void GuideReturn()
+    public void SettingsMenuReturn()
     {
         settingsMenuUI.SetActive(false);
         pauseMenuUI.SetActive(true);
@@ -130,6 +143,8 @@ public class PauseMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        //Swap to this before build
+        //Application.Quit();
         UnityEditor.EditorApplication.isPlaying = false;
     }
 }

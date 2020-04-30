@@ -10,7 +10,7 @@ public class Victory : MonoBehaviour
     public void OnTriggerEnter(Collider collision)
     {
         
-        if (collision.gameObject.tag == "Goal" )
+        if (collision.gameObject.tag == "Goal")
         {
             animationDelay = 0;
             //TODO           

@@ -1,19 +1,93 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
-    public string levelToLoad;
-    public SceneFader sceneFader;
+    //Owner: Raimon
+    //Code from: David
+
+    public static bool UIMenuActive;
+    [SerializeField]
+    GameObject settingsMenuUI, guideMenuUI;
+    [SerializeField]
+    Dropdown resolutionDropdown;
+    Resolution[] resolutions;
     
-    public void Play()
+    void Awake()
     {
-        sceneFader.FadeTo(levelToLoad);
-        
+        UIMenuActive = false;
     }
 
-    public void Quit()
+    void Start()
     {
-        Debug.Log("I'm out!");
-        Application.Quit();
+        ScreenResolution();
     }
+
+    private void ScreenResolution()
+    {
+        resolutions = Screen.resolutions;
+        resolutionDropdown.ClearOptions();
+        List<string> options = new List<string>();
+        int currentResolutionIndex = 0;
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + " x " + resolutions[i].height;
+            options.Add(option);
+
+            if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+
+        resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
+    }
+
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = resolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+    }
+
+    public void SetFullscren(bool isFullscreen)
+    {
+        Screen.fullScreen = isFullscreen;
+    }
+
+    void Update()
+    {
+        if (guideMenuUI == true && Input.GetButtonDown("Cancel"))
+        {
+            GuideMenuReturn();
+            SettingsMenuReturn();
+        }
+    }
+
+    public void SettingsMenu()
+    {
+        UIMenuActive = true;
+        settingsMenuUI.SetActive(true);
+    }
+
+    public void GuideMenu()
+    {
+        UIMenuActive = true;
+        guideMenuUI.SetActive(true);
+    }
+
+    public void GuideMenuReturn()
+    {
+        UIMenuActive = false;
+        guideMenuUI.SetActive(false);
+    }
+
+    public void SettingsMenuReturn()
+    {
+        UIMenuActive = false;
+        settingsMenuUI.SetActive(false);
+    }
+
 }

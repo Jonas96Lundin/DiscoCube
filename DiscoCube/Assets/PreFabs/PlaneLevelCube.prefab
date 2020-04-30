@@ -134,12 +134,12 @@ Transform:
   m_LocalPosition: {x: 21.420826, y: -0.66521406, z: -1.4865694}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
+  - {fileID: 4239658754550258394}
   - {fileID: 4239658755192890054}
   - {fileID: 4239658754556253504}
   - {fileID: 4239658754087288249}
   - {fileID: 4239658754080403104}
   - {fileID: 4239658754225402882}
-  - {fileID: 4239658754550258394}
   - {fileID: 4239658753770354745}
   - {fileID: 4239658755574794516}
   m_Father: {fileID: 0}
@@ -217,7 +217,7 @@ GameObject:
   - component: {fileID: 4239658754080403105}
   m_Layer: 0
   m_Name: Purple Plane
-  m_TagString: Untagged
+  m_TagString: ColorPlane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -235,7 +235,7 @@ Transform:
   m_Children:
   - {fileID: 4239658753901825005}
   m_Father: {fileID: 4239658753905096257}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
 --- !u!33 &4239658754080403135
 MeshFilter:
@@ -310,7 +310,7 @@ GameObject:
   - component: {fileID: 4239658754087288246}
   m_Layer: 0
   m_Name: Yellow Plane
-  m_TagString: Untagged
+  m_TagString: ColorPlane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -328,7 +328,7 @@ Transform:
   m_Children:
   - {fileID: 4239658755199817897}
   m_Father: {fileID: 4239658753905096257}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
 --- !u!33 &4239658754087288244
 MeshFilter:
@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 4239658754225402883}
   m_Layer: 0
   m_Name: Teal Plane
-  m_TagString: Untagged
+  m_TagString: ColorPlane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -421,7 +421,7 @@ Transform:
   m_Children:
   - {fileID: 4239658754783394595}
   m_Father: {fileID: 4239658753905096257}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!33 &4239658754225402881
 MeshFilter:
@@ -496,7 +496,7 @@ GameObject:
   - component: {fileID: 4239658754550258395}
   m_Layer: 0
   m_Name: Red Plane
-  m_TagString: Untagged
+  m_TagString: ColorPlane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -514,7 +514,7 @@ Transform:
   m_Children:
   - {fileID: 4239658754724188123}
   m_Father: {fileID: 4239658753905096257}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 180}
 --- !u!33 &4239658754550258393
 MeshFilter:
@@ -589,7 +589,7 @@ GameObject:
   - component: {fileID: 4239658754556253505}
   m_Layer: 0
   m_Name: Green Plane
-  m_TagString: Untagged
+  m_TagString: ColorPlane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -607,7 +607,7 @@ Transform:
   m_Children:
   - {fileID: 4239658754592003208}
   m_Father: {fileID: 4239658753905096257}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 180, z: 0}
 --- !u!33 &4239658754556253535
 MeshFilter:
@@ -1098,7 +1098,7 @@ GameObject:
   - component: {fileID: 4239658755192890059}
   m_Layer: 0
   m_Name: Blue Plane
-  m_TagString: Untagged
+  m_TagString: ColorPlane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1116,7 +1116,7 @@ Transform:
   m_Children:
   - {fileID: 4239658754866529409}
   m_Father: {fileID: 4239658753905096257}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &4239658755192890057
 MeshFilter:

@@ -5,6 +5,8 @@ using System.Collections;
 
 public class SceneFader : MonoBehaviour
 {
+    //Owner: Raimon 
+
     public Image img;
     public AnimationCurve curve;
 
@@ -15,8 +17,12 @@ public class SceneFader : MonoBehaviour
 
     public void FadeTo(string scene)
     {
-        Debug.Log(scene + " loading");
         StartCoroutine(FadeOut(scene));
+    }
+
+    public void FadeToFast(string scene)
+    {
+        StartCoroutine(Restart(scene));
     }
 
     IEnumerator FadeIn()
@@ -46,6 +52,21 @@ public class SceneFader : MonoBehaviour
             yield return 0;
         }
         
+        SceneManager.LoadScene(scene);
+    }
+
+    IEnumerator Restart(string scene)
+    {
+
+        float t = 0f;
+
+        while (t < 0.5f)
+        {
+            t += Time.deltaTime * 1f;
+            float a = curve.Evaluate(t);
+            img.color = new Color(0f, 0f, 0f, a);
+            yield return 0;
+        }
         SceneManager.LoadScene(scene);
     }
 }
