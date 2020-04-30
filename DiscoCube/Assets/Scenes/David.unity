@@ -299,6 +299,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &798229716 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5201819130698181295, guid: 3a32dbe811c360744880e9f8412d6336,
+    type: 3}
+  m_PrefabInstance: {fileID: 5201819129352619900}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 853051423, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &902047843
 GameObject:
   m_ObjectHideFlags: 0
@@ -524,6 +536,7 @@ MonoBehaviour:
   currentColor: 0
   currentLevelColor: 4
   currentWinningColor: 4
+  currentGlowingColorChoice: 0
   isOnGround: 0
 --- !u!4 &1204332859
 Transform:
@@ -1413,6 +1426,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5201819129659161615, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SettingsMenuReturn
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201819130134705619, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201819130531532711, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201819131140075058, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5201819131150392481, guid: 3a32dbe811c360744880e9f8412d6336,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1529,5 +1562,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 24100000, guid: ef9e22b5319bb7b47861fd33930d6783,
         type: 2}
+    - target: {fileID: 5201819131150392485, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: resolutionDropdown
+      value: 
+      objectReference: {fileID: 798229716}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a32dbe811c360744880e9f8412d6336, type: 3}

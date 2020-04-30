@@ -75,11 +75,7 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        if(guideMenuUI == true && Input.GetButtonDown("Cancel"))
-        {
-            GuideMenuReturn();
-            SettingsMenuReturn();
-        }
+
     }
 
     public void SetVolume(float volume)
@@ -111,7 +107,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         gameIsPaused = false;
 
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         sceneFader.FadeToFast(SceneManager.GetActiveScene().name);
         stepCounterScript.stepCounter = 0;
     }
