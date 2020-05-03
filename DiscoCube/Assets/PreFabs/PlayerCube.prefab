@@ -45,6 +45,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentColor: 4
   currentLevelColor: 4
+  currentWinningColor: 0
+  currentGlowingColorChoice: 0
   isOnGround: 0
 --- !u!114 &1985119817349561235
 MonoBehaviour:
@@ -61,6 +63,8 @@ MonoBehaviour:
   isWinning: 0
   colorManager: {fileID: 8159917135253647475}
   goal: {fileID: 0}
+  completeLevelUI: {fileID: 0}
+  winColor: 0
 --- !u!114 &3483506591436698089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,8 +85,11 @@ MonoBehaviour:
   up: {fileID: 7874117756418964641}
   down: {fileID: 7874117756420595778}
   step: 9
+  inputVertical: 
+  inputHorizontal: 
   speed: 0.01
   inputDelay: 5
+  input: 1
   movning: 0
 --- !u!1 &7874117754910565033
 GameObject:

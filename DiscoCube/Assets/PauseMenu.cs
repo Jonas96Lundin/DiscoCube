@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -17,8 +18,8 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField]
     Dropdown resolutionDropdown;
-    Resolution[] resolutions; 
-
+    Resolution[] resolutions;
+    AudioMixer audioMixer;
 
     void Start()
     {
@@ -74,17 +75,12 @@ public class PauseMenu : MonoBehaviour
             }
         }
 
-        if(guideMenuUI == true && Input.GetButtonDown("Cancel"))
-        {
-            GuideMenuReturn();
-            SettingsMenuReturn();
-        }
+
     }
 
     public void SetVolume(float volume)
     {
-        // TODO 
-        // Connect music to method
+        audioMixer.SetFloat("volume", volume);
     }
 
     public void Resume()
@@ -111,7 +107,7 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         gameIsPaused = false;
 
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         sceneFader.FadeToFast(SceneManager.GetActiveScene().name);
         stepCounterScript.stepCounter = 0;
     }

@@ -22,6 +22,7 @@ public class CountdownTimer : MonoBehaviour
 
     void Update()
     {
+        isActive = true;
         if (isActive) // Jonas kod
         {
             currentTime -= 1 * Time.deltaTime;
@@ -30,6 +31,7 @@ public class CountdownTimer : MonoBehaviour
             if (currentTime <= 0)
             {
                 currentTime = 0;
+                isActive = false;
             }
         }
     }
