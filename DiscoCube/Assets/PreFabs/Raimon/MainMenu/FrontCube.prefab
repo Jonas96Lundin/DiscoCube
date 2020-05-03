@@ -62,7 +62,7 @@ MeshRenderer:
   m_Materials:
   - {fileID: 2100000, guid: 1264e3898ba06f7469d215574cc183a0, type: 2}
   - {fileID: 2100000, guid: 889f04dc2f4eac44d9350e1ef32f906b, type: 2}
-  - {fileID: 2100000, guid: e5feb2d321633b648a636bfb01e1a8a0, type: 2}
+  - {fileID: 2100000, guid: 15d755b88f43b4c43ab9d21798b4270b, type: 2}
   - {fileID: 2100000, guid: b9da414e61c6b7641bc4bd3c14e3d4fc, type: 2}
   - {fileID: 2100000, guid: 3974fe75f9ad90247aed764b04e485d8, type: 2}
   - {fileID: 2100000, guid: d181de0629f43194282771ca661e31dd, type: 2}
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystemToUse: {fileID: 4335989964850604353}
+  canvasText: {fileID: 0}
   OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -112,7 +113,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  anim: {fileID: 0}
 --- !u!65 &2433779349996397924
 BoxCollider:
   m_ObjectHideFlags: 0

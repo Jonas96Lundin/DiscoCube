@@ -7,13 +7,16 @@ public class CountdownTimer : MonoBehaviour
 {
     float currentTime = 0f;
 
-    [SerializeField] float totalTime;
-    [SerializeField] Text countdownText;
-
+    [SerializeField] 
+    float totalTime;
+    [SerializeField] 
+    Text countdownText;
+    [HideInInspector]
     public bool isActive; // Jonas kod
 
     void Start()
     {
+        isActive = true;
         currentTime = totalTime;
     }
 

@@ -21,8 +21,8 @@ public class ClickableObject : MonoBehaviour
             {
                 if (transform.tag == this.tag)
                 {
-                    ClickableObject temp = transform.GetComponent<ClickableObject>();
-                    temp.particleSystemToUse.Play();
+                    ClickableObject tempObject = transform.GetComponent<ClickableObject>();
+                    tempObject.particleSystemToUse.Play();
                 }
 
             }

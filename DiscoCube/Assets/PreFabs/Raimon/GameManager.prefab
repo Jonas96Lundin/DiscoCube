@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 3984638023785882261}
   - component: {fileID: 7853452672682805186}
   - component: {fileID: 7853452672682805185}
+  - component: {fileID: 1499246184428210324}
+  - component: {fileID: 1144385231313333177}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -83,3 +85,33 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1499246184428210324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984638023785882263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a66797a4e147b41b8c95ca605b90f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stepCounter: 0
+  stepsCounterText: {fileID: 0}
+  endScreenText: {fileID: 0}
+--- !u!114 &1144385231313333177
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984638023785882263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98e34f16136cb64095aa25d9e76d00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalTime: 60
+  countdownText: {fileID: 0}
+  isActive: 0
