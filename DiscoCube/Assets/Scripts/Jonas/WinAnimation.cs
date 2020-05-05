@@ -13,6 +13,7 @@ public class WinAnimation : MonoBehaviour
     public GameObject goal;
     //Rasmus kod:
     public GameObject completeLevelUI;
+    [SerializeField]
     bool isActivated = false;
     float animationDelay;
     //Slut på Rasmus kod
@@ -50,7 +51,7 @@ public class WinAnimation : MonoBehaviour
                 //Lås movement så att man inte kan fortsätta röra på sig efter victory animation har påbörjats. Koordinera med Kristians movement script.
                 isActivated = true;
             }
-            else if(!(colorManager.currentLevelColor == winColor && currentColor == currentWinningColor) && !isActivated)
+            else if (!(colorManager.currentLevelColor == winColor && currentColor == currentWinningColor) && !isActivated)
             {
                 Debug.Log("You walked with the wrong color on goal!");
                 FindObjectOfType<WrongColorDialogue>().DialoguePopUp();
@@ -78,7 +79,7 @@ public class WinAnimation : MonoBehaviour
             //Rasmus kod:
             animationDelay += 1 * Time.deltaTime;
 
-            if (/*isActivated && animationDelay >= 1f*/transform.position==endPos) // jonas kod
+            if (/*isActivated && animationDelay >= 1f*/transform.position == endPos) // jonas kod
             {
                 colorManager.SetGlowingColors(winColor);
             }
@@ -111,7 +112,7 @@ public class WinAnimation : MonoBehaviour
         //    isActivated = true;
         //    Debug.LogError("IT IS WINNING");
         //}
-      
+
         //Jonas
         if (collision.gameObject.tag == "Goal")
         {

@@ -55,12 +55,12 @@ public class DialogueManager : MonoBehaviour
         int soundCounter = 50;
         foreach (char letter in sentence.ToCharArray())
         {
-            //if (soundCounter % 50 == 0)
-            //{
-            //    FindObjectOfType<AudioManager>().Play("SenseiTalk");
-            //}
-            //soundCounter++;
-            FindObjectOfType<AudioManager>().Play("SenseiTalkBitDemon");
+            if (soundCounter % 50 == 0)
+            {
+                FindObjectOfType<AudioManager>().Play("SenseiTalk");
+            }
+            soundCounter++;
+            //FindObjectOfType<AudioManager>().Play("SenseiTalkBitDemon");
             dialogueText.text += letter;
             yield return null;
         }
