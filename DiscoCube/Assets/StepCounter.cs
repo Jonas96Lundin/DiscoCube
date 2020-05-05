@@ -6,7 +6,9 @@ public class StepCounter : MonoBehaviour
     //Owner: David
     //Code from Raimon
 
+    [HideInInspector]
     public int stepCounter = 0;
+
     [SerializeField]
     Text stepsCounterText;
 

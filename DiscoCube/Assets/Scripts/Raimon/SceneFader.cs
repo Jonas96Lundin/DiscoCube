@@ -6,9 +6,10 @@ using System.Collections;
 public class SceneFader : MonoBehaviour
 {
     //Owner: Raimon 
-
-    public Image img;
-    public AnimationCurve curve;
+    [SerializeField]
+    Image img;
+    [SerializeField]
+    AnimationCurve curve;
 
     private void Start()
     {
@@ -34,7 +35,6 @@ public class SceneFader : MonoBehaviour
             t -= Time.deltaTime * 2f;
             float a = curve.Evaluate(t);
             img.color = new Color(0f, 0f, 0f, a);
-            //img.color = new Color(100f, 0f, 255f, a); //Not working
             yield return 0;
         }
     }
