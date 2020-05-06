@@ -9,6 +9,11 @@ public class TriggerActivator : MonoBehaviour
     ColorManager colorManager;
     [SerializeField]
     string[] trigger;
+
+    public void Update()
+    {
+
+    }
     
     public void OnTriggerEnter(Collider collider)
     {

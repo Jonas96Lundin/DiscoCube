@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEditor;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -107,8 +108,8 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1f;
         gameIsPaused = false;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        //sceneFader.FadeToFast(SceneManager.GetActiveScene().name);
+        //SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+        sceneFader.FadeToFast(SceneManager.GetActiveScene().name);
         stepCounterScript.stepCounter = 0;
     }
 
