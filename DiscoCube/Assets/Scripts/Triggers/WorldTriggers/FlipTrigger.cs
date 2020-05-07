@@ -3,6 +3,9 @@
 /// <summary>
 /// This script is connected to the different trigger points around the level cube.
 /// These triggers makes it so that the player cube can roll over the edges of the level cube.
+/// 
+/// Owner: Kristian
+/// Code by: Jonas
 /// </summary>
 
 public class FlipTrigger : MonoBehaviour

@@ -17,18 +17,6 @@ public class MainMenu : MonoBehaviour
     void Awake()
     {
         UIExtraMenuActive = false;
-        
-        string[] controllerNames = Input.GetJoystickNames();
-        for (int x = 0; x < controllerNames.Length; x++)
-        {
-            if (controllerNames[x].Length == 33 || controllerNames[x].Length == 19)
-            {
-                Debug.Log("Controller detected!");
-                UIExtraMenuActive = true;
-                controllerSetupUI.SetActive(true);
-                Debug.Log("Controller Menu active");
-            }
-        }
     }
 
     void Start()
