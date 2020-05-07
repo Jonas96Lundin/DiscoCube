@@ -7,13 +7,13 @@ public class MainMenu : MonoBehaviour
     //Owner: Raimon
     //Code from: David
 
-    public static bool UIMenuActive;
+    public static bool UIExtraMenuActive;
     [SerializeField]
     GameObject settingsMenuUI, guideMenuUI, controllerSetupUI;
     [SerializeField]
     Dropdown resolutionDropdown;
     Resolution[] resolutions;
-    
+
     void Awake()
     {
         string[] controllerNames = Input.GetJoystickNames();
@@ -27,7 +27,7 @@ public class MainMenu : MonoBehaviour
             }
         }
         UIMenuActive = false;
-        
+
     }
 
     void Start()
@@ -79,25 +79,25 @@ public class MainMenu : MonoBehaviour
 
     public void SettingsMenu()
     {
-        UIMenuActive = true;
+        UIExtraMenuActive = true;
         settingsMenuUI.SetActive(true);
     }
 
     public void GuideMenu()
     {
-        UIMenuActive = true;
+        UIExtraMenuActive = true;
         guideMenuUI.SetActive(true);
     }
 
     public void GuideMenuReturn()
     {
-        UIMenuActive = false;
+        UIExtraMenuActive = false;
         guideMenuUI.SetActive(false);
     }
 
     public void SettingsMenuReturn()
     {
-        UIMenuActive = false;
+        UIExtraMenuActive = false;
         settingsMenuUI.SetActive(false);
     }
 

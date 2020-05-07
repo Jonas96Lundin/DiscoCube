@@ -14,7 +14,7 @@ public class ClickableObject : MonoBehaviour
 
     private void OnMouseEnter()
     {
-        if (!MainMenu.UIMenuActive)
+        if (!MainMenu.UIExtraMenuActive)
         {
             canvasText.SetActive(true);
             foreach (Transform transform in transform.parent)
@@ -48,7 +48,7 @@ public class ClickableObject : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
 
-            if (Physics.Raycast(ray, out Hit) && Hit.collider.gameObject == gameObject && !MainMenu.UIMenuActive)
+            if (Physics.Raycast(ray, out Hit) && Hit.collider.gameObject == gameObject && !MainMenu.UIExtraMenuActive)
             {
                 Debug.Log("Clicking Cube registered.");
                 OnClick.Invoke();
