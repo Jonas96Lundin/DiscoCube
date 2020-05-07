@@ -2458,6 +2458,10 @@ PrefabInstance:
       propertyPath: timerCounterText
       value: 
       objectReference: {fileID: 1565637889}
+    - target: {fileID: 1896340989, guid: a5dc982d3dfea314d8f44a066ee98868, type: 3}
+      propertyPath: music
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1144385231313333177, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}
       propertyPath: countdownText
