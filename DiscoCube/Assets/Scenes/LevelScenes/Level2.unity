@@ -415,13 +415,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc760534bd4dc124881386e41c485da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1434066171}
   levelCenter: {fileID: 1500216339}
   offset: {x: 30, y: 30, z: -10}
   mouseSensitivity: 4
   scrollSensitivity: 2
   orbitDampening: 10
   scrollDampening: 6
+  inputRSVertical: 
+  inputRSHorizontal: 
 --- !u!114 &526322255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1260,12 +1261,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   completeLevelUI: {fileID: 1132929032}
---- !u!4 &1434066171 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2209412162367555077, guid: f2f4f87d6d224a2499e9da827fae442c,
-    type: 3}
-  m_PrefabInstance: {fileID: 598262172}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1500216338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2119,5 +2114,10 @@ PrefabInstance:
       propertyPath: img
       value: 
       objectReference: {fileID: 1122256147}
+    - target: {fileID: 7853452672682805186, guid: a5dc982d3dfea314d8f44a066ee98868,
+        type: 3}
+      propertyPath: levelToLoad
+      value: Level3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5dc982d3dfea314d8f44a066ee98868, type: 3}
