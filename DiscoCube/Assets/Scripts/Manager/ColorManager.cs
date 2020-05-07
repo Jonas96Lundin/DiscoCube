@@ -87,7 +87,6 @@ public class ColorManager : MonoBehaviour
 
     public void SetGlowingColors(LevelColors color)
     {
-        ;
         GameObject[] cubePlane = GameObject.FindGameObjectsWithTag("ColorPlane");
         switch (currentGlowingColorChoice)
         {

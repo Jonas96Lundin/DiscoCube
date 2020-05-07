@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     Dropdown resolutionDropdown;
     Resolution[] resolutions;
-
+    MovementScript moveScript;
     void Awake()
     {
         UIExtraMenuActive = false;
@@ -89,5 +89,4 @@ public class MainMenu : MonoBehaviour
         UIExtraMenuActive = false;
         settingsMenuUI.SetActive(false);
     }
-
 }

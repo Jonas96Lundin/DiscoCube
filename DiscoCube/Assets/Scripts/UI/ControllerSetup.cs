@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// This script enables the player to choose which input schematic they want to use. 
+/// This script enables the player to choose which input schematic they want to use.
 /// At the start of the game, the game will detect if there are any gamepad/controllers plugged in,
 /// and will display a prompt to choose a controller-scheme between Playstation 4's DualShock 4 or Xbox One's Controller.
 ///
@@ -12,11 +12,13 @@ public class ControllerSetup : MonoBehaviour
 {
     MovementScript moveScript;
     CameraController cameraScript;
-    
+
+    [SerializeField]
+    GameObject controllerSetupUI;
+
     private bool xboxActivated, pS4Activated;
 
     private string xboxVertical, xboxHorizontal, xboxRSVertical, xboxRSHorizontal, ps4Vertical, ps4Horizontal, ps4RSVertical, ps4RSHorizontal;
-
 
     // Start is called before the first frame update
     void Start()
@@ -30,7 +32,7 @@ public class ControllerSetup : MonoBehaviour
         moveScript = FindObjectOfType<MovementScript>();
         cameraScript = FindObjectOfType<CameraController>();
 
-        // This assignes the controller-differences in input. Some inputs are the same between the 
+        // This assignes the controller-differences in input. Some inputs are the same between the
         // different controllers, but some are assigned to different functions on the controller.
         xboxVertical = "Xbox Vertical";
         xboxHorizontal = "Xbox Horizontal";
@@ -49,9 +51,12 @@ public class ControllerSetup : MonoBehaviour
         // If the Xbox controll-scheme is selected, the inputs will be configured for Xbox.
         if (xboxActivated)
         {
+            Debug.Log("Xbox controller activated!");
             XboxControlConfiguration();
             pS4Activated = false;
-            MainMenu.UIExtraMenuActive = false;
+            controllerSetupUI.SetActive(false);
+            Time.timeScale = 1f;
+            Debug.Log("Timescale = 1");
         }
         // If the PS4 controll-scheme is selected, the inputs will be configured for PS4.
         else if (pS4Activated)
@@ -61,19 +66,20 @@ public class ControllerSetup : MonoBehaviour
 
             //PS4ControlConfiguration();
             xboxActivated = false;
-            MainMenu.UIExtraMenuActive = false;
+            controllerSetupUI.SetActive(false);
+            Time.timeScale = 1f;
+
         }
         else
             return;
     }
 
-    
     public void XboxControlConfiguration()
     {
         moveScript.inputVertical = xboxVertical;
         moveScript.inputHorizontal = xboxHorizontal;
         cameraScript.inputRSVertical = xboxRSVertical;
-        cameraScript.inputRSHorizontal = xboxRSHorizontal;      
+        cameraScript.inputRSHorizontal = xboxRSHorizontal;
     }
 
     public void PS4ControlConfiguration()
@@ -92,6 +98,12 @@ public class ControllerSetup : MonoBehaviour
     public void OnClickActivateXbox()
     {
         xboxActivated = true;
+    }
+
+    public void BackButton()
+    {
+        controllerSetupUI.SetActive(false);
+        Time.timeScale = 1f;
     }
 
 }

@@ -10,6 +10,11 @@ TagManager:
   - ColorPlane
   - GateTrigger
   - PlayerCube
+  - Start
+  - Settings
+  - Exit
+  - Help
+  - Symbol
   layers:
   - Default
   - TransparentFX
