@@ -13,21 +13,22 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     Dropdown resolutionDropdown;
     Resolution[] resolutions;
-
+    MovementScript moveScript;
     void Awake()
     {
+        UIExtraMenuActive = false;
+        
         string[] controllerNames = Input.GetJoystickNames();
         for (int x = 0; x < controllerNames.Length; x++)
         {
             if (controllerNames[x].Length == 33 || controllerNames[x].Length == 19)
             {
                 Debug.Log("Controller detected!");
-                UIMenuActive = true;
+                UIExtraMenuActive = true;
                 controllerSetupUI.SetActive(true);
+                Debug.Log("Controller Menu active");
             }
         }
-        UIMenuActive = false;
-
     }
 
     void Start()
@@ -100,5 +101,4 @@ public class MainMenu : MonoBehaviour
         UIExtraMenuActive = false;
         settingsMenuUI.SetActive(false);
     }
-
 }

@@ -12,15 +12,27 @@ public class ControllerSetup : MonoBehaviour
 {
     MovementScript moveScript;
     CameraController cameraScript;
-    
+
+    [SerializeField]
+    GameObject controllerSetupUI;
+
     private bool xboxActivated, pS4Activated;
 
     private string xboxVertical, xboxHorizontal, xboxRSVertical, xboxRSHorizontal, ps4Vertical, ps4Horizontal, ps4RSVertical, ps4RSHorizontal;
 
-
     // Start is called before the first frame update
     void Start()
     {
+        string[] controllerNames = Input.GetJoystickNames();
+        for (int x = 0; x < controllerNames.Length; x++)
+        {
+            if (controllerNames[x].Length == 33 || controllerNames[x].Length == 19)
+            {
+                controllerSetupUI.SetActive(true);
+                Time.timeScale = 0f;
+            }
+        }
+
         moveScript = FindObjectOfType<MovementScript>();
         cameraScript = FindObjectOfType<CameraController>();
 
@@ -44,22 +56,26 @@ public class ControllerSetup : MonoBehaviour
         // If the Xbox controll-scheme is selected, the inputs will be configured for Xbox.
         if (xboxActivated)
         {
+            Debug.Log("Xbox controller activated!");
             XboxControlConfiguration();
             pS4Activated = false;
-            MainMenu.UIMenuActive = false;
+            controllerSetupUI.SetActive(false);
+            Time.timeScale = 1f;
+            Debug.Log("Timescale = 1");
         }
         // If the PS4 controll-scheme is selected, the inputs will be configured for PS4.
         else if (pS4Activated)
         {
             PS4ControlConfiguration();
             xboxActivated = false;
-            MainMenu.UIMenuActive = false;
+            controllerSetupUI.SetActive(false);
+            Time.timeScale = 1f;
+
         }
         else
             return;
     }
 
-    
     public void XboxControlConfiguration()
     {
         moveScript.inputVertical = xboxVertical;
@@ -84,6 +100,12 @@ public class ControllerSetup : MonoBehaviour
     public void OnClickActivateXbox()
     {
         xboxActivated = true;
+    }
+
+    public void BackButton()
+    {
+        controllerSetupUI.SetActive(false);
+        Time.timeScale = 1f;
     }
 
 }

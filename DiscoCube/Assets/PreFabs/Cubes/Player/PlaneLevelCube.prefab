@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 9015728465919988911}
   m_Layer: 0
   m_Name: Heart
-  m_TagString: Untagged
+  m_TagString: Symbol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 7020136441033850992}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Untagged
+  m_TagString: Symbol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -170,7 +170,7 @@ GameObject:
   - component: {fileID: 271205081782112004}
   m_Layer: 0
   m_Name: Circle
-  m_TagString: Untagged
+  m_TagString: Symbol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1536,7 +1536,7 @@ GameObject:
   - component: {fileID: 6528762545871717831}
   m_Layer: 0
   m_Name: Peace
-  m_TagString: Untagged
+  m_TagString: Symbol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1615,7 +1615,7 @@ GameObject:
   - component: {fileID: 2465455542698414098}
   m_Layer: 0
   m_Name: Triangle
-  m_TagString: Untagged
+  m_TagString: Symbol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1694,7 +1694,7 @@ GameObject:
   - component: {fileID: 8985053389005757177}
   m_Layer: 0
   m_Name: Star
-  m_TagString: Untagged
+  m_TagString: Symbol
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
