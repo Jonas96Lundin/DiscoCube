@@ -9,6 +9,7 @@ TagManager:
   - Goal
   - Teal
   - ColorPlane
+  - Wall
   layers:
   - Default
   - TransparentFX
