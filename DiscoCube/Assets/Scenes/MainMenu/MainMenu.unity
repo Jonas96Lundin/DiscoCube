@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.060863636, g: 0.041964944, b: 0.038809538, a: 1}
+  m_IndirectSpecularColor: {r: 0.085951805, g: 0.07300812, b: 0.07103032, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2392,7 +2392,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1940989049}
+      - m_Target: {fileID: 1104969820}
         m_MethodName: GuideMenuReturn
         m_Mode: 1
         m_Arguments:
@@ -3363,6 +3363,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090486505}
   m_CullTransparentMesh: 0
+--- !u!1 &1104969818 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6607157456817405087, guid: 273702a81a030784aa21af2e920a8cd9,
+    type: 3}
+  m_PrefabInstance: {fileID: 6607157455516178663}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1104969820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104969818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 763099a475431bf48af45946698bee73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsMenuUI: {fileID: 267637658}
+  guideMenuUI: {fileID: 1460486621}
+  resolutionDropdown: {fileID: 1683148377}
 --- !u!1 &1124362081
 GameObject:
   m_ObjectHideFlags: 0
@@ -4256,7 +4277,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1940989049}
+      - m_Target: {fileID: 0}
         m_MethodName: SetFullscren
         m_Mode: 0
         m_Arguments:
@@ -4716,7 +4737,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1940989049}
+      - m_Target: {fileID: 1104969820}
         m_MethodName: SetResolution
         m_Mode: 0
         m_Arguments:
@@ -4973,7 +4994,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1940989049}
+      - m_Target: {fileID: 1104969820}
         m_MethodName: SettingsMenuReturn
         m_Mode: 1
         m_Arguments:
@@ -5121,18 +5142,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1940989049 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6607157456817405086, guid: 273702a81a030784aa21af2e920a8cd9,
-    type: 3}
-  m_PrefabInstance: {fileID: 6607157455516178663}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e45f644e73ffe8e4cb3ed3d8cd6a8d3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1983763072
 GameObject:
   m_ObjectHideFlags: 0
@@ -5769,12 +5778,18 @@ PrefabInstance:
       propertyPath: resolutionDropdown
       value: 
       objectReference: {fileID: 1683148377}
+    - target: {fileID: 6607157456817405086, guid: 273702a81a030784aa21af2e920a8cd9,
+        type: 3}
+      propertyPath: controllerSetupUI
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 6607157456817405087, guid: 273702a81a030784aa21af2e920a8cd9,
         type: 3}
       propertyPath: m_Name
       value: MainMenu
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6607157456817405086, guid: 273702a81a030784aa21af2e920a8cd9, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 273702a81a030784aa21af2e920a8cd9, type: 3}
 --- !u!1001 &7850559139440373792
 PrefabInstance:
@@ -5987,7 +6002,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1940989049}
+      objectReference: {fileID: 1104969820}
     - target: {fileID: 8928119862319081397, guid: ae8142af9306d874aa5076f441aadd8b,
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -6002,7 +6017,12 @@ PrefabInstance:
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1940989049}
+      objectReference: {fileID: 1104969820}
+    - target: {fileID: 8928119862497685584, guid: ae8142af9306d874aa5076f441aadd8b,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GuideMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 8928119862618914400, guid: ae8142af9306d874aa5076f441aadd8b,
         type: 3}
       propertyPath: canvasText
@@ -6012,7 +6032,12 @@ PrefabInstance:
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1940989049}
+      objectReference: {fileID: 1104969820}
+    - target: {fileID: 8928119862618914400, guid: ae8142af9306d874aa5076f441aadd8b,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GuideMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 8928119862634275833, guid: ae8142af9306d874aa5076f441aadd8b,
         type: 3}
       propertyPath: canvasText
@@ -6022,7 +6047,12 @@ PrefabInstance:
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1940989049}
+      objectReference: {fileID: 1825175738}
+    - target: {fileID: 8928119862634275833, guid: ae8142af9306d874aa5076f441aadd8b,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
     - target: {fileID: 8928119862677206220, guid: ae8142af9306d874aa5076f441aadd8b,
         type: 3}
       propertyPath: canvasText
@@ -6032,7 +6062,12 @@ PrefabInstance:
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1940989049}
+      objectReference: {fileID: 1104969820}
+    - target: {fileID: 8928119862677206220, guid: ae8142af9306d874aa5076f441aadd8b,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SettingsMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 8928119863478729740, guid: ae8142af9306d874aa5076f441aadd8b,
         type: 3}
       propertyPath: canvasText
@@ -6057,6 +6092,11 @@ PrefabInstance:
         type: 3}
       propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1940989049}
+      objectReference: {fileID: 1104969820}
+    - target: {fileID: 8928119863502112427, guid: ae8142af9306d874aa5076f441aadd8b,
+        type: 3}
+      propertyPath: OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SettingsMenu
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae8142af9306d874aa5076f441aadd8b, type: 3}

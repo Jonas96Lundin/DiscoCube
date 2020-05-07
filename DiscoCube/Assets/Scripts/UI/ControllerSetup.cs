@@ -21,6 +21,12 @@ public class ControllerSetup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Initialize();
+
+    }
+
+    public void Initialize()
+    {
         moveScript = FindObjectOfType<MovementScript>();
         cameraScript = FindObjectOfType<CameraController>();
 
@@ -35,7 +41,6 @@ public class ControllerSetup : MonoBehaviour
         ps4Horizontal = "PS4 Horizontal";
         ps4RSVertical = "PS4 RS Vertical";
         ps4RSHorizontal = "PS4 RS Horizontal";
-
     }
 
     // Update is called once per frame
@@ -46,14 +51,17 @@ public class ControllerSetup : MonoBehaviour
         {
             XboxControlConfiguration();
             pS4Activated = false;
-            MainMenu.UIMenuActive = false;
+            MainMenu.UIExtraMenuActive = false;
         }
         // If the PS4 controll-scheme is selected, the inputs will be configured for PS4.
         else if (pS4Activated)
         {
-            PS4ControlConfiguration();
+            Initialize();
+            Debug.Log(moveScript.inputVertical + " " + moveScript.inputVertical.ToString());
+
+            //PS4ControlConfiguration();
             xboxActivated = false;
-            MainMenu.UIMenuActive = false;
+            MainMenu.UIExtraMenuActive = false;
         }
         else
             return;
