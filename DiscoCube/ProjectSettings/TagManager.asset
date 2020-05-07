@@ -4,45 +4,50 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - ColorManager
-  - MiddleOfCube
+  - TutorialDialogue
+  - TutorialArrow
   - Goal
-  - Teal
   - ColorPlane
-  - Wall
+  - GateTrigger
+  - PlayerCube
+  - Start
+  - Settings
+  - Exit
+  - Help
+  - Symbol
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  -
   - Water
   - UI
-  - 
-  - 
-  - PostProcessing
-  - Player
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
+  -
   m_SortingLayers:
   - name: Default
     uniqueID: 0
