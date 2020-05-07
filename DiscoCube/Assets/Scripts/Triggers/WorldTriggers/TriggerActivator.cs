@@ -10,26 +10,39 @@ public class TriggerActivator : MonoBehaviour
     [SerializeField]
     string[] trigger;
 
+    bool tempbool = false;
+
     public void Update()
     {
 
     }
     
-    public void OnTriggerEnter(Collider collider)
+    public void OnTriggerExit(Collider collider)
     {
-        
-        GateTrigger t = collider.GetComponent<GateTrigger>();
         if (collider.gameObject.tag == trigger[0])
         {
-            if (t.GetTriggerColor() == colorManager.currentColor)
-            {
-                Debug.Log("Success!! \nTrigger: " + t.GetTriggerColor().ToString() + " ColorManager: " + colorManager.currentColor.ToString());
-            }
-            else
-            {
-                Debug.Log("Failure!! \nTrigger: " + t.GetTriggerColor().ToString() + " ColorManager: " + colorManager.currentColor.ToString());
-            }
+            tempbool =! tempbool;
         }
+
+        if (tempbool)
+        {
+            //TODO
+            //Gör om till metod
+            GateTrigger t = collider.GetComponent<GateTrigger>();
+            if (collider.gameObject.tag == trigger[0])
+            {
+                if (t.GetTriggerColor() == colorManager.currentColor)
+                {
+                    Debug.Log("Success!! \nTrigger: " + t.GetTriggerColor().ToString() + " ColorManager: " + colorManager.currentColor.ToString());
+                }
+                else
+                {
+                    Debug.Log("Failure!! \nTrigger: " + t.GetTriggerColor().ToString() + " ColorManager: " + colorManager.currentColor.ToString());
+                }
+            }
+
+        }
+
     }
 
 }

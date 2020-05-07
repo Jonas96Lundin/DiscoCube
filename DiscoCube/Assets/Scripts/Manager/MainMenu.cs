@@ -7,7 +7,7 @@ public class MainMenu : MonoBehaviour
     //Owner: Raimon
     //Code from: David
 
-    public static bool UIMenuActive;
+    public static bool UIExtraMenuActive;
     [SerializeField]
     GameObject settingsMenuUI, guideMenuUI;
     [SerializeField]
@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
     
     void Awake()
     {
-        UIMenuActive = false;
+        UIExtraMenuActive = false;
     }
 
     void Start()
@@ -68,25 +68,25 @@ public class MainMenu : MonoBehaviour
 
     public void SettingsMenu()
     {
-        UIMenuActive = true;
+        UIExtraMenuActive = true;
         settingsMenuUI.SetActive(true);
     }
 
     public void GuideMenu()
     {
-        UIMenuActive = true;
+        UIExtraMenuActive = true;
         guideMenuUI.SetActive(true);
     }
 
     public void GuideMenuReturn()
     {
-        UIMenuActive = false;
+        UIExtraMenuActive = false;
         guideMenuUI.SetActive(false);
     }
 
     public void SettingsMenuReturn()
     {
-        UIMenuActive = false;
+        UIExtraMenuActive = false;
         settingsMenuUI.SetActive(false);
     }
 
