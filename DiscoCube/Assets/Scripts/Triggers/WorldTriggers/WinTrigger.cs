@@ -77,6 +77,7 @@ public class WinTrigger : MonoBehaviour
         }
         if (isWinning)
         {
+            CountUpTimer.IsCounting = false;
             moveSpeed += 0.01f; //Adjust this for how fast you want the cube to fall into the hole.
             transform.position = Vector3.Lerp(transform.position, endPos, moveSpeed);
 

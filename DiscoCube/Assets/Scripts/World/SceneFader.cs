@@ -10,6 +10,8 @@ public class SceneFader : MonoBehaviour
     Image img;
     [SerializeField]
     AnimationCurve curve;
+    [SerializeField]
+    string musicStop, musicStart;
 
     private void Start()
     {
@@ -51,8 +53,17 @@ public class SceneFader : MonoBehaviour
             img.color = new Color(0f, 0f, 0f, a);
             yield return 0;
         }
-        
-        SceneManager.LoadScene(scene);
+
+        if (musicStop != null || musicStart != null)
+        {
+            AudioManager.instance.Stop(musicStop);
+            SceneManager.LoadScene(scene);
+            AudioManager.instance.Play(musicStart);
+        }
+        else
+        {
+            SceneManager.LoadScene(scene);
+        }
     }
 
     IEnumerator Restart(string scene)

@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     //Owner: Raimon
     //Code from: David
 
+
+    public static bool symbolSwitch;
     [SerializeField]
     string levelToLoad;
     [SerializeField]

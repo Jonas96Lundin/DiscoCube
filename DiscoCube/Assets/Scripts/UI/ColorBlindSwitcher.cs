@@ -2,23 +2,29 @@
 
 public class ColorBlindSwitcher : MonoBehaviour
 {
-    private bool symbolSwitch;
     GameObject[] symbols;
+
 
     void Start()
     {
+        
         symbols = GameObject.FindGameObjectsWithTag("Symbol");
-        foreach (GameObject go in symbols)
+        if (GameManager.symbolSwitch == false)
         {
-            go.SetActive(false);
+            foreach (GameObject go in symbols)
+            {
+                go.SetActive(false);
+            }
         }
+        
     }
 
     public void ColorBlindModeSwitch()
     {
-        symbolSwitch =! symbolSwitch;
+        GameManager.symbolSwitch =!GameManager.symbolSwitch;
+        Debug.Log(GameManager.symbolSwitch);
 
-        if (symbolSwitch)
+        if (GameManager.symbolSwitch)
         {
             foreach (GameObject go in symbols)
             {

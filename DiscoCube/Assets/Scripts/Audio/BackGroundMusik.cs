@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class BackGroundMusik : MonoBehaviour
 {
+    [SerializeField]
+    string music;
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<AudioManager>().Play("BGMusic");
+        AudioManager.instance.Play(music);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

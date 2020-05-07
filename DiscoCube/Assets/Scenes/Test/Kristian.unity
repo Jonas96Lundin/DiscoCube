@@ -1118,7 +1118,7 @@ PrefabInstance:
       objectReference: {fileID: 1997555338}
     - target: {fileID: 422283914, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Play
+      value: NextScene
       objectReference: {fileID: 0}
     - target: {fileID: 1286995423, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
       propertyPath: m_IsActive
@@ -1310,7 +1310,7 @@ PrefabInstance:
     - target: {fileID: 8030556913073582280, guid: a2b1a4096af739a42b92bbfdef5baf07,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8030556913073582280, guid: a2b1a4096af739a42b92bbfdef5baf07,
         type: 3}
@@ -1411,6 +1411,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1180111302, guid: 3a32dbe811c360744880e9f8412d6336, type: 3}
+      propertyPath: img
+      value: 
+      objectReference: {fileID: 720873684}
     - target: {fileID: 5201819129159268356, guid: 3a32dbe811c360744880e9f8412d6336,
         type: 3}
       propertyPath: m_FontData.m_Font
@@ -1613,6 +1617,11 @@ PrefabInstance:
       propertyPath: countdownText
       value: 
       objectReference: {fileID: 1210540949}
+    - target: {fileID: 1144385231313333177, guid: a5dc982d3dfea314d8f44a066ee98868,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1499246184428210324, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}
       propertyPath: stepsCounterText
@@ -1656,7 +1665,7 @@ PrefabInstance:
     - target: {fileID: 3984638023785882261, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 3984638023785882261, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}
@@ -1740,6 +1749,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1caf91893a3b7344990de70e6de0777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1997555340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1997555331}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9931ad4dce46aaf41aa9e4a790fa6034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerCounterText: {fileID: 1210540949}
 --- !u!1 &2113291164
 GameObject:
   m_ObjectHideFlags: 0
