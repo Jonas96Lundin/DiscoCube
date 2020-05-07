@@ -645,7 +645,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc760534bd4dc124881386e41c485da8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1434066171}
   levelCenter: {fileID: 1500216339}
   offset: {x: 30, y: 30, z: -10}
   mouseSensitivity: 4
@@ -1074,6 +1073,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 146386230}
+    - target: {fileID: 422283914, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextScene
+      objectReference: {fileID: 0}
     - target: {fileID: 666708395, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
       propertyPath: stepCounter
       value: 
@@ -2022,12 +2025,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1564804420}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &1434066171 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2209412162367555077, guid: f2f4f87d6d224a2499e9da827fae442c,
-    type: 3}
-  m_PrefabInstance: {fileID: 598262172}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1500216338
 GameObject:
   m_ObjectHideFlags: 0
@@ -2561,6 +2558,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorManager: {fileID: 32478614}
+  trigger: []
 --- !u!1001 &1622069743
 PrefabInstance:
   m_ObjectHideFlags: 0
