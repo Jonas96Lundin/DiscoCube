@@ -546,7 +546,7 @@ PrefabInstance:
     - target: {fileID: 7231945527898733022, guid: 3c53ff65758218e409fbbdd34dd8010f,
         type: 3}
       propertyPath: sounds.Array.data[1].volume
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7231945527898733022, guid: 3c53ff65758218e409fbbdd34dd8010f,
         type: 3}
@@ -1357,7 +1357,7 @@ Light:
   serializedVersion: 8
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1.25
+  m_Intensity: 0.9
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -1737,6 +1737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318568ade5fa6be43b0eb8b6e4bde861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  music: 
 --- !u!114 &1997555338 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7853452672682805186, guid: a5dc982d3dfea314d8f44a066ee98868,
