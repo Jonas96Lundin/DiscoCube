@@ -1,6 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
+/// <summary>
+/// This script is connected to the different trigger points around the level cube.
+/// These triggers makes it so that the player cube can roll over the edges of the level cube.
+/// </summary>
 
 public class FlipTrigger : MonoBehaviour
 {
@@ -26,7 +29,7 @@ public class FlipTrigger : MonoBehaviour
         oldLevelColor = colorScript.currentLevelColor.ToString();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         if (triggerActivated && moveScript.movning == false && colorScript.isOnGround == false)

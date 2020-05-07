@@ -1,8 +1,15 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// This script enables the player to activate and subsequently take control of the games camera.
+/// This will be activated/deactivated with a button press from the player at any time during the game.
+/// 
+/// Owner: Jonas
+/// Code by: Krisitan
+/// </summary>
+
 public class CameraController : MonoBehaviour
 {
-    
     [SerializeField]
     Transform levelCenter;
     private Transform cameraTransform;
@@ -26,8 +33,6 @@ public class CameraController : MonoBehaviour
         localRotation = offset;
         inputRSVertical = "Xbox RS Vertical";
         inputRSHorizontal = "Xbox RS Horizontal";
-
-        //BehindPlayer();
     }
 
     private void LateUpdate()

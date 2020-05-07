@@ -9,14 +9,25 @@ public class MainMenu : MonoBehaviour
 
     public static bool UIMenuActive;
     [SerializeField]
-    GameObject settingsMenuUI, guideMenuUI;
+    GameObject settingsMenuUI, guideMenuUI, controllerSetupUI;
     [SerializeField]
     Dropdown resolutionDropdown;
     Resolution[] resolutions;
     
     void Awake()
     {
+        string[] controllerNames = Input.GetJoystickNames();
+        for (int x = 0; x < controllerNames.Length; x++)
+        {
+            if (controllerNames[x].Length == 33 || controllerNames[x].Length == 19)
+            {
+                Debug.Log("Controller detected!");
+                UIMenuActive = true;
+                controllerSetupUI.SetActive(true);
+            }
+        }
         UIMenuActive = false;
+        
     }
 
     void Start()

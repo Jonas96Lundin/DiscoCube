@@ -1,6 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+
+/// <summary>
+/// This script enables the player to choose which input schematic they want to use. 
+/// At the start of the game, the game will detect if there are any gamepad/controllers plugged in,
+/// and will display a prompt to choose a controller-scheme between Playstation 4's DualShock 4 or Xbox One's Controller.
+///
+/// Owner: Kristian
+/// </summary>
 
 public class ControllerSetup : MonoBehaviour
 {
@@ -18,6 +24,8 @@ public class ControllerSetup : MonoBehaviour
         moveScript = FindObjectOfType<MovementScript>();
         cameraScript = FindObjectOfType<CameraController>();
 
+        // This assignes the controller-differences in input. Some inputs are the same between the 
+        // different controllers, but some are assigned to different functions on the controller.
         xboxVertical = "Xbox Vertical";
         xboxHorizontal = "Xbox Horizontal";
         xboxRSVertical = "Xbox RS Vertical";
@@ -33,21 +41,25 @@ public class ControllerSetup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // If the Xbox controll-scheme is selected, the inputs will be configured for Xbox.
         if (xboxActivated)
         {
             XboxControlConfiguration();
             pS4Activated = false;
+            MainMenu.UIMenuActive = false;
         }
+        // If the PS4 controll-scheme is selected, the inputs will be configured for PS4.
         else if (pS4Activated)
         {
             PS4ControlConfiguration();
             xboxActivated = false;
+            MainMenu.UIMenuActive = false;
         }
         else
             return;
     }
 
-    //TODO: Fix it so that when you have both types of controllers plugged in. They will not interfere with one another. 
+    
     public void XboxControlConfiguration()
     {
         moveScript.inputVertical = xboxVertical;
