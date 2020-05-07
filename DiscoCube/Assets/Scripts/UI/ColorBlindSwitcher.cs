@@ -5,7 +5,7 @@ public class ColorBlindSwitcher : MonoBehaviour
     private bool symbolSwitch;
     GameObject[] symbols;
 
-    private void Start()
+    void Start()
     {
         symbols = GameObject.FindGameObjectsWithTag("Symbol");
         foreach (GameObject go in symbols)

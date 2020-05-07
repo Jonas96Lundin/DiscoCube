@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     SceneFader sceneFader;
     
-    public void Play()
+    public void NextScene()
     {
         sceneFader.FadeTo(levelToLoad);
 

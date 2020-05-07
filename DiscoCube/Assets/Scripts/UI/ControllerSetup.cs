@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// This script enables the player to choose which input schematic they want to use. 
+/// This script enables the player to choose which input schematic they want to use.
 /// At the start of the game, the game will detect if there are any gamepad/controllers plugged in,
 /// and will display a prompt to choose a controller-scheme between Playstation 4's DualShock 4 or Xbox One's Controller.
 ///
@@ -23,20 +23,16 @@ public class ControllerSetup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        string[] controllerNames = Input.GetJoystickNames();
-        for (int x = 0; x < controllerNames.Length; x++)
-        {
-            if (controllerNames[x].Length == 33 || controllerNames[x].Length == 19)
-            {
-                controllerSetupUI.SetActive(true);
-                Time.timeScale = 0f;
-            }
-        }
+        Initialize();
 
+    }
+
+    public void Initialize()
+    {
         moveScript = FindObjectOfType<MovementScript>();
         cameraScript = FindObjectOfType<CameraController>();
 
-        // This assignes the controller-differences in input. Some inputs are the same between the 
+        // This assignes the controller-differences in input. Some inputs are the same between the
         // different controllers, but some are assigned to different functions on the controller.
         xboxVertical = "Xbox Vertical";
         xboxHorizontal = "Xbox Horizontal";
@@ -47,7 +43,6 @@ public class ControllerSetup : MonoBehaviour
         ps4Horizontal = "PS4 Horizontal";
         ps4RSVertical = "PS4 RS Vertical";
         ps4RSHorizontal = "PS4 RS Horizontal";
-
     }
 
     // Update is called once per frame
@@ -66,7 +61,10 @@ public class ControllerSetup : MonoBehaviour
         // If the PS4 controll-scheme is selected, the inputs will be configured for PS4.
         else if (pS4Activated)
         {
-            PS4ControlConfiguration();
+            Initialize();
+            Debug.Log(moveScript.inputVertical + " " + moveScript.inputVertical.ToString());
+
+            //PS4ControlConfiguration();
             xboxActivated = false;
             controllerSetupUI.SetActive(false);
             Time.timeScale = 1f;
@@ -81,7 +79,7 @@ public class ControllerSetup : MonoBehaviour
         moveScript.inputVertical = xboxVertical;
         moveScript.inputHorizontal = xboxHorizontal;
         cameraScript.inputRSVertical = xboxRSVertical;
-        cameraScript.inputRSHorizontal = xboxRSHorizontal;      
+        cameraScript.inputRSHorizontal = xboxRSHorizontal;
     }
 
     public void PS4ControlConfiguration()

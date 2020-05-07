@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 
     public static bool UIExtraMenuActive;
     [SerializeField]
-    GameObject settingsMenuUI, guideMenuUI, controllerSetupUI;
+    GameObject settingsMenuUI, guideMenuUI;
     [SerializeField]
     Dropdown resolutionDropdown;
     Resolution[] resolutions;

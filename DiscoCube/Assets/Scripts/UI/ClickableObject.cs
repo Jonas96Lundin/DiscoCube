@@ -50,7 +50,6 @@ public class ClickableObject : MonoBehaviour
 
             if (Physics.Raycast(ray, out Hit) && Hit.collider.gameObject == gameObject && !MainMenu.UIExtraMenuActive)
             {
-                Debug.Log("Clicking Cube registered.");
                 OnClick.Invoke();
             }
         }
