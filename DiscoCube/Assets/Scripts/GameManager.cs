@@ -19,7 +19,6 @@ public class GameManager : MonoBehaviour
     public void NextScene()
     {
         sceneFader.FadeTo(levelToLoad);
-
     }
 
     public void Quit()
