@@ -4,10 +4,12 @@ Detta är ett spel som är menat för människor i alla åldrar som har en kärl
 
 
 Instruktioner:
-Starta scenen "Master", klicka på play-knappen.
-Spelet styrs antingen med piltangenterna eller med en Xbox-kontroll (både med vänstra handkontrollspaken eller D-pad).
-(OBS! Endast Xbox-kontroller fungerar och om du använder någon annan handkontroll eller har den inkopplad så kan spelet beté sig konstigt).
-Vill man kontrollera kameran så trycker man på Left Shift eller R3 på kontroll, därefter kan man styra kameran med musen eller den högra handkontrollspaken. Vill man återgå till styrningen så trycker man på kamerakontrollknappen igen.
+Öppna mappen "Scenes" klicka på "MainMenu"-mappen starta scenen MainMenu.
+Klicka på Start ( i mitten av menykuben). 
+Spelet styrs antingen med piltangenterna eller med WASD-tangenterna. Vill man styra kameran så trycker man på
+shift och sedan styr kameran med musen. Vill man tillbaka till "spelläget" så trycker man på shift igen.
+Målet är att landa i hålet med samma sida upp som resten av den stora kuben.
+När ni har vunnit första banan så kan ni trycka på "Next level" för att spela nästa bana. Det finns för tillfället 3st banor i spelet.
 
 Tryck på ESC (Startknappen/eller vad den nu kallas på Xbox) för att komma till pausmenyn.
 Resume startar spelet igen.
