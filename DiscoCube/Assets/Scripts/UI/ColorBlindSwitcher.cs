@@ -4,10 +4,12 @@ public class ColorBlindSwitcher : MonoBehaviour
 {
     GameObject[] symbols;
 
+    [SerializeField]
+    GameObject checkmark;
+
 
     void Start()
     {
-        
         symbols = GameObject.FindGameObjectsWithTag("Symbol");
         if (GameManager.symbolSwitch == false)
         {
@@ -15,14 +17,14 @@ public class ColorBlindSwitcher : MonoBehaviour
             {
                 go.SetActive(false);
             }
+            checkmark.SetActive(false);
         }
         
     }
 
     public void ColorBlindModeSwitch()
     {
-        GameManager.symbolSwitch =!GameManager.symbolSwitch;
-        Debug.Log(GameManager.symbolSwitch);
+        GameManager.symbolSwitch =! GameManager.symbolSwitch;
 
         if (GameManager.symbolSwitch)
         {
@@ -30,6 +32,7 @@ public class ColorBlindSwitcher : MonoBehaviour
             {
                 go.SetActive(true);
             }
+            checkmark.SetActive(true);
         }
         else
         {
@@ -37,6 +40,8 @@ public class ColorBlindSwitcher : MonoBehaviour
             {
                 go.SetActive(false);
             }
+            checkmark.SetActive(false);
         }
+
     }
 }

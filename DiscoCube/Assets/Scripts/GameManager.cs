@@ -15,11 +15,17 @@ public class GameManager : MonoBehaviour
     string levelToLoad;
     [SerializeField]
     SceneFader sceneFader;
+    string mainMenu = "MainMenu";
     
     public void NextScene()
     {
         sceneFader.FadeTo(levelToLoad);
+    }
 
+    public void ReturnToMainMenu()
+    {
+        Time.timeScale = 1;
+        sceneFader.FadeTo(mainMenu);
     }
 
     public void Quit()

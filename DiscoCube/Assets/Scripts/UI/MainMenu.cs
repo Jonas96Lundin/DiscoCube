@@ -13,7 +13,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField]
     Dropdown resolutionDropdown;
     Resolution[] resolutions;
-    MovementScript moveScript;
     void Awake()
     {
         UIExtraMenuActive = false;
