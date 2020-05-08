@@ -24,7 +24,7 @@ public class CameraController : MonoBehaviour
 
     public string inputRSVertical, inputRSHorizontal;
 
-    bool freelookActivated = false;
+    public static bool freelookActivated = false;
 
     private void Start()
     {
@@ -37,12 +37,16 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("ActivateCamera"))
+        if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0))
         {
-            freelookActivated = !freelookActivated;
+            freelookActivated = true;
             localRotation = offset;
         }
-
+        else if(Input.GetMouseButtonUp(1) || Input.GetMouseButtonUp(0))
+        {
+            freelookActivated = false;
+            localRotation = offset;
+        }
         //Rotation of the camera based on Mouse Coordinatied
         if (freelookActivated)
         {
@@ -62,19 +66,7 @@ public class CameraController : MonoBehaviour
                 else if (localRotation.y > 90f)
                     localRotation.y = 90f;
             }
-           
-            if(Input.GetAxis("Mouse ScrollWheel") != 0f)
-            {
-                //Zooming Input from Mouse Wheel.
-                float scrollAmount = Input.GetAxis("Mouse ScrollWheel") * scrollSensitivity;
-
-                scrollAmount *= (this.cameraDistance * 0.3f);
-
-                this.cameraDistance += scrollAmount * -1f;
-
-                //this makes the camera go no closer than 1.5 meters from target, and no further than 100 meters.
-                this.cameraDistance = Mathf.Clamp(this.cameraDistance, 1.5f, 100f);
-            }
+         
         }
 
         //Actual Camera rig transformation

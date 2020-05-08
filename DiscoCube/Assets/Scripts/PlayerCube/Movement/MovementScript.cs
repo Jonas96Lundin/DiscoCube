@@ -14,7 +14,7 @@ public class MovementScript : MonoBehaviour
 
     PauseMenu pauseMenu;
     StepCounter stepCounterScript;
-
+    
     public GameObject center;
     public GameObject right;
     public GameObject left;
@@ -44,7 +44,7 @@ public class MovementScript : MonoBehaviour
     {
         inputDelay += Time.deltaTime;
         //TODO: May have to change the delaytimer, so the movement feels more responsive.
-        if (input == true && inputDelay >= 0.25 && !pauseMenu.gameIsPaused)
+        if (input == true && inputDelay >= 0.25 && !pauseMenu.gameIsPaused && !CameraController.freelookActivated)
         {
             //TODO: Maybe find a way so that Up is not allways dominant when multiple keys are pressed down at the same time.
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Vertical") > 0 || Input.GetAxis(inputVertical) > 0)

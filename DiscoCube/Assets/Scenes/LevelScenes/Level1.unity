@@ -1285,21 +1285,6 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1896340984}
-    - target: {fileID: 5201819130134705619, guid: 3a32dbe811c360744880e9f8412d6336,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201819130531532711, guid: 3a32dbe811c360744880e9f8412d6336,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201819131140075058, guid: 3a32dbe811c360744880e9f8412d6336,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5201819131150392481, guid: 3a32dbe811c360744880e9f8412d6336,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1409,11 +1394,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PauseMenuUI
-      objectReference: {fileID: 0}
-    - target: {fileID: 5201819131150392484, guid: 3a32dbe811c360744880e9f8412d6336,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a32dbe811c360744880e9f8412d6336, type: 3}
