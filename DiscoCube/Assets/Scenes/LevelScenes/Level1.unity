@@ -1285,6 +1285,36 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1896340984}
+    - target: {fileID: 53534284305283355, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53534284305283355, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: m_textInfo.spaceCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53534284305283355, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53534284305283355, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 53534284305283355, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5201819130275439971, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5201819131150392481, guid: 3a32dbe811c360744880e9f8412d6336,
         type: 3}
       propertyPath: m_LocalPosition.x
