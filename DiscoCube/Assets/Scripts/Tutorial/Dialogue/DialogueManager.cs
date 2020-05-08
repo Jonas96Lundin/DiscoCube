@@ -14,6 +14,10 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     GameObject wrongColorTutorial;
 
+    [SerializeField]
+    bool secondVoice;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,13 +26,13 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
-        FindObjectOfType<CountdownTimer>().isActive = false;
+        CountUpTimer.IsCounting = false;
 
         nameText.text = dialogue.name;
 
         sentences.Clear();
 
-        foreach(string sentence in dialogue.sentences)
+        foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
@@ -38,7 +42,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        if(sentences.Count == 0)
+        if (sentences.Count == 0)
         {
             EndDialogue();
             return;
@@ -55,12 +59,20 @@ public class DialogueManager : MonoBehaviour
         int soundCounter = 50;
         foreach (char letter in sentence.ToCharArray())
         {
-            //if (soundCounter % 50 == 0)
-            //{
-            //    FindObjectOfType<AudioManager>().Play("SenseiTalk");
-            //}
-            //soundCounter++;
-            FindObjectOfType<AudioManager>().Play("SenseiTalkBitDemon");
+            if (secondVoice)
+            {
+                if (soundCounter % 50 == 0)
+                {
+                    FindObjectOfType<AudioManager>().Play("SenseiTalk");
+                }
+                soundCounter++;
+
+            }
+            else
+            {
+                FindObjectOfType<AudioManager>().Play("SenseiTalkBitDemon");
+
+            }
             dialogueText.text += letter;
             yield return null;
         }
@@ -74,7 +86,7 @@ public class DialogueManager : MonoBehaviour
             FindObjectOfType<ScaleTween>().ScaleDown();
 
         }
-        FindObjectOfType<CountdownTimer>().isActive = true;
+        CountUpTimer.IsCounting = true;
         wrongColorTutorial.SetActive(true);
         FindObjectOfType<AudioManager>().Stop("SenseiTalkBitDemon");
 
