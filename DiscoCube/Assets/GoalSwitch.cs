@@ -20,13 +20,6 @@ public class GoalSwitch : MonoBehaviour
 
     void Update()
     {
-        if (trigger)
-        {
-            winTriggerScrippt.steppedOnGoalTrigger = true;
-        }
-        else
-        {
-            winTriggerScrippt.steppedOnGoalTrigger = false;
-        }
+
     }
 }

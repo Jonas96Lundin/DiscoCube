@@ -5,13 +5,12 @@ using UnityEngine;
 public class Teleport : MonoBehaviour
 {
     public GameObject player;
+    public GameObject center;
     public Transform teleportTarget;
     public Transform teleportCollider;
     RotatingLevelScript rotateScript;
     MovementScript movementScript;
     public bool triggerActivated;
-    Vector3 pos = new Vector3(0, 20, 0);
-    Quaternion rot = Quaternion.Euler(180, 180, 0); 
 
     private void Start()
     {
@@ -32,9 +31,9 @@ public class Teleport : MonoBehaviour
             if (rotateScript.cube.transform.rotation == Quaternion.Euler(180, 180, 0))
             {
                 player.transform.position = teleportTarget.transform.position;
-                triggerActivated = false;   
+                triggerActivated = false;
             }
+            center.transform.LeanSetLocalPosY(-12);
         }
-
     }
 }

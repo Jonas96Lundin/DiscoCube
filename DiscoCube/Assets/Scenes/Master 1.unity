@@ -231,7 +231,6 @@ GameObject:
   - component: {fileID: 44677215}
   - component: {fileID: 44677214}
   - component: {fileID: 44677213}
-  - component: {fileID: 44677212}
   m_Layer: 0
   m_Name: TeleportTarget
   m_TagString: Untagged
@@ -239,18 +238,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &44677212
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 44677211}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 924fd87902c538b4c8778fc6f6a1bc1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &44677213
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -317,7 +304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44677211}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: -10, y: -14, z: -10}
+  m_LocalPosition: {x: 2, y: -14, z: 2}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 200621798}
@@ -1242,7 +1229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85270cbdbd7e2a46a02cecc7a8d9a21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1801089246}
+  player: {fileID: 1368630816}
+  center: {fileID: 1130858949}
   teleportTarget: {fileID: 44677216}
   teleportCollider: {fileID: 914875522}
   triggerActivated: 0
@@ -1856,6 +1844,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  musicStop: 
+  musicStart: 
 --- !u!4 &1209541595 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7874117754991771319, guid: f2f4f87d6d224a2499e9da827fae442c,
@@ -2361,6 +2351,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c53ff65758218e409fbbdd34dd8010f, type: 3}
+--- !u!1 &1628076121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3984638023785882263, guid: a5dc982d3dfea314d8f44a066ee98868,
+    type: 3}
+  m_PrefabInstance: {fileID: 7853452672788439982}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1628076129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628076121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e98e34f16136cb64095aa25d9e76d00c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalTime: 60
+  countdownText: {fileID: 1572998388}
+  isActive: 0
 --- !u!1 &1801089246 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7874117754991771318, guid: f2f4f87d6d224a2499e9da827fae442c,
@@ -2883,6 +2894,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1896340985, guid: a5dc982d3dfea314d8f44a066ee98868, type: 3}
+      propertyPath: timerCounterText
+      value: 
+      objectReference: {fileID: 1572998388}
+    - target: {fileID: 1896340985, guid: a5dc982d3dfea314d8f44a066ee98868, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1144385231313333177, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}
       propertyPath: countdownText

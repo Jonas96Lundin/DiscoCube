@@ -14,7 +14,7 @@ public class WinTrigger : MonoBehaviour
 
     //Owner: Jonas
     //Code from Rasmus, Raimon
-
+    GoalSwitch goalSwitchScript;
     Vector3 endPos, endPosOrientation;
     float moveSpeed, animationDelay;
     public bool isWinning, ActivateWinAnimation, steppedOnGoalTrigger;
@@ -35,7 +35,7 @@ public class WinTrigger : MonoBehaviour
     public void Start()
     {
         isWinning = ActivateWinAnimation = false;
-
+        goalSwitchScript = FindObjectOfType<GoalSwitch>();
         // Declares start and end position for the cube win movement
         endPosOrientation = new Vector3(0, -4, 0);
         endPos = transform.position + endPosOrientation;
@@ -49,7 +49,7 @@ public class WinTrigger : MonoBehaviour
         currentWinningColor = colorManager.currentWinningColor.ToString();
 
         //Jonas
-        if (steppedOnGoalTrigger)
+        if (steppedOnGoalTrigger && goalSwitchScript.trigger)
         {
             if (colorManager.currentLevelColor == winColor && currentColor == currentWinningColor)
             {
