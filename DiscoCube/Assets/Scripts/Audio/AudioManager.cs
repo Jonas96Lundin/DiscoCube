@@ -1,6 +1,7 @@
 using UnityEngine.Audio;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
@@ -61,4 +62,12 @@ public class AudioManager : MonoBehaviour
 		s.source.Stop();
 	}
 
+	public void SetVolume(float volume)
+	{
+		foreach(Sound s in sounds)
+		{
+			s.volume = volume;
+			s.source.volume = volume;
+		}
+	}
 }
