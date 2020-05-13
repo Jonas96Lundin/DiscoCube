@@ -12,7 +12,9 @@ GameObject:
   - component: {fileID: 7853452672682805186}
   - component: {fileID: 7853452672682805185}
   - component: {fileID: 1499246184428210324}
-  - component: {fileID: 1144385231313333177}
+  - component: {fileID: 1896340984}
+  - component: {fileID: 1896340985}
+  - component: {fileID: 1896340989}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -46,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1caf91893a3b7344990de70e6de0777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Level2
+  levelToLoad: Level3
   sceneFader: {fileID: 7853452672682805185}
 --- !u!114 &7853452672682805185
 MonoBehaviour:
@@ -85,6 +87,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  musicStop: 
+  musicStart: 
 --- !u!114 &1499246184428210324
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -99,8 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepCounter: 0
   stepsCounterText: {fileID: 0}
-  endScreenText: {fileID: 0}
---- !u!114 &1144385231313333177
+--- !u!114 &1896340984
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,9 +112,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 3984638023785882263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e98e34f16136cb64095aa25d9e76d00c, type: 3}
+  m_Script: {fileID: 11500000, guid: bc37580e93fe2734ca52e36a3e1f9da1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalTime: 60
-  countdownText: {fileID: 0}
-  isActive: 0
+--- !u!114 &1896340985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984638023785882263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9931ad4dce46aaf41aa9e4a790fa6034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerCounterText: {fileID: 0}
+--- !u!114 &1896340989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3984638023785882263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 318568ade5fa6be43b0eb8b6e4bde861, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: BGMusic

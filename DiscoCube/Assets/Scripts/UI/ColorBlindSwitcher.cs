@@ -1,24 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ColorBlindSwitcher : MonoBehaviour
 {
-    private bool symbolSwitch;
+    GameObject[] symbols;
+
+    [SerializeField]
+    GameObject checkmark;
+
+
+    void Start()
+    {
+        symbols = GameObject.FindGameObjectsWithTag("Symbol");
+        if (GameManager.symbolSwitch == false)
+        {
+            foreach (GameObject go in symbols)
+            {
+                go.SetActive(false);
+            }
+            checkmark.SetActive(false);
+        }
+        
+    }
 
     public void ColorBlindModeSwitch()
     {
-        symbolSwitch =! symbolSwitch;
+        GameManager.symbolSwitch =! GameManager.symbolSwitch;
 
-        GameObject[] symbols = GameObject.FindGameObjectsWithTag("Symbol");
-
-        if (symbolSwitch)
+        if (GameManager.symbolSwitch)
         {
-
             foreach (GameObject go in symbols)
             {
                 go.SetActive(true);
             }
+            checkmark.SetActive(true);
         }
         else
         {
@@ -26,6 +40,8 @@ public class ColorBlindSwitcher : MonoBehaviour
             {
                 go.SetActive(false);
             }
+            checkmark.SetActive(false);
         }
+
     }
 }

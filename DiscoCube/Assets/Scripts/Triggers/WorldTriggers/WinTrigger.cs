@@ -69,21 +69,23 @@ public class WinTrigger : MonoBehaviour
             steppedOnGoalTrigger = false;
         }
 
-        // TODO: When the Restart function is called, the winning trigger is never activated.
         if (!isWinning && ActivateWinAnimation)
         {
             endPos = transform.position + endPosOrientation;
             isWinning = true;
         }
         if (isWinning)
-        {
+        {            
+            DenyMovement();
+
+            CountUpTimer.IsCounting = false;
             moveSpeed += 0.01f; //Adjust this for how fast you want the cube to fall into the hole.
             transform.position = Vector3.Lerp(transform.position, endPos, moveSpeed);
 
             //Rasmus kod:
             animationDelay += 1 * Time.deltaTime;
 
-            if (transform.position==endPos) // jonas kod
+            if (transform.position == endPos) // jonas kod
             {
                 colorManager.SetGlowingColors(winColor);
             }
@@ -96,6 +98,14 @@ public class WinTrigger : MonoBehaviour
         }
 
     }
+
+    private void DenyMovement()
+    {
+        //Makes it impossible to move.
+        MovementScript ms = GetComponentInParent<MovementScript>();
+        ms.input = false;
+    }
+
     public void SetOrientation(Vector3 orientation)
     {
         endPosOrientation = orientation;

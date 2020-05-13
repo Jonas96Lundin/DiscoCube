@@ -9,15 +9,16 @@ public class GameManager : MonoBehaviour
     //Owner: Raimon
     //Code from: David
 
+
+    public static bool symbolSwitch;
     [SerializeField]
     string levelToLoad;
     [SerializeField]
     SceneFader sceneFader;
     
-    public void Play()
+    public void NextScene()
     {
         sceneFader.FadeTo(levelToLoad);
-
     }
 
     public void Quit()

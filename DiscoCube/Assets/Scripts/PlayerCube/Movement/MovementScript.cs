@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class MovementScript : MonoBehaviour
 {
+    //Layermask to check for obstacles
+    [SerializeField]
+    LayerMask obstacleLayer;
+
     private Vector3 offset;
     
     public GameObject player;
@@ -14,7 +18,7 @@ public class MovementScript : MonoBehaviour
 
     PauseMenu pauseMenu;
     StepCounter stepCounterScript;
-
+    
     public GameObject center;
     public GameObject right;
     public GameObject left;
@@ -44,29 +48,55 @@ public class MovementScript : MonoBehaviour
     {
         inputDelay += Time.deltaTime;
         //TODO: May have to change the delaytimer, so the movement feels more responsive.
-        if (input == true && inputDelay >= 0.25 && !pauseMenu.gameIsPaused)
+
+        //Stops movement if game is paused or freelook is activated
+        if (pauseMenu.gameIsPaused || CameraController.freelookActivated)
+        {
+            return;
+        }
+
+        //Movement
+        if (input == true && inputDelay >= 0.25)
         {
             //TODO: Maybe find a way so that Up is not allways dominant when multiple keys are pressed down at the same time.
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Vertical") > 0 || Input.GetAxis(inputVertical) > 0)
             {
+                if (CheckForObstacles(this.transform, Vector3.forward))
+                {
+                    return;
+                }
+                
                 StartCoroutine("MoveUp");
                 input = false;
                 stepCounterScript.stepCounter++;
             }
             else if (Input.GetKey(KeyCode.DownArrow) || Input.GetAxis("Vertical") < 0 || Input.GetAxis(inputVertical) < 0)
             {
+                if (CheckForObstacles(this.transform, Vector3.back))
+                {
+                    return;
+                }
+                
                 StartCoroutine("MoveDown");
                 input = false;
                 stepCounterScript.stepCounter++;
             }
             else if (Input.GetKey(KeyCode.RightArrow) || Input.GetAxis("Horizontal") > 0 || Input.GetAxis(inputHorizontal) > 0)
             {
+                if (CheckForObstacles(this.transform, Vector3.right))
+                {
+                    return;
+                }
                 StartCoroutine("MoveRight");
                 input = false;
                 stepCounterScript.stepCounter++;
             }
             else if (Input.GetKey(KeyCode.LeftArrow) || Input.GetAxis("Horizontal") < 0 || Input.GetAxis(inputHorizontal) < 0)
             {
+                if (CheckForObstacles(this.transform, Vector3.left))
+                {
+                    return;
+                }
                 StartCoroutine("MoveLeft");
                 input = false;
                 stepCounterScript.stepCounter++;
@@ -83,6 +113,20 @@ public class MovementScript : MonoBehaviour
                 inputDelay = 0f;
             }
         }
+    }
+
+
+    /// <summary>
+    /// CheckForObstacles
+    /// Checks for any obstacles with the layer "ObstacleLayer" 4 units in the given direction
+    /// </summary>
+    /// <param name="transform">The object you want to check from</param>
+    /// <param name="direction">The direction you want to check for obstacles in</param>
+    /// <returns>return a bool true/false if anything is found</returns>
+    bool CheckForObstacles(Transform transform, Vector3 direction)
+    {
+        RaycastHit hit;
+        return Physics.Raycast(transform.position, direction, out hit, 4f, obstacleLayer);
     }
 
     IEnumerator MoveUp()

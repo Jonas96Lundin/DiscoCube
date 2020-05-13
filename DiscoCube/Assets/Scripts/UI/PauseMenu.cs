@@ -10,17 +10,20 @@ public class PauseMenu : MonoBehaviour
 {
     [HideInInspector]
     public bool gameIsPaused = false;
+
     [SerializeField]
     GameObject pauseMenuUI, settingsMenuUI, guideMenuUI;
+
     [SerializeField]
     SceneFader sceneFader;
 
-    StepCounter stepCounterScript;
-
     [SerializeField]
     Dropdown resolutionDropdown;
+
     Resolution[] resolutions;
     AudioMixer audioMixer;
+    StepCounter stepCounterScript;
+    string mainMenu = "MainMenu";
 
     void Start()
     {
@@ -75,8 +78,6 @@ public class PauseMenu : MonoBehaviour
                 Pause();
             }
         }
-
-
     }
 
     public void SetVolume(float volume)
@@ -138,10 +139,20 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true);
     }
 
+
+    public void ReturnToMainMenu()
+    {
+        pauseMenuUI.SetActive(false);
+        settingsMenuUI.SetActive(false);
+        guideMenuUI.SetActive(false);
+        Time.timeScale = 1f;
+        gameIsPaused = false;
+        sceneFader.FadeTo(mainMenu);
+    }
     public void QuitGame()
     {
         //Swap to this before build
-        //Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
+        Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 }

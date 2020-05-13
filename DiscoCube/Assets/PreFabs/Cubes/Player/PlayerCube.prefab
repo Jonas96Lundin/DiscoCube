@@ -43,11 +43,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45460d7715af6a245a8f81b0eab86b38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oldColor: 0
   currentColor: 4
   currentLevelColor: 4
-  currentWinningColor: 0
+  currentWinningColor: 1
   currentGlowingColorChoice: 0
   isOnGround: 0
+--- !u!114 &598262174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2209412162367555073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3642e0bf669be1843baaa075c9ce9784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1985119817349561235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,11 +73,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3c37579051121241a4c8e2201a8bd29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isWinning: 0
   colorManager: {fileID: 8159917135253647475}
-  goal: {fileID: 0}
   completeLevelUI: {fileID: 0}
-  winColor: 0
+  winColor: 5
 --- !u!114 &3483506591436698089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,7 +157,7 @@ Transform:
   m_GameObject: {fileID: 7874117754991771318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -4.463, y: 21, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 7874117756199988819}
   - {fileID: 2209412162367555077}
@@ -353,6 +364,36 @@ PrefabInstance:
     - target: {fileID: 7769596807035253469, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
         type: 3}
       propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769596807352545408, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769596807481223714, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769596807482734901, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769596807950949976, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769596807952748994, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769596808323311176, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
