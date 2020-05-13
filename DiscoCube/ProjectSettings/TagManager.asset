@@ -15,6 +15,7 @@ TagManager:
   - Exit
   - Help
   - Symbol
+  - Teleporter
   layers:
   - Default
   - TransparentFX

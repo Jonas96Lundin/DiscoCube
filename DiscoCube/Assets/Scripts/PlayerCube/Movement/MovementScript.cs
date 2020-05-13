@@ -154,5 +154,6 @@ public class MovementScript : MonoBehaviour
 
         winAnimation.SetOrientation(new Vector3(0, -4, 0)); // Jonas test
     }
-   
+    
+
 }

@@ -17,7 +17,7 @@ public class WinTrigger : MonoBehaviour
 
     Vector3 endPos, endPosOrientation;
     float moveSpeed, animationDelay;
-    bool isWinning, ActivateWinAnimation, steppedOnGoalTrigger;
+    public bool isWinning, ActivateWinAnimation, steppedOnGoalTrigger;
     string currentColor, currentWinningColor, oldColor;
 
     [SerializeField]
