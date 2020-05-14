@@ -17,7 +17,7 @@ public class RotatingLevelScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (moveScript.movning == false)
+        if (moveScript.moving == false)
         {
             RotateWhenPressingButton();
         }

@@ -35,7 +35,7 @@ public class FlipTrigger : MonoBehaviour
 
     void Update()
     {
-        if (triggerActivated && moveScript.movning == false && colorScript.isOnGround == false)
+        if (triggerActivated && moveScript.moving == false && colorScript.isOnGround == false)
         {
             FlipDirection();
             

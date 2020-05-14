@@ -20,6 +20,6 @@ public class GoalSwitch : MonoBehaviour
 
     void Update()
     {
-
+        
     }
 }

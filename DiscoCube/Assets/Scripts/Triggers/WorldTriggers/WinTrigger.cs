@@ -49,7 +49,7 @@ public class WinTrigger : MonoBehaviour
         currentWinningColor = colorManager.currentWinningColor.ToString();
 
         //Jonas
-        if (steppedOnGoalTrigger && goalSwitchScript.trigger)
+        if (steppedOnGoalTrigger/* || goalSwitchScript.trigger*/)
         {
             if (colorManager.currentLevelColor == winColor && currentColor == currentWinningColor)
             {
