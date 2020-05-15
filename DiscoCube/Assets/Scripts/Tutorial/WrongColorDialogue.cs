@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// A pop up message when the player is going on the hole with the wrong color
+/// Created by: Jonas
+/// </summary>
 public class WrongColorDialogue : MonoBehaviour
 {
     [SerializeField]

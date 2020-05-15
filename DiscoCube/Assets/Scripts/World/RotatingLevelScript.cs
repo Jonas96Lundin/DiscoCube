@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Rotates the levelCube with either a press of a numpad key or by changing the variable 
+/// rotateToColor to the name of the color
+/// 
+/// Created by: Jonas
+/// </summary>
 public class RotatingLevelScript : MonoBehaviour
 {
     public GameObject cube;
@@ -19,15 +25,19 @@ public class RotatingLevelScript : MonoBehaviour
     {
         if (moveScript.movning == false)
         {
-            RotateWhenPressingButton();
+            RotateLevel();
         }
     }
 
-    // Use numpad to change rotation to the side with the color "rotation"
-    public void RotateWhenPressingButton()
+
+    /// <summary>
+    /// Rotate the level with either numpad or changing rotateToColor
+    /// Method by: Jonas
+    /// </summary>
+    public void RotateLevel()
     {
 
-        if (Input.GetKeyDown(KeyCode.Keypad8) || rotateToColor == "green")
+        if (Input.GetKeyDown(KeyCode.Keypad8) || rotateToColor == "green") 
         {
             moveScript.input = false;
             rotateToColor = "green";
@@ -36,7 +46,9 @@ public class RotatingLevelScript : MonoBehaviour
             {
                 moveScript.input = true;
                 rotateToColor = "";
-                //Checks which color you rotated from, and moves you one rotation onto the new color.
+
+                //Code by: Kristian
+                //Checks which color you rotated from, and moves you one rotation onto the new color. 
                 if (colorManagerScript.currentLevelColor.ToString() == "yellow")
                 {
                     moveScript.StartCoroutine("MoveRight");
@@ -68,6 +80,9 @@ public class RotatingLevelScript : MonoBehaviour
             {
                 moveScript.input = true;
                 rotateToColor = "";
+
+                //Code by: Kristian
+                //Checks which color you rotated from, and moves you one rotation onto the new color. 
                 if (colorManagerScript.currentLevelColor.ToString() == "teal")
                 {
                     moveScript.StartCoroutine("MoveRight");
@@ -99,6 +114,9 @@ public class RotatingLevelScript : MonoBehaviour
             {
                 moveScript.input = true;
                 rotateToColor = "";
+
+                //Code by: Kristian
+                //Checks which color you rotated from, and moves you one rotation onto the new color. 
                 if (colorManagerScript.currentLevelColor.ToString() == "red")
                 {
                     moveScript.StartCoroutine("MoveRight");
@@ -131,6 +149,9 @@ public class RotatingLevelScript : MonoBehaviour
             {
                 moveScript.input = true;
                 rotateToColor = "";
+
+                //Code by: Kristian
+                //Checks which color you rotated from, and moves you one rotation onto the new color. 
                 if (colorManagerScript.currentLevelColor.ToString() == "yellow")
                 {
                     moveScript.StartCoroutine("MoveRight");
@@ -162,7 +183,10 @@ public class RotatingLevelScript : MonoBehaviour
             {
                 moveScript.input = true;
                 rotateToColor = "";
-                if(colorManagerScript.currentLevelColor.ToString() == "yellow")
+
+                //Code by: Kristian
+                //Checks which color you rotated from, and moves you one rotation onto the new color. 
+                if (colorManagerScript.currentLevelColor.ToString() == "yellow")
                 {
                     moveScript.StartCoroutine("MoveRight");
                     moveScript.input = false;
@@ -193,6 +217,9 @@ public class RotatingLevelScript : MonoBehaviour
             {
                 moveScript.input = true;
                 rotateToColor = "";
+
+                //Code by: Kristian
+                //Checks which color you rotated from, and moves you one rotation onto the new color. 
                 if (colorManagerScript.currentLevelColor.ToString() == "purple")
                 {
                     moveScript.StartCoroutine("MoveRight");

@@ -1,6 +1,9 @@
 ﻿
 using UnityEngine;
-
+/// <summary>
+/// Sets the currentLevelColor in ColorManager to red
+/// Created by: Jonas
+/// </summary>
 public class LevelColorTriggerRed : MonoBehaviour
 {
 

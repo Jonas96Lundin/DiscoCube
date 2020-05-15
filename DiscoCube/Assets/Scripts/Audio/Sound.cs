@@ -1,6 +1,9 @@
 ﻿using UnityEngine.Audio;
 using UnityEngine;
-
+/// <summary>
+/// Create a sound that can be played through AudioManager.
+/// Created by: Jonas
+/// </summary>
 [System.Serializable]
 public class Sound {
 

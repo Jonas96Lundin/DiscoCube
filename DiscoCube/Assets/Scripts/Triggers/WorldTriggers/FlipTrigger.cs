@@ -4,8 +4,7 @@
 /// This script is connected to the different trigger points around the level cube.
 /// These triggers makes it so that the player cube can roll over the edges of the level cube.
 /// 
-/// Owner: Kristian
-/// Code by: Jonas
+/// Created by: Kristian & Jonas
 /// </summary>
 
 public class FlipTrigger : MonoBehaviour
@@ -22,6 +21,7 @@ public class FlipTrigger : MonoBehaviour
     MovementScript moveScript;
     ColorManager colorScript;
     RotatingLevelScript rotateScript;
+
     void Start()
     {
         moveScript = FindObjectOfType<MovementScript>();
@@ -46,16 +46,15 @@ public class FlipTrigger : MonoBehaviour
             triggerActivated = false;
             oldLevelColor = colorScript.currentLevelColor.ToString();
         }
-
-        
-
     }
 
     //TODO
     //Can we make thís more general so that it is not dependent on colors too much?
+    /// <summary>
+    /// Flips the level to the other side of the fliptrigger object
+    /// </summary>
     void FlipDirection()
     {
-
         if (colorScript.currentLevelColor.ToString() == triggerColor1)
         {
             rotateScript.rotateToColor = triggerColor2;
@@ -69,7 +68,10 @@ public class FlipTrigger : MonoBehaviour
         triggerActivated = false;
         
     }
-    
+    /// <summary>
+    /// Edge trigger activated
+    /// </summary>
+    /// <param name="other"></param>
     void OnTriggerEnter(Collider other)
     {
         triggerColor1 = savedTriggerColor1;
@@ -78,21 +80,12 @@ public class FlipTrigger : MonoBehaviour
         triggerActivated = true;
     }
 
+    /// <summary>
+    /// Resets the trigger colors
+    /// </summary>
     public void ResetTriggerColors()
     {
         triggerColor1 = "";
         triggerColor2 = "";
     }
-
-    public void ContinueMovementAfterRotation()
-    {
-        if (triggerColor1 == "yellow" && triggerColor2 == "teal" && colorScript.currentLevelColor.ToString() == "teal")
-        {
-            Debug.LogError("How did I get here?");
-            moveScript.StartCoroutine("MoveLeft");
-            moveScript.input = false;
-        }
-    }
-
-
 }
