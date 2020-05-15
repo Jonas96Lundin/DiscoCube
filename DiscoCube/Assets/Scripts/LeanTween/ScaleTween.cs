@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Scales an object with the help of LeanTween.
+/// Created by: Jonas
+/// </summary>
 public class ScaleTween : MonoBehaviour
 {
     [SerializeField]
@@ -20,6 +23,10 @@ public class ScaleTween : MonoBehaviour
         }
 
     }
+    /// <summary>
+    /// Scales up an object with LeanTween.
+    /// Method by: Jonas
+    /// </summary>
     public void ScaleUp()
     {
         foreach (GameObject go in objects)
@@ -27,6 +34,10 @@ public class ScaleTween : MonoBehaviour
             LeanTween.scale(go, new Vector3(1, 1, 1), 0.3f).setDelay(delay);
         }
     }
+    /// <summary>
+    /// Scales down an object with LeanTween.
+    /// Method by: Jonas
+    /// </summary>
     public void ScaleDown()
     {
         foreach (GameObject go in objects)

@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Use LeanTween to move an object
+/// Created by: Jonas
+/// </summary>
 public class MoveTween : MonoBehaviour
 {
     public GameObject movableObject;
@@ -21,7 +24,10 @@ public class MoveTween : MonoBehaviour
             MoveY();
         }
     }
-
+    /// <summary>
+    /// Moves an object in Y direction with the help of LeanTween.
+    /// Method by: Jonas
+    /// </summary>
     public void MoveY()
     {
         if (!LeanTween.isTweening(movableObject))
