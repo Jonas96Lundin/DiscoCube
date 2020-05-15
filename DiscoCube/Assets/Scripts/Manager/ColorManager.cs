@@ -1,6 +1,9 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// Holds the current color for the playercube and the levelcube. Also holds the winningcolor.
+/// Created by: Jonas
+/// </summary>
 public class ColorManager : MonoBehaviour
 {
     public CubeColors oldColor;
@@ -44,6 +47,10 @@ public class ColorManager : MonoBehaviour
     //    }
     //}
 
+        /// <summary>
+        /// Sets the currentWinningColor acording to what the currentLevelColor is.
+        /// Method by: Jonas
+        /// </summary>
     public void CheckLevelColorCollision()
     {
         switch (currentLevelColor)
@@ -80,11 +87,20 @@ public class ColorManager : MonoBehaviour
                 break;
         }
     }
+    /// <summary>
+    /// Get the currentColor for the playercube
+    /// </summary>
+    /// <returns></returns>
     public CubeColors GetCurrentColor()
     {
         return currentColor;
     }
 
+    /// <summary>
+    /// Sets the levelcube materials to glowing
+    /// Method by: Jonas
+    /// </summary>
+    /// <param name="color"></param>
     public void SetGlowingColors(LevelColors color)
     {
         GameObject[] cubePlane = GameObject.FindGameObjectsWithTag("ColorPlane");

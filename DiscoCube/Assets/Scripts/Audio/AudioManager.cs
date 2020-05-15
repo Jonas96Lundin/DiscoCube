@@ -3,6 +3,10 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Handles the Audio
+/// Created by: Jonas
+/// </summary>
 public class AudioManager : MonoBehaviour
 {
 
@@ -35,6 +39,11 @@ public class AudioManager : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Plays the sound that is chosen.
+	/// Method by: Jonas
+	/// </summary>
+	/// <param name="sound">Input the name of the sound</param>
 	public void Play(string sound)
 	{
 		Sound s = Array.Find(sounds, item => item.name == sound);
@@ -50,6 +59,11 @@ public class AudioManager : MonoBehaviour
 		s.source.Play();
 	}
 
+	/// <summary>
+	/// Stops the sound that is chosen.
+	/// Method by: Jonas
+	/// </summary>
+	/// <param name="sound">Input the name of the sound</param>
 	public void Stop(string sound)
 	{
 		Sound s = Array.Find(sounds, item => item.name == sound);
@@ -62,6 +76,11 @@ public class AudioManager : MonoBehaviour
 		s.source.Stop();
 	}
 
+	/// <summary>
+	/// Sets the volume.
+	/// Method by; Jonas
+	/// </summary>
+	/// <param name="volume">Insert the volume as a float</param>
 	public void SetVolume(float volume)
 	{
 		foreach(Sound s in sounds)

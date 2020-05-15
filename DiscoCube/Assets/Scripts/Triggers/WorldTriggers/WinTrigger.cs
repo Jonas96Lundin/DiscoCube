@@ -12,8 +12,9 @@ public class WinTrigger : MonoBehaviour
     //Dela upp i mindre delar
     //Gör en summary
 
-    //Owner: Jonas
+    //Created by: Jonas
     //Code from Rasmus, Raimon
+
     GoalSwitch goalSwitchScript;
     Vector3 endPos, endPosOrientation;
     float moveSpeed, animationDelay;
@@ -49,7 +50,7 @@ public class WinTrigger : MonoBehaviour
         currentWinningColor = colorManager.currentWinningColor.ToString();
 
         //Jonas
-        if (steppedOnGoalTrigger && goalSwitchScript.trigger)
+        if (steppedOnGoalTrigger/* || goalSwitchScript.trigger*/)
         {
             if (colorManager.currentLevelColor == winColor && currentColor == currentWinningColor)
             {

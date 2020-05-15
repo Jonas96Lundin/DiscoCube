@@ -1,6 +1,9 @@
 ﻿
 using UnityEngine;
-
+/// <summary>
+/// Sets the currentLevelColor in ColorManager to teal
+/// Created by: Jonas
+/// </summary>
 public class LevelColorTriggerTeal : MonoBehaviour
 {
 

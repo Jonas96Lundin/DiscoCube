@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
+/// <summary>
+/// A manager that handles Dialogues. 
+/// Created by: Jonas
+/// </summary>
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI nameText;
@@ -24,6 +27,11 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
+    /// <summary>
+    /// Start the dialogue.
+    /// Method by: Jonas
+    /// </summary>
+    /// <param name="dialogue">The dialogue you want to start</param>
     public void StartDialogue(Dialogue dialogue)
     {
         CountUpTimer.IsCounting = false;
@@ -39,7 +47,10 @@ public class DialogueManager : MonoBehaviour
 
         DisplayNextSentence();
     }
-
+    /// <summary>
+    /// Displays the next sentence in the Dialogue, if sentences is zero, end dialogue.
+    /// Created by: Jonas
+    /// </summary>
     public void DisplayNextSentence()
     {
         if (sentences.Count == 0)
@@ -52,7 +63,12 @@ public class DialogueManager : MonoBehaviour
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
     }
-
+    /// <summary>
+    /// Type the sentence so it looks like someone is writing the text, letter by letter. Also plays a sound for each letter.
+    /// Created by: Jonas
+    /// </summary>
+    /// <param name="sentence"></param>
+    /// <returns></returns>
     IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
@@ -77,7 +93,10 @@ public class DialogueManager : MonoBehaviour
             yield return null;
         }
     }
-
+    /// <summary>
+    /// Scales down objects and starts the timer.
+    /// Created by: Jonas
+    /// </summary>
     private void EndDialogue()
     {
         GameObject[] tutorialDialogueObjects = GameObject.FindGameObjectsWithTag("TutorialDialogue");
