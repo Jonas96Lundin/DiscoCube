@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using UnityEngine.Audio;
 using UnityEditor;
 
@@ -13,6 +14,9 @@ public class PauseMenu : MonoBehaviour
 
     [SerializeField]
     GameObject pauseMenuUI, settingsMenuUI, guideMenuUI;
+
+    [SerializeField]
+    GameObject pauseFirstButton, settingsFirstButton, settingsClosedButton, guideClosedButton;
 
     [SerializeField]
     SceneFader sceneFader;
@@ -99,7 +103,12 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
+
         gameIsPaused = true;
+        //Clear selected object.
+        EventSystem.current.SetSelectedGameObject(null);
+        //Set a new object
+        EventSystem.current.SetSelectedGameObject(pauseFirstButton);
     }
 
     public void Restart()
@@ -119,25 +128,40 @@ public class PauseMenu : MonoBehaviour
     {
         pauseMenuUI.SetActive(false);
         settingsMenuUI.SetActive(true);
-
+        //Clear selected object.
+        EventSystem.current.SetSelectedGameObject(null);
+        //Set a new object
+        EventSystem.current.SetSelectedGameObject(settingsFirstButton);
     }
 
     public void GuideMenu()
     {
         pauseMenuUI.SetActive(false);
         guideMenuUI.SetActive(true);
+        //Clear selected object.
+        EventSystem.current.SetSelectedGameObject(null);
+        //Set a new object
+        EventSystem.current.SetSelectedGameObject(guideClosedButton);
     }
 
     public void GuideMenuReturn()
     {
         pauseMenuUI.SetActive(true);
         guideMenuUI.SetActive(false);
+        //Clear selected object.
+        EventSystem.current.SetSelectedGameObject(null);
+        //Set a new object
+        EventSystem.current.SetSelectedGameObject(pauseFirstButton);
     }
 
     public void SettingsMenuReturn()
     {
         settingsMenuUI.SetActive(false);
         pauseMenuUI.SetActive(true);
+        //Clear selected object.
+        EventSystem.current.SetSelectedGameObject(null);
+        //Set a new object
+        EventSystem.current.SetSelectedGameObject(pauseFirstButton);
     }
 
 

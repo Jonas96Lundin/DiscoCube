@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// This script enables the player to choose which input schematic they want to use.
@@ -16,14 +17,24 @@ public class ControllerSetup : MonoBehaviour
     [SerializeField]
     GameObject controllerSetupUI;
 
-    private bool xboxActivated, pS4Activated;
+    [SerializeField]
+    GameObject menuFirstButton;
+
+
+    public bool xboxActivated, pS4Activated;
 
     private string xboxVertical, xboxHorizontal, xboxRSVertical, xboxRSHorizontal, ps4Vertical, ps4Horizontal, ps4RSVertical, ps4RSHorizontal;
 
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 0f;
         Initialize();
+        moveScript.input = false;
+        //Clear selected object.
+        EventSystem.current.SetSelectedGameObject(null);
+        //Set a new object
+        EventSystem.current.SetSelectedGameObject(menuFirstButton);
 
     }
 
@@ -56,6 +67,7 @@ public class ControllerSetup : MonoBehaviour
             pS4Activated = false;
             controllerSetupUI.SetActive(false);
             Time.timeScale = 1f;
+            moveScript.input = true;
             Debug.Log("Timescale = 1");
         }
         // If the PS4 controll-scheme is selected, the inputs will be configured for PS4.
@@ -64,11 +76,11 @@ public class ControllerSetup : MonoBehaviour
             Initialize();
             Debug.Log(moveScript.inputVertical + " " + moveScript.inputVertical.ToString());
 
-            //PS4ControlConfiguration();
+            PS4ControlConfiguration();
             xboxActivated = false;
             controllerSetupUI.SetActive(false);
+            moveScript.input = true;
             Time.timeScale = 1f;
-
         }
         else
             return;

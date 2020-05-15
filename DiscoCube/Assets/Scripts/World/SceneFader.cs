@@ -43,7 +43,6 @@ public class SceneFader : MonoBehaviour
 
     IEnumerator FadeOut(string scene)
     {
-
         float t = 0f;
 
         while (t < 1f)
@@ -68,7 +67,6 @@ public class SceneFader : MonoBehaviour
 
     IEnumerator Restart(string scene)
     {
-
         float t = 0f;
 
         while (t < 0.5f)
