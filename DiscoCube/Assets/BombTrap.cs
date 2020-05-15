@@ -21,6 +21,7 @@ public class BombTrap : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         trapTriggerActivated = true;
+        FindObjectOfType<AudioManager>().Play("BombTrap");
     }
 
     void Update()

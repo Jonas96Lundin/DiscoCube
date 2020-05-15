@@ -18,6 +18,7 @@ public class Freeze : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         freezeTrapTriggerActivated = true;
+        FindObjectOfType<AudioManager>().Play("FreezeTrap");
     }
     void Update()
     {

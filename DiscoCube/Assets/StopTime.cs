@@ -17,6 +17,7 @@ public class StopTime : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         stopTimeTriggerActivated = true;
+        FindObjectOfType<AudioManager>().Play("TimeStop");
     }
 
     void Update()
