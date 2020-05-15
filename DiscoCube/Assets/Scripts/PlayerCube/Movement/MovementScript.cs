@@ -2,38 +2,40 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class MovementScript : MonoBehaviour
 {
+    [Header("Player Prefab:")]
+    [SerializeField]
+    GameObject player;
+
     //Layermask to check for obstacles
     [SerializeField]
     LayerMask obstacleLayer;
 
+    [SerializeField]
+    GameObject center, right, left, up, down;
+
     private Vector3 offset;
     
-    public GameObject player;
-
     public WinTrigger winAnimation; // For the winning animation. /Jonas
     //public GameObject rightEdge;
     enum Direction { right, left, up, down};
 
     PauseMenu pauseMenu;
     StepCounter stepCounterScript;
-    
-    public GameObject center;
-    public GameObject right;
-    public GameObject left;
-    public GameObject up;
-    public GameObject down;
 
-    public int step = 9;
+    int step = 9;
 
     public string inputVertical, inputHorizontal; //Gives the ability to change the controller with the ControllerSetup script /Kristian.
 
     public float speed = 0.01f;
-    public float inputDelay = 5f;
+    float inputDelay = 5f;
 
     public bool input = true;
-    public bool movning = false;
+    public bool moving = false;
     private Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
 
     private void Start()
@@ -131,7 +133,7 @@ public class MovementScript : MonoBehaviour
 
     IEnumerator MoveUp()
     {
-        movning = true;
+        moving = true;
         for (int i = 0; i < 90 / step; i++)
         {
             player.transform.RotateAround(up.transform.position, rotateUp, step);
@@ -140,13 +142,13 @@ public class MovementScript : MonoBehaviour
         center.transform.position = player.transform.position;
         inputDelay = 0f;
         input = true;
-        movning = false;
+        moving = false;
 
     }
 
     IEnumerator MoveDown()
     {
-        movning = true;
+        moving = true;
         for (int i = 0; i < 90 / step; i++)
         {
             player.transform.RotateAround(down.transform.position, rotateDown, step);
@@ -155,12 +157,12 @@ public class MovementScript : MonoBehaviour
         center.transform.position = player.transform.position;
         inputDelay = 0f;
         input = true;
-        movning = false;
+        moving = false;
     }
 
     IEnumerator MoveRight()
     {
-        movning = true;
+        moving = true;
         for (int i = 0; i < 90 / step; i++)
         {
             player.transform.RotateAround(right.transform.position, rotateRight, step);
@@ -169,12 +171,12 @@ public class MovementScript : MonoBehaviour
         center.transform.position = player.transform.position;
         inputDelay = 0f;
         input = true;
-        movning = false;
+        moving = false;
     }
 
     IEnumerator MoveLeft()
     {
-        movning = true;
+        moving = true;
         for (int i = 0; i < 90 / step; i++)
         {
             player.transform.RotateAround(left.transform.position, rotateLeft, step);
@@ -183,7 +185,7 @@ public class MovementScript : MonoBehaviour
         center.transform.position = player.transform.position;
         inputDelay = 0f;
         input = true;
-        movning = false;
+        moving = false;
     }
 
     //TEST: A trigger that changes the Vector3 values of the different directions.
@@ -198,6 +200,4 @@ public class MovementScript : MonoBehaviour
 
         winAnimation.SetOrientation(new Vector3(0, -4, 0)); // Jonas test
     }
-    
-
 }

@@ -25,7 +25,7 @@ public class Teleport : MonoBehaviour
 
     public void Update()
     {
-        if (triggerActivated && movementScript.movning == false)
+        if (triggerActivated && movementScript.moving == false)
         {
             rotateScript.rotateToColor = "red";
             if (rotateScript.cube.transform.rotation == Quaternion.Euler(180, 180, 0))
