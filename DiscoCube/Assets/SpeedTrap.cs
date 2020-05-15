@@ -17,6 +17,7 @@ public class SpeedTrap : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         speedTrapTriggerActivated = true;
+        FindObjectOfType<AudioManager>().Play("SlowTrap");
     }
 
     void Update()

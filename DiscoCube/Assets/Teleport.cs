@@ -21,6 +21,7 @@ public class Teleport : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         triggerActivated = true;
+        FindObjectOfType<AudioManager>().Play("Teleporter");
     }
 
     public void Update()
