@@ -765,6 +765,11 @@ PrefabInstance:
       propertyPath: completeLevelUI
       value: 
       objectReference: {fileID: 1132929032}
+    - target: {fileID: 7995789786763071316, guid: f2f4f87d6d224a2499e9da827fae442c,
+        type: 3}
+      propertyPath: winColor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8159917135253647475, guid: f2f4f87d6d224a2499e9da827fae442c,
         type: 3}
       propertyPath: currentWinningColor
@@ -773,7 +778,7 @@ PrefabInstance:
     - target: {fileID: 8159917135253647475, guid: f2f4f87d6d224a2499e9da827fae442c,
         type: 3}
       propertyPath: currentGlowingColorChoice
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2f4f87d6d224a2499e9da827fae442c, type: 3}
@@ -1406,6 +1411,11 @@ PrefabInstance:
       propertyPath: img
       value: 
       objectReference: {fileID: 1931031133}
+    - target: {fileID: 7853452672682805186, guid: a5dc982d3dfea314d8f44a066ee98868,
+        type: 3}
+      propertyPath: levelToLoad
+      value: Level1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5dc982d3dfea314d8f44a066ee98868, type: 3}
 --- !u!1 &1130858949 stripped

@@ -33,6 +33,10 @@ public class DialogueManager : MonoBehaviour
         {
             DisplayNextSentence();
         }
+        if(sentences.Count > 0)
+        {
+            CountUpTimer.IsCounting = false;
+        }
     }
 
     /// <summary>
@@ -43,6 +47,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         CountUpTimer.IsCounting = false;
+        FindObjectOfType<MovementScript>().canMove = false;
 
         nameText.text = dialogue.name;
 
@@ -114,6 +119,7 @@ public class DialogueManager : MonoBehaviour
 
         }
         CountUpTimer.IsCounting = true;
+        FindObjectOfType<MovementScript>().canMove = true;
         wrongColorTutorial.SetActive(true);
         FindObjectOfType<AudioManager>().Stop("SenseiTalkBitDemon");
 
