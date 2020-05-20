@@ -27,6 +27,14 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
+    private void Update()
+    {
+        if (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Mouse0)/*GetKeyDown(KeyCode.Return)*/)
+        {
+            DisplayNextSentence();
+        }
+    }
+
     /// <summary>
     /// Start the dialogue.
     /// Method by: Jonas
