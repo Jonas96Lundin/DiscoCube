@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// ControllerDetection checks when the first level is loaded if there is a controller connected. If there is, it shows a controller select overlay.
@@ -17,7 +18,6 @@ public class ControllerDetection : MonoBehaviour
     GameObject mouseAndKeyboard, xbox, ps4;
 
     static bool controllerDetected;
-
 
     enum inputDevice { noController, xController, pController}
     static inputDevice currentInputDevice;
@@ -47,6 +47,7 @@ public class ControllerDetection : MonoBehaviour
             if (names[x].Length == 19)
             {
                 controllerDetected = true;
+                
                 print("PS4 CONTROLLER IS CONNECTED");
                 controllerSelectionOverlay.SetActive(true); //Displays the controller selection overlay.
                 ps4.SetActive(true);

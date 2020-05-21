@@ -29,6 +29,8 @@ public class PauseMenu : MonoBehaviour
     StepCounter stepCounterScript;
     string mainMenu = "MainMenu";
 
+    public string confirmXbox, confirmPS4;
+
     void Start()
     {
         ScreenResolution();

@@ -13,6 +13,7 @@ public class ControllerSetup : MonoBehaviour
 {
     MovementScript moveScript;
     CameraController cameraScript;
+    PauseMenu pauseScript;
 
     [SerializeField]
     GameObject controllerSetupUI;
@@ -20,11 +21,12 @@ public class ControllerSetup : MonoBehaviour
     [SerializeField]
     GameObject menuFirstButton;
 
+    
 
     public bool xboxActivated, pS4Activated;
 
-    private string xboxVertical, xboxHorizontal, xboxRSVertical, xboxRSHorizontal, ps4Vertical, ps4Horizontal, ps4RSVertical, ps4RSHorizontal;
-
+    private string xboxVertical, xboxHorizontal, xboxRSVertical, xboxRSHorizontal, xboxConfirm;
+    private string ps4Vertical, ps4Horizontal, ps4RSVertical, ps4RSHorizontal, PS4Confirm;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,13 +37,13 @@ public class ControllerSetup : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         //Set a new object
         EventSystem.current.SetSelectedGameObject(menuFirstButton);
-
     }
 
     public void Initialize()
     {
         moveScript = FindObjectOfType<MovementScript>();
         cameraScript = FindObjectOfType<CameraController>();
+        pauseScript = FindObjectOfType<PauseMenu>();
 
         // This assignes the controller-differences in input. Some inputs are the same between the
         // different controllers, but some are assigned to different functions on the controller.
@@ -49,11 +51,14 @@ public class ControllerSetup : MonoBehaviour
         xboxHorizontal = "Xbox Horizontal";
         xboxRSVertical = "Xbox RS Vertical";
         xboxRSHorizontal = "Xbox RS Horizontal";
+        xboxConfirm = "Xbox Confirm";
+        
 
         ps4Vertical = "PS4 Vertical";
         ps4Horizontal = "PS4 Horizontal";
         ps4RSVertical = "PS4 RS Vertical";
         ps4RSHorizontal = "PS4 RS Horizontal";
+        PS4Confirm = "PS4 Confirm";
     }
 
     // Update is called once per frame
@@ -66,16 +71,14 @@ public class ControllerSetup : MonoBehaviour
             XboxControlConfiguration();
             pS4Activated = false;
             controllerSetupUI.SetActive(false);
-            Time.timeScale = 1f;
             moveScript.input = true;
-            Debug.Log("Timescale = 1");
+            Time.timeScale = 1f;
         }
         // If the PS4 controll-scheme is selected, the inputs will be configured for PS4.
         else if (pS4Activated)
         {
             Initialize();
             Debug.Log(moveScript.inputVertical + " " + moveScript.inputVertical.ToString());
-
             PS4ControlConfiguration();
             xboxActivated = false;
             controllerSetupUI.SetActive(false);
@@ -92,6 +95,7 @@ public class ControllerSetup : MonoBehaviour
         moveScript.inputHorizontal = xboxHorizontal;
         cameraScript.inputRSVertical = xboxRSVertical;
         cameraScript.inputRSHorizontal = xboxRSHorizontal;
+        pauseScript.confirmXbox = xboxConfirm;
     }
 
     public void PS4ControlConfiguration()
@@ -100,16 +104,19 @@ public class ControllerSetup : MonoBehaviour
         moveScript.inputHorizontal = ps4Horizontal;
         cameraScript.inputRSVertical = ps4RSVertical;
         cameraScript.inputRSHorizontal = ps4RSHorizontal;
+        pauseScript.confirmPS4 = PS4Confirm;
     }
 
     public void OnClickActivatePS4()
     {
         pS4Activated = true;
+        xboxActivated = false;
     }
 
     public void OnClickActivateXbox()
     {
         xboxActivated = true;
+        pS4Activated = false;
     }
 
     public void BackButton()
