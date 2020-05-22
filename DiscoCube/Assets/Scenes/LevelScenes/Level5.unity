@@ -414,7 +414,7 @@ PrefabInstance:
     - target: {fileID: 1768750177742123293, guid: b570223671f4b43498d9f070e86a64ff,
         type: 3}
       propertyPath: m_Name
-      value: Wall 2
+      value: Wall Invis
       objectReference: {fileID: 0}
     - target: {fileID: 1768750177742123294, guid: b570223671f4b43498d9f070e86a64ff,
         type: 3}
