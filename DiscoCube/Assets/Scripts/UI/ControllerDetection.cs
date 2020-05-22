@@ -24,9 +24,9 @@ public class ControllerDetection : MonoBehaviour
    
     private void Awake()
     {
-        //Checks if the loaded scene is the first level of the game.
-        if (SceneManager.GetActiveScene().name == "Level1")
+        if(SceneManager.GetActiveScene().name =="Jonas Tutorial")
             DetectIfControllerIsConnected();
+        //Checks if the loaded scene is the first level of the game and if the tutorial is skipped.
         //If an input device has been chosen in Levl1, then it shall keep displaying in the following levels.
         else if (SceneManager.GetActiveScene().name != "Level1" || SceneManager.GetActiveScene().name != "MainMenu")
         {
