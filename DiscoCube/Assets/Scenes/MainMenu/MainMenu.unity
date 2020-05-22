@@ -2673,7 +2673,7 @@ PrefabInstance:
     - target: {fileID: 7853452672682805186, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}
       propertyPath: levelToLoad
-      value: Level1
+      value: Jonas Tutorial
       objectReference: {fileID: 0}
     - target: {fileID: 7853452672682805186, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}

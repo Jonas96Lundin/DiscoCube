@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using System.Threading;
 using UnityEngine.SceneManagement;
 
@@ -30,6 +31,9 @@ public class WinTrigger : MonoBehaviour
 
     [SerializeField]
     ColorManager.LevelColors winColor;
+
+    [SerializeField]
+    GameObject firstButtonSelected;
 
 
 
@@ -76,6 +80,10 @@ public class WinTrigger : MonoBehaviour
         {
             endPos = transform.position + endPosOrientation;
             isWinning = true;
+            //Clear selected object.
+            EventSystem.current.SetSelectedGameObject(null);
+            //Set a new object
+            EventSystem.current.SetSelectedGameObject(firstButtonSelected);
         }
         if (isWinning)
         {            
@@ -99,7 +107,6 @@ public class WinTrigger : MonoBehaviour
                 animationDelay = 0;
             }
         }
-
     }
 
     private void DenyMovement()
@@ -128,5 +135,7 @@ public class WinTrigger : MonoBehaviour
     public void Win()
     {
         completeLevelUI.SetActive(true);
+       
+        
     }
 }

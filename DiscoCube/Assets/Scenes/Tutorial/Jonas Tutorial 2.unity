@@ -755,6 +755,21 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7995789786763071316, guid: f2f4f87d6d224a2499e9da827fae442c,
+        type: 3}
+      propertyPath: firstButtonSelected
+      value: 
+      objectReference: {fileID: 676681649}
+    - target: {fileID: 7995789786763071316, guid: f2f4f87d6d224a2499e9da827fae442c,
+        type: 3}
+      propertyPath: completeLevelUI
+      value: 
+      objectReference: {fileID: 1132929032}
+    - target: {fileID: 7995789786763071316, guid: f2f4f87d6d224a2499e9da827fae442c,
+        type: 3}
+      propertyPath: winColor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8159917135253647475, guid: f2f4f87d6d224a2499e9da827fae442c,
         type: 3}
       propertyPath: currentWinningColor
@@ -763,7 +778,7 @@ PrefabInstance:
     - target: {fileID: 8159917135253647475, guid: f2f4f87d6d224a2499e9da827fae442c,
         type: 3}
       propertyPath: currentGlowingColorChoice
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2f4f87d6d224a2499e9da827fae442c, type: 3}
@@ -991,6 +1006,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
+--- !u!1 &676681649 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 422283911, guid: b533a8711f80f4b41bb4b713fe002aad,
+    type: 3}
+  m_PrefabInstance: {fileID: 676681648}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &740919238
 GameObject:
   m_ObjectHideFlags: 0
@@ -1390,6 +1411,11 @@ PrefabInstance:
       propertyPath: img
       value: 
       objectReference: {fileID: 1931031133}
+    - target: {fileID: 7853452672682805186, guid: a5dc982d3dfea314d8f44a066ee98868,
+        type: 3}
+      propertyPath: levelToLoad
+      value: Level1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5dc982d3dfea314d8f44a066ee98868, type: 3}
 --- !u!1 &1130858949 stripped

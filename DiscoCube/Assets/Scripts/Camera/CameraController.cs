@@ -37,12 +37,13 @@ public class CameraController : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0) || Input.GetButtonDown("ActivateCamera"))
         {
+            Debug.Log("Freelook = " + freelookActivated);
             freelookActivated = true;
             localRotation = offset;
         }
-        else if(Input.GetMouseButtonUp(1) || Input.GetMouseButtonUp(0))
+        else if(Input.GetMouseButtonUp(1) || Input.GetMouseButtonUp(0) || Input.GetButtonUp("ActivateCamera"))
         {
             freelookActivated = false;
             localRotation = offset;

@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu/MainMenu.unity
     guid: 538d1820aa8219b4d92ae1b4196b3074
   - enabled: 1
+    path: Assets/Scenes/Tutorial/Jonas Tutorial.unity
+    guid: c828ac30ec573e144b0e5b9a9f4103f5
+  - enabled: 1
+    path: Assets/Scenes/Tutorial/Jonas Tutorial 2.unity
+    guid: 003f208c405fd2e4eb6e92351e01773d
+  - enabled: 1
     path: Assets/Scenes/LevelScenes/Level1.unity
     guid: b40c638bfe5e2964d8c81183b169c34b
   - enabled: 1
@@ -17,4 +23,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LevelScenes/Level3.unity
     guid: 85d403c58565193489ac8f1a2f865218
+  - enabled: 1
+    path: Assets/Scenes/Tutorial/Jonas Tutorial 3 Wall.unity
+    guid: 9f33c9d520178f94dacb223eca9eee6f
+  - enabled: 1
+    path: Assets/Scenes/LevelScenes/Level4.unity
+    guid: 174748b5ab6bf714c95924f18b569e70
+  - enabled: 1
+    path: Assets/Scenes/LevelScenes/Level5.unity
+    guid: d80472d7e1c06104f9312bf2e48d991a
+  - enabled: 1
+    path: Assets/Scenes/LevelScenes/Level6.unity
+    guid: c93956bcd9663d8458e40a78f8387f17
+  - enabled: 1
+    path: Assets/Scenes/LevelScenes/Level7.unity
+    guid: 738458d0ead369746a8d33858ec902f9
+  - enabled: 1
+    path: Assets/Scenes/Tutorial/Jonas Tutorial 4 Teleport.unity
+    guid: fe7982b659684254e8d430ab03b9e9ac
   m_configObjects: {}

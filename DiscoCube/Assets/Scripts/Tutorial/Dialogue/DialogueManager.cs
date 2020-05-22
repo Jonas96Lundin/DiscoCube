@@ -27,6 +27,18 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
+    private void Update()
+    {
+        if (Input.anyKeyDown && !Input.GetKeyDown(KeyCode.Mouse0)/*GetKeyDown(KeyCode.Return)*/)
+        {
+            DisplayNextSentence();
+        }
+        if(sentences.Count > 0)
+        {
+            CountUpTimer.IsCounting = false;
+        }
+    }
+
     /// <summary>
     /// Start the dialogue.
     /// Method by: Jonas
@@ -35,6 +47,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         CountUpTimer.IsCounting = false;
+        FindObjectOfType<MovementScript>().canMove = false;
 
         nameText.text = dialogue.name;
 
@@ -106,6 +119,7 @@ public class DialogueManager : MonoBehaviour
 
         }
         CountUpTimer.IsCounting = true;
+        FindObjectOfType<MovementScript>().canMove = true;
         wrongColorTutorial.SetActive(true);
         FindObjectOfType<AudioManager>().Stop("SenseiTalkBitDemon");
 

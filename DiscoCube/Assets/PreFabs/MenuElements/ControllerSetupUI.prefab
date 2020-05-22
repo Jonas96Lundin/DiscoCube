@@ -385,7 +385,7 @@ GameObject:
   - component: {fileID: 5134001136435901864}
   - component: {fileID: 5134001136435901865}
   m_Layer: 5
-  m_Name: Text
+  m_Name: XboxOneText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -449,7 +449,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Xbox
+  m_Text: 'Xbox One
 
 '
 --- !u!1 &5134001136558755712
@@ -537,7 +537,7 @@ GameObject:
   - component: {fileID: 5134001136983788993}
   - component: {fileID: 5134001136983788994}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Ps4Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -689,11 +689,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_Mode: 4
+    m_SelectOnUp: {fileID: 5134001137688409742}
+    m_SelectOnDown: {fileID: 5134001137688409742}
+    m_SelectOnLeft: {fileID: 5134001137647088939}
+    m_SelectOnRight: {fileID: 5134001137647088939}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -716,7 +716,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1461711404}
         m_MethodName: OnClickActivateXbox
         m_Mode: 1
         m_Arguments:
@@ -801,13 +801,14 @@ GameObject:
   - component: {fileID: 5134001137358170921}
   - component: {fileID: 5134001137358170922}
   - component: {fileID: 5134001137358170923}
+  - component: {fileID: 1461711404}
   m_Layer: 5
   m_Name: ControllerSetupUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &5134001137358170920
 RectTransform:
   m_ObjectHideFlags: 0
@@ -888,6 +889,22 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1461711404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5134001137358170925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b020c5b4bbe64d64a819296ca52bf980, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controllerSetupUI: {fileID: 5134001137358170925}
+  menuFirstButton: {fileID: 5134001137315717498}
+  xboxActivated: 0
+  pS4Activated: 0
 --- !u!1 &5134001137647088941
 GameObject:
   m_ObjectHideFlags: 0
@@ -975,11 +992,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_Mode: 4
+    m_SelectOnUp: {fileID: 5134001137688409742}
+    m_SelectOnDown: {fileID: 5134001137688409742}
+    m_SelectOnLeft: {fileID: 5134001137315717496}
+    m_SelectOnRight: {fileID: 5134001137315717496}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -1002,7 +1019,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1461711404}
         m_MethodName: OnClickActivatePS4
         m_Mode: 1
         m_Arguments:
@@ -1100,9 +1117,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_Mode: 4
+    m_SelectOnUp: {fileID: 5134001137315717496}
+    m_SelectOnDown: {fileID: 5134001137315717496}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
@@ -1126,4 +1143,15 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5134001137688409741}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1461711404}
+        m_MethodName: BackButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

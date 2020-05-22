@@ -11,6 +11,9 @@ public class Teleport : MonoBehaviour
     RotatingLevelScript rotateScript;
     MovementScript movementScript;
     public bool triggerActivated;
+    enum TeleportColors { teal, green, yellow, blue, purple, red};
+    [SerializeField]
+    TeleportColors teleportToColor;
 
     private void Start()
     {
@@ -28,13 +31,30 @@ public class Teleport : MonoBehaviour
     {
         if (triggerActivated && movementScript.moving == false)
         {
-            rotateScript.rotateToColor = "red";
-            if (rotateScript.cube.transform.rotation == Quaternion.Euler(180, 180, 0))
+
+            switch (teleportToColor)
             {
-                player.transform.position = teleportTarget.transform.position;
-                triggerActivated = false;
+                case TeleportColors.red:
+                    rotateScript.rotateToColor = "red";
+                    if (rotateScript.cube.transform.rotation == Quaternion.Euler(180, 180, 0))
+                    {
+                        player.transform.position = teleportTarget.transform.position;
+                        triggerActivated = false;
+                    }
+                    center.transform.LeanSetLocalPosY(-12);
+                    break;
+                case TeleportColors.teal:
+                    rotateScript.rotateToColor = "teal";
+                    if (rotateScript.cube.transform.rotation == Quaternion.Euler(0, 0, 0))
+                    {
+                        player.transform.position = teleportTarget.transform.position;
+                        triggerActivated = false;
+                    }
+                    center.transform.LeanSetLocalPosY(0);
+                    break;
+
             }
-            center.transform.LeanSetLocalPosY(-12);
+
         }
     }
 }

@@ -36,6 +36,7 @@ public class MovementScript : MonoBehaviour
 
     public bool input = true;
     public bool moving = false;
+    public bool canMove = true;
     private Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
 
     private void Start()
@@ -58,7 +59,7 @@ public class MovementScript : MonoBehaviour
         }
 
         //Movement
-        if (input == true && inputDelay >= 0.25)
+        if (input == true && inputDelay >= 0.25 && canMove == true)
         {
             //TODO: Maybe find a way so that Up is not allways dominant when multiple keys are pressed down at the same time.
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Vertical") > 0 || Input.GetAxis(inputVertical) > 0)
