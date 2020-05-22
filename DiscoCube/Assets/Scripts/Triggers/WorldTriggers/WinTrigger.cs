@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
-    
-    /// <summary>
-    /// This is NOT only a trigger.
-    /// </summary>
+using UnityEngine.SceneManagement;
+
+/// <summary>
+/// This is NOT only a trigger.
+/// </summary>
 public class WinTrigger : MonoBehaviour
 {
     //TODO
@@ -32,6 +33,7 @@ public class WinTrigger : MonoBehaviour
 
 
 
+
     // Start is called before the first frame update
     public void Start()
     {
@@ -50,7 +52,7 @@ public class WinTrigger : MonoBehaviour
         currentWinningColor = colorManager.currentWinningColor.ToString();
 
         //Jonas
-        if (steppedOnGoalTrigger/* || goalSwitchScript.trigger*/)
+        if (steppedOnGoalTrigger)
         {
             if (colorManager.currentLevelColor == winColor && currentColor == currentWinningColor)
             {
@@ -117,7 +119,7 @@ public class WinTrigger : MonoBehaviour
     {
         //Jonas
         if (collision.gameObject.tag == "Goal")
-        {
+        {         
             steppedOnGoalTrigger = true;
             oldColor = currentColor;
         }
