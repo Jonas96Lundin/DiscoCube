@@ -39,7 +39,6 @@ public class CameraController : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(0) || Input.GetButtonDown("ActivateCamera"))
         {
-            Debug.Log("Freelook = " + freelookActivated);
             freelookActivated = true;
             localRotation = offset;
         }
