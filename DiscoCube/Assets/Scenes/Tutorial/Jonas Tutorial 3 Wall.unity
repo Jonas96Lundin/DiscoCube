@@ -308,6 +308,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &289244887 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7853452672682805186, guid: a5dc982d3dfea314d8f44a066ee98868,
+    type: 3}
+  m_PrefabInstance: {fileID: 1057421598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1caf91893a3b7344990de70e6de0777, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &380756527 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5616807922037369342, guid: 7e2830748bd5ebb4ca6b05f1e5a0d327,
@@ -821,6 +833,14 @@ PrefabInstance:
       propertyPath: timeCounter
       value: 
       objectReference: {fileID: 467147990}
+    - target: {fileID: 422283914, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 289244887}
+    - target: {fileID: 422283914, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextScene
+      objectReference: {fileID: 0}
     - target: {fileID: 666708395, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
       propertyPath: stepCounter
       value: 

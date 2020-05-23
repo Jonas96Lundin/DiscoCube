@@ -25,7 +25,6 @@ public class PauseMenu : MonoBehaviour
     Dropdown resolutionDropdown;
 
     Resolution[] resolutions;
-    AudioMixer audioMixer;
     StepCounter stepCounterScript;
     string mainMenu = "MainMenu";
 
@@ -86,7 +85,6 @@ public class PauseMenu : MonoBehaviour
 
     public void SetVolume(float volume)
     {
-        //audioMixer.SetFloat("volume", volume);
         AudioManager.instance.SetVolume(volume);
     }
 
@@ -163,7 +161,6 @@ public class PauseMenu : MonoBehaviour
         //Set a new object
         EventSystem.current.SetSelectedGameObject(pauseFirstButton);
     }
-
 
     public void ReturnToMainMenu()
     {
