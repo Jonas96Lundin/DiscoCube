@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// 
 /// </summary>
-public class MovementScript : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     [Header("Player Prefab:")]
     [SerializeField]
@@ -17,30 +17,27 @@ public class MovementScript : MonoBehaviour
 
     [SerializeField]
     GameObject center, right, left, up, down;
-
-    private Vector3 offset;
     
-    public WinTrigger winAnimation; // For the winning animation. /Jonas
-    //public GameObject rightEdge;
-    enum Direction { right, left, up, down};
-
+    WinTrigger winTrigger; // For the winning animation. /Jonas
     PauseMenu pauseMenu;
     StepCounter stepCounterScript;
 
-    int step = 9;
-
-    public string inputVertical, inputHorizontal; //Gives the ability to change the controller with the ControllerSetup script /Kristian.
-
-    public float speed = 0.01f;
-    float inputDelay = 5f;
-
-    public bool input = true;
-    public bool moving = false;
-    public bool canMove = true;
+    enum Direction { right, left, up, down};
     private Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
+
+    [HideInInspector]
+    public string inputVertical, inputHorizontal; //Gives the ability to change the controller with the ControllerSetup script /Kristian.
+    [HideInInspector]
+    public bool input = true, canMove = true, moving = false;
+    [HideInInspector]
+    public float speed = 0.01f;
+
+    float inputDelay = 5f;
+    int step = 9;
 
     private void Start()
     {
+        winTrigger = GetComponent<WinTrigger>();
         pauseMenu = FindObjectOfType<PauseMenu>();
         stepCounterScript = FindObjectOfType<StepCounter>();
         inputVertical = "Vertical";
@@ -50,7 +47,6 @@ public class MovementScript : MonoBehaviour
     void Update()
     {
         inputDelay += Time.deltaTime;
-        //TODO: May have to change the delaytimer, so the movement feels more responsive.
 
         //Stops movement if game is paused or freelook is activated
         if (pauseMenu.gameIsPaused || CameraController.freelookActivated)
@@ -61,7 +57,6 @@ public class MovementScript : MonoBehaviour
         //Movement
         if (input == true && inputDelay >= 0.25 && canMove == true)
         {
-            //TODO: Maybe find a way so that Up is not allways dominant when multiple keys are pressed down at the same time.
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetAxis("Vertical") > 0 || Input.GetAxis(inputVertical) > 0)
             {
                 if (CheckForObstacles(this.transform, Vector3.forward))
@@ -135,7 +130,7 @@ public class MovementScript : MonoBehaviour
     IEnumerator MoveUp()
     {
         moving = true;
-        for (int i = 0; i < 90 / step; i++)
+        for (int i = 0; i < 10; i++)
         {
             player.transform.RotateAround(up.transform.position, rotateUp, step);
             yield return new WaitForSeconds(speed);
@@ -150,7 +145,7 @@ public class MovementScript : MonoBehaviour
     IEnumerator MoveDown()
     {
         moving = true;
-        for (int i = 0; i < 90 / step; i++)
+        for (int i = 0; i < 10; i++)
         {
             player.transform.RotateAround(down.transform.position, rotateDown, step);
             yield return new WaitForSeconds(speed);
@@ -164,7 +159,7 @@ public class MovementScript : MonoBehaviour
     IEnumerator MoveRight()
     {
         moving = true;
-        for (int i = 0; i < 90 / step; i++)
+        for (int i = 0; i < 10; i++)
         {
             player.transform.RotateAround(right.transform.position, rotateRight, step);
             yield return new WaitForSeconds(speed);
@@ -178,7 +173,7 @@ public class MovementScript : MonoBehaviour
     IEnumerator MoveLeft()
     {
         moving = true;
-        for (int i = 0; i < 90 / step; i++)
+        for (int i = 0; i < 10; i++)
         {
             player.transform.RotateAround(left.transform.position, rotateLeft, step);
             yield return new WaitForSeconds(speed);
@@ -189,8 +184,7 @@ public class MovementScript : MonoBehaviour
         moving = false;
     }
 
-    //TEST: A trigger that changes the Vector3 values of the different directions.
-    //Reset all values on Empty Objects
+    //Reset all values on direction coorinates around the player cube, when rotation is complete.
     public void OnTriggerReset(GameObject center)
     {
         center.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -199,6 +193,6 @@ public class MovementScript : MonoBehaviour
         rotateRight = new Vector3(0, 0, -1);
         rotateLeft = new Vector3(0, 0, 1);
 
-        winAnimation.SetOrientation(new Vector3(0, -4, 0)); // Jonas test
+        //winTrigger.SetOrientation(new Vector3(0, -4, 0)); // Jonas test
     }
 }
