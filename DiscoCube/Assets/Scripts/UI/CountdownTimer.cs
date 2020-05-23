@@ -13,10 +13,13 @@ public class CountdownTimer : MonoBehaviour
     [HideInInspector]
     public bool isActive; // Jonas kod
 
+    PauseMenu pauseMenuScript;
+
     void Start()
     {
         isActive = true;
         currentTime = totalTime;
+        pauseMenuScript = FindObjectOfType<PauseMenu>();
     }
 
     void Update()
@@ -31,6 +34,7 @@ public class CountdownTimer : MonoBehaviour
             {
                 currentTime = 0;
                 isActive = false;
+                pauseMenuScript.Restart();
             }
         }
     }

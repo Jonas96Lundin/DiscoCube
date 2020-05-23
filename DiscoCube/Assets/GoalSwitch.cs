@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GoalSwitch : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class GoalSwitch : MonoBehaviour
     Material green, red;
     Material currentColor;
 
+    [SerializeField]
+    Text gate;
 
     void Start()
     {
@@ -22,14 +25,21 @@ public class GoalSwitch : MonoBehaviour
     {
         trigger = true;
         FindObjectOfType<AudioManager>().Play("Switch");
+        gate.text = "Goal Open";
     }
 
     void Update()
     {
+
         if (trigger)
         {
             currentColor = green;
             this.GetComponent<Renderer>().sharedMaterial = currentColor;
+            winTriggerScrippt.enabled = true;
+        }
+        else
+        {
+            winTriggerScrippt.enabled = false;
         }
     }
 }

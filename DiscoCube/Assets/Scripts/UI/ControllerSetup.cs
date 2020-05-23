@@ -11,7 +11,7 @@ using UnityEngine.EventSystems;
 
 public class ControllerSetup : MonoBehaviour
 {
-    MovementScript moveScript;
+    Movement moveScript;
     CameraController cameraScript;
 
     [SerializeField]
@@ -20,27 +20,27 @@ public class ControllerSetup : MonoBehaviour
     [SerializeField]
     GameObject menuFirstButton;
 
+    
 
     public bool xboxActivated, pS4Activated;
 
-    private string xboxVertical, xboxHorizontal, xboxRSVertical, xboxRSHorizontal, ps4Vertical, ps4Horizontal, ps4RSVertical, ps4RSHorizontal;
-
+    private string xboxVertical, xboxHorizontal, xboxRSVertical, xboxRSHorizontal;
+    private string ps4Vertical, ps4Horizontal, ps4RSVertical, ps4RSHorizontal;
     // Start is called before the first frame update
     void Start()
     {
         Time.timeScale = 0f;
         Initialize();
         moveScript.input = false;
-        //Clear selected object.
+        //Clear selected object in event system.
         EventSystem.current.SetSelectedGameObject(null);
-        //Set a new object
+        //Set a new object in event system.
         EventSystem.current.SetSelectedGameObject(menuFirstButton);
-
     }
 
     public void Initialize()
     {
-        moveScript = FindObjectOfType<MovementScript>();
+        moveScript = FindObjectOfType<Movement>();
         cameraScript = FindObjectOfType<CameraController>();
 
         // This assignes the controller-differences in input. Some inputs are the same between the
@@ -49,6 +49,7 @@ public class ControllerSetup : MonoBehaviour
         xboxHorizontal = "Xbox Horizontal";
         xboxRSVertical = "Xbox RS Vertical";
         xboxRSHorizontal = "Xbox RS Horizontal";
+        
 
         ps4Vertical = "PS4 Vertical";
         ps4Horizontal = "PS4 Horizontal";
@@ -62,22 +63,15 @@ public class ControllerSetup : MonoBehaviour
         // If the Xbox controll-scheme is selected, the inputs will be configured for Xbox.
         if (xboxActivated)
         {
-            Debug.Log("Xbox controller activated!");
             XboxControlConfiguration();
-            pS4Activated = false;
             controllerSetupUI.SetActive(false);
-            Time.timeScale = 1f;
             moveScript.input = true;
-            Debug.Log("Timescale = 1");
+            Time.timeScale = 1f;
         }
         // If the PS4 controll-scheme is selected, the inputs will be configured for PS4.
         else if (pS4Activated)
         {
-            Initialize();
-            Debug.Log(moveScript.inputVertical + " " + moveScript.inputVertical.ToString());
-
             PS4ControlConfiguration();
-            xboxActivated = false;
             controllerSetupUI.SetActive(false);
             moveScript.input = true;
             Time.timeScale = 1f;
@@ -105,11 +99,13 @@ public class ControllerSetup : MonoBehaviour
     public void OnClickActivatePS4()
     {
         pS4Activated = true;
+        xboxActivated = false;
     }
 
     public void OnClickActivateXbox()
     {
         xboxActivated = true;
+        pS4Activated = false;
     }
 
     public void BackButton()
