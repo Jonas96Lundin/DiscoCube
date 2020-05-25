@@ -112,7 +112,7 @@ public class WinTrigger : MonoBehaviour
     private void DenyMovement()
     {
         //Makes it impossible to move.
-        MovementScript ms = GetComponentInParent<MovementScript>();
+        Movement ms = GetComponentInParent<Movement>();
         ms.input = false;
     }
 
