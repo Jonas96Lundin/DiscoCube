@@ -280,11 +280,6 @@ PrefabInstance:
       propertyPath: completeLevelUI
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 1985119817349561235, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
-        type: 3}
-      propertyPath: winColor
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3483506591436698089, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
         type: 3}
       propertyPath: center
@@ -372,7 +367,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3483506591436698089, guid: 4eb4803cffc26ba41ac7059145cb6ce4, type: 3}
-    - {fileID: 598262174, guid: 4eb4803cffc26ba41ac7059145cb6ce4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4eb4803cffc26ba41ac7059145cb6ce4, type: 3}
 --- !u!1 &2209412162367555073 stripped
 GameObject:

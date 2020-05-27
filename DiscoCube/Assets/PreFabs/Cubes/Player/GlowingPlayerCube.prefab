@@ -512,7 +512,9 @@ GameObject:
   - component: {fileID: 7769596807035253440}
   - component: {fileID: 7769596807035253441}
   - component: {fileID: 7769596807035253469}
+  - component: {fileID: 598262174}
   - component: {fileID: 1985119817349561235}
+  - component: {fileID: 3483506591436698089}
   m_Layer: 0
   m_Name: GlowingPlayerCube
   m_TagString: Untagged
@@ -616,6 +618,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &598262174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769596807035253446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3642e0bf669be1843baaa075c9ce9784, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1985119817349561235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,6 +650,33 @@ MonoBehaviour:
     type: 3}
   winColor: 5
   firstButtonSelected: {fileID: 0}
+--- !u!114 &3483506591436698089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7769596807035253446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c53fd0c1aff91b48bd2a1ea91025f8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 7769596807035253446}
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  center: {fileID: 0}
+  right: {fileID: 0}
+  left: {fileID: 0}
+  up: {fileID: 0}
+  down: {fileID: 0}
+  winAnimation: {fileID: 1985119817349561235}
+  inputVertical: 
+  inputHorizontal: 
+  speed: 0.01
+  input: 1
+  moving: 0
 --- !u!1 &7769596807096492866
 GameObject:
   m_ObjectHideFlags: 0
