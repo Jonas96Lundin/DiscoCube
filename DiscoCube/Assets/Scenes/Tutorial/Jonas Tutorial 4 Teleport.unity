@@ -1482,6 +1482,7 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 339499711, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value:
@@ -1502,6 +1503,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: NextScene
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 56eae96... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
 =======
 >>>>>>> parent of 56eae96... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
     - target: {fileID: 666708395, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
@@ -1633,6 +1636,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 8337182992013840801, guid: b533a8711f80f4b41bb4b713fe002aad,
         type: 3}
       propertyPath: m_Sprite
@@ -1644,6 +1648,8 @@ PrefabInstance:
       propertyPath: m_Type
       value: 0
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 56eae96... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
 =======
 >>>>>>> parent of 56eae96... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
     - target: {fileID: 8337182992013840807, guid: b533a8711f80f4b41bb4b713fe002aad,
@@ -2344,6 +2350,7 @@ PrefabInstance:
       value: GameManager
       objectReference: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 5180308760715442669, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}
       propertyPath: mouseAndKeyboard
@@ -2359,6 +2366,8 @@ PrefabInstance:
       propertyPath: ps4
       value:
       objectReference: {fileID: 2109621718}
+=======
+>>>>>>> parent of 56eae96... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
 =======
 >>>>>>> parent of 56eae96... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
     - target: {fileID: 7853452672682805185, guid: a5dc982d3dfea314d8f44a066ee98868,
@@ -3219,6 +3228,7 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c53ff65758218e409fbbdd34dd8010f, type: 3}
 <<<<<<< HEAD
+<<<<<<< HEAD
 --- !u!114 &1647682084 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7853452672682805186, guid: a5dc982d3dfea314d8f44a066ee98868,
@@ -3231,6 +3241,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1caf91893a3b7344990de70e6de0777, type: 3}
   m_Name:
   m_EditorClassIdentifier:
+=======
+>>>>>>> parent of 56eae96... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
 =======
 >>>>>>> parent of 56eae96... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
 --- !u!1 &1662725127
