@@ -885,6 +885,7 @@ PrefabInstance:
       propertyPath: timeCounter
       value:
       objectReference: {fileID: 1878619234}
+<<<<<<< HEAD
     - target: {fileID: 339499711, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -893,6 +894,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ReturnToMainMenu
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 9fbacc1... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
     - target: {fileID: 422283914, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value:
@@ -905,6 +908,7 @@ PrefabInstance:
       propertyPath: stepCounter
       value:
       objectReference: {fileID: 1878619236}
+<<<<<<< HEAD
     - target: {fileID: 1286995426, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -913,6 +917,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Restart
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 9fbacc1... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
     - target: {fileID: 8337182991194996673, guid: b533a8711f80f4b41bb4b713fe002aad,
         type: 3}
       propertyPath: m_Name
