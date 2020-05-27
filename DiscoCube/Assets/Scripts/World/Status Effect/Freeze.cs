@@ -7,12 +7,12 @@ public class Freeze : MonoBehaviour
     public GameObject player;
     public Transform trap;
     public bool freezeTrapTriggerActivated;
-    MovementScript movementScript;
+    Movement movementScript;
     float freezeTimer = 0f;
 
     void Start()
     {
-        movementScript = FindObjectOfType<MovementScript>();
+        movementScript = FindObjectOfType<Movement>();
     }
 
     public void OnTriggerEnter(Collider other)
