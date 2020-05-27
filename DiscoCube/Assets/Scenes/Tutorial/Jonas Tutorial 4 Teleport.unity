@@ -1483,6 +1483,7 @@ PrefabInstance:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 339499711, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value:
@@ -1491,6 +1492,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ReturnToMainMenu
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 9fbacc1... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
 =======
 >>>>>>> parent of 9fbacc1... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
 =======
@@ -1513,6 +1516,7 @@ PrefabInstance:
       objectReference: {fileID: 467147991}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 1286995426, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value:
@@ -1521,6 +1525,8 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Restart
       objectReference: {fileID: 0}
+=======
+>>>>>>> parent of 9fbacc1... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
 =======
 >>>>>>> parent of 9fbacc1... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
 =======
@@ -2673,8 +2679,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cce59ef391837d94ba051888db6dd19e, type: 3}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_Name:
   m_EditorClassIdentifier:
+=======
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> parent of 9fbacc1... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
 =======
   m_Name: 
   m_EditorClassIdentifier: 

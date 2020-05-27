@@ -338,7 +338,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlowingPlayerCube
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     m_RemovedComponents: []
+=======
+    m_RemovedComponents:
+    - {fileID: 3483506591436698089, guid: 4eb4803cffc26ba41ac7059145cb6ce4, type: 3}
+>>>>>>> parent of 9fbacc1... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
   m_SourcePrefab: {fileID: 100100000, guid: 4eb4803cffc26ba41ac7059145cb6ce4, type: 3}
 --- !u!4 &2209412162367555077 stripped
 Transform:
