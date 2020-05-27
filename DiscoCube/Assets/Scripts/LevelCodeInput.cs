@@ -1,11 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class LevelCodeInput : MonoBehaviour
 {
     [SerializeField]
     SceneFader fader;
+    [SerializeField]
+    GameObject inputField;
+
+    void OnEnable()
+    {
+        //Clear selected object in event system.
+        EventSystem.current.SetSelectedGameObject(null);
+        //Set a new object in event system.
+        EventSystem.current.SetSelectedGameObject(inputField);
+    }
     public void CheckCode(string input)
     {
         switch (input.ToLower())

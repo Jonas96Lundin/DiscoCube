@@ -17,11 +17,6 @@ public class HighScore : MonoBehaviour
         SetStepHighScore(sc);
         SetTimeHighScore(ct);
     }
-    void Start()
-    {
-        
-    }
-
 
     public void Remove()
     {
@@ -34,13 +29,11 @@ public class HighScore : MonoBehaviour
 
         if (steps < PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "Steps", 99))
         {
-            Debug.Log("Stepcounter is: " + stepCounter.stepCounter + "(Inside if)");
             PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "Steps", steps);
             stepScore.text = "Steps: " + steps.ToString();
         }
         else
         {
-            Debug.Log("Stepcounter is: " + stepCounter.stepCounter + "(outside if)");
             stepScore.text = "Steps: " + PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "Steps").ToString();
         }
     }

@@ -4738,12 +4738,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104969818}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9cc1495b67f725d47981b545b46eca2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 1638669323}
+  inputField: {fileID: 1766156732}
 --- !u!1 &1124362081
 GameObject:
   m_ObjectHideFlags: 0
@@ -5619,6 +5620,7 @@ GameObject:
   - component: {fileID: 1418302739}
   - component: {fileID: 1418302741}
   - component: {fileID: 1418302740}
+  - component: {fileID: 1418302742}
   m_Layer: 5
   m_Name: CodeInputUI
   m_TagString: Untagged
@@ -5683,6 +5685,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1418302738}
   m_CullTransparentMesh: 0
+--- !u!114 &1418302742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418302738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc1495b67f725d47981b545b46eca2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fader: {fileID: 1638669323}
+  inputField: {fileID: 875232065}
 --- !u!1001 &1445023575
 PrefabInstance:
   m_ObjectHideFlags: 0
