@@ -272,6 +272,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae74a7e679e11847896cbd8abd8df34, type: 3}
+--- !u!114 &29594472 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5201819131150392485, guid: 3a32dbe811c360744880e9f8412d6336,
+    type: 3}
+  m_PrefabInstance: {fileID: 1564804420}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 408fa7f0da0c78b4e837c92219384809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &31793165 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e624bb57492e3404b856ccba8aede753,
@@ -1353,6 +1365,11 @@ PrefabInstance:
       propertyPath: firstButtonSelected
       value: 
       objectReference: {fileID: 676681649}
+    - target: {fileID: 7995789786763071316, guid: f2f4f87d6d224a2499e9da827fae442c,
+        type: 3}
+      propertyPath: winColor
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 8159917135253647475, guid: f2f4f87d6d224a2499e9da827fae442c,
         type: 3}
       propertyPath: currentWinningColor
@@ -1479,6 +1496,14 @@ PrefabInstance:
       propertyPath: timeCounter
       value: 
       objectReference: {fileID: 467147990}
+    - target: {fileID: 339499711, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 29594472}
+    - target: {fileID: 339499711, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ReturnToMainMenu
+      objectReference: {fileID: 0}
     - target: {fileID: 422283914, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1491,6 +1516,18 @@ PrefabInstance:
       propertyPath: stepCounter
       value: 
       objectReference: {fileID: 467147991}
+    - target: {fileID: 1196311847, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
+      propertyPath: gm
+      value: 
+      objectReference: {fileID: 1647682084}
+    - target: {fileID: 1286995426, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 29594472}
+    - target: {fileID: 1286995426, guid: b533a8711f80f4b41bb4b713fe002aad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Restart
+      objectReference: {fileID: 0}
     - target: {fileID: 8337182991194996673, guid: b533a8711f80f4b41bb4b713fe002aad,
         type: 3}
       propertyPath: m_Name
@@ -2608,18 +2645,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 598262172}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1368630823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1368630816}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cce59ef391837d94ba051888db6dd19e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1422079639
 PrefabInstance:
   m_ObjectHideFlags: 0

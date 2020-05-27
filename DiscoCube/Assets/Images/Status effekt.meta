@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:DiscoCube/Assets/Images/Status effekt.meta
 guid: d3fdbfa33a66dd94fb795779ba3369a0
+=======
+guid: 38ea6d999e7f2854ca01458446ac7d09
+>>>>>>> fdfe6f88e5e4c207177bd2e016fa5be425244628:DiscoCube/Assets/Scenes/End.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
