@@ -911,6 +911,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
     - target: {fileID: 7995789786763071316, guid: f2f4f87d6d224a2499e9da827fae442c,
         type: 3}
       propertyPath: completeLevelUI
@@ -921,6 +922,8 @@ PrefabInstance:
       propertyPath: firstButtonSelected
       value: 
       objectReference: {fileID: 1099031635}
+=======
+>>>>>>> parent of 9fbacc1... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
 =======
 >>>>>>> parent of 9fbacc1... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
     m_RemovedComponents: []
