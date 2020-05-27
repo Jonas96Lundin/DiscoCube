@@ -8089,6 +8089,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 3120411822061575296, guid: ae8142af9306d874aa5076f441aadd8b,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8fbe19e363d33844da3bab56aaec0385, type: 2}
     - target: {fileID: 4348271910687245177, guid: ae8142af9306d874aa5076f441aadd8b,
         type: 3}
       propertyPath: canvasText
