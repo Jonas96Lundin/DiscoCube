@@ -49,33 +49,6 @@ MonoBehaviour:
   currentWinningColor: 1
   currentGlowingColorChoice: 0
   isOnGround: 0
---- !u!114 &3834953149188625877
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2209412162367555073}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf1ad8d37ee76dc458527b268700cc57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 2209412162367555073}
-  obstacleLayer:
-    serializedVersion: 2
-    m_Bits: 1024
-  center: {fileID: 7874117756199988818}
-  right: {fileID: 7874117756038294985}
-  left: {fileID: 7874117754910565033}
-  up: {fileID: 7874117756418964641}
-  down: {fileID: 7874117756420595778}
-  inputVertical: 
-  inputHorizontal: 
-  input: 1
-  canMove: 1
-  moving: 0
-  speed: 0.01
 --- !u!1 &7874117754910565033
 GameObject:
   m_ObjectHideFlags: 0
@@ -370,16 +343,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlowingPlayerCube
       objectReference: {fileID: 0}
+<<<<<<< HEAD
     m_RemovedComponents:
     - {fileID: 3483506591436698089, guid: 4eb4803cffc26ba41ac7059145cb6ce4, type: 3}
     - {fileID: 598262174, guid: 4eb4803cffc26ba41ac7059145cb6ce4, type: 3}
+=======
+    m_RemovedComponents: []
+>>>>>>> parent of 56eae96... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
   m_SourcePrefab: {fileID: 100100000, guid: 4eb4803cffc26ba41ac7059145cb6ce4, type: 3}
---- !u!1 &2209412162367555073 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7769596807035253446, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
-    type: 3}
-  m_PrefabInstance: {fileID: 8465165888134378695}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2209412162367555077 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7769596807035253442, guid: 4eb4803cffc26ba41ac7059145cb6ce4,

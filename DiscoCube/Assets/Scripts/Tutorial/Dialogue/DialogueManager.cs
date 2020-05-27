@@ -47,7 +47,7 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(Dialogue dialogue)
     {
         CountUpTimer.IsCounting = false;
-        FindObjectOfType<Movement>().canMove = false;
+        FindObjectOfType<MovementScript>().canMove = false;
 
         nameText.text = dialogue.name;
 
@@ -119,7 +119,7 @@ public class DialogueManager : MonoBehaviour
 
         }
         CountUpTimer.IsCounting = true;
-        FindObjectOfType<Movement>().canMove = true;
+        FindObjectOfType<MovementScript>().canMove = true;
         wrongColorTutorial.SetActive(true);
         FindObjectOfType<AudioManager>().Stop("SenseiTalkBitDemon");
 

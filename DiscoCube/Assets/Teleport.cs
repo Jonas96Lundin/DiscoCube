@@ -9,7 +9,7 @@ public class Teleport : MonoBehaviour
     public Transform teleportTarget;
     public Transform teleportCollider;
     RotatingLevelScript rotateScript;
-    Movement movementScript;
+    MovementScript movementScript;
     public bool triggerActivated;
     enum TeleportColors { teal, green, yellow, blue, purple, red};
     [SerializeField]
@@ -18,7 +18,7 @@ public class Teleport : MonoBehaviour
     private void Start()
     {
         rotateScript = FindObjectOfType<RotatingLevelScript>();
-        movementScript = FindObjectOfType<Movement>();
+        movementScript = FindObjectOfType<MovementScript>();
     }
 
     public void OnTriggerEnter(Collider other)

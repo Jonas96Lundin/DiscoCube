@@ -18,13 +18,13 @@ public class FlipTrigger : MonoBehaviour
 
     bool triggerActivated;
 
-    Movement moveScript;
+    MovementScript moveScript;
     ColorManager colorScript;
     RotatingLevelScript rotateScript;
 
     void Start()
     {
-        moveScript = FindObjectOfType<Movement>();
+        moveScript = FindObjectOfType<MovementScript>();
         colorScript = FindObjectOfType<ColorManager>();
         rotateScript = FindObjectOfType<RotatingLevelScript>();
         savedTriggerColor1 = triggerColor1;

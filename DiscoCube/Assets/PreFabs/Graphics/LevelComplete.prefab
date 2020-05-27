@@ -26,16 +26,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 316969917}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 751777919197206256}
-  m_RootOrder: 0
+  m_Father: {fileID: 8337182992013840806}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 180, y: -4}
+  m_AnchoredPosition: {x: 180, y: -58}
   m_SizeDelta: {x: 344.5, y: 69.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &316969921
@@ -207,7 +207,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5201819131150392485, guid: 3a32dbe811c360744880e9f8412d6336,
+          type: 3}
         m_MethodName: ReturnToMainMenu
         m_Mode: 1
         m_Arguments:
@@ -352,7 +353,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7853452672682805186, guid: a5dc982d3dfea314d8f44a066ee98868,
+          type: 3}
         m_MethodName: NextScene
         m_Mode: 1
         m_Arguments:
@@ -814,7 +816,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 5201819131150392485, guid: 3a32dbe811c360744880e9f8412d6336,
+          type: 3}
         m_MethodName: Restart
         m_Mode: 1
         m_Arguments:
@@ -1195,6 +1198,7 @@ Transform:
   m_Father: {fileID: 8337182992013840806}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &2204499621213605471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1288,8 @@ MonoBehaviour:
   stepScore: {fileID: 3757173032573714351}
   timeScore: {fileID: 6863791272036670204}
   gm: {fileID: 0}
+=======
+>>>>>>> parent of 56eae96... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
 --- !u!1 &8165684762657089111
 GameObject:
   m_ObjectHideFlags: 0
@@ -1310,16 +1316,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8165684762657089111}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 751777919197206256}
-  m_RootOrder: 1
+  m_Father: {fileID: 8337182992013840806}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -115, y: -4}
+  m_AnchoredPosition: {x: -115, y: -58}
   m_SizeDelta: {x: 344.5, y: 69.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &511855409054153506
@@ -1506,8 +1512,13 @@ RectTransform:
   m_Children:
   - {fileID: 8337182992316406377}
   - {fileID: 1718265692351938472}
+<<<<<<< HEAD
   - {fileID: 751777919197206256}
   - {fileID: 2252780006840886487}
+=======
+  - {fileID: 940865817553395762}
+  - {fileID: 316969918}
+>>>>>>> parent of 56eae96... Merge branch 'master' of https://github.com/Jonas96Lundin/DiscoCube
   m_Father: {fileID: 8337182991194996685}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
