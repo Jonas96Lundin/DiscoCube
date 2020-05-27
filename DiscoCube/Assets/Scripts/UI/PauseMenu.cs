@@ -174,6 +174,7 @@ public class PauseMenu : MonoBehaviour
         guideMenuUI.SetActive(false);
         Time.timeScale = 1f;
         gameIsPaused = false;
+        AudioManager.instance.Stop("BGMusic");
         sceneFader.FadeTo(mainMenu);
     }
     public void QuitGame()
