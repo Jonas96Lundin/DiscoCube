@@ -13,11 +13,11 @@ public class RotatingLevelScript : MonoBehaviour
     public GameObject cube;
     public GameObject center;
     public string rotateToColor;
-    private MovementScript moveScript;
+    private Movement moveScript;
     private ColorManager colorManagerScript;
     private void Start()
     {
-        moveScript = FindObjectOfType<MovementScript>();
+        moveScript = FindObjectOfType<Movement>();
         colorManagerScript = FindObjectOfType<ColorManager>();
     }
     // Update is called once per frame
@@ -246,6 +246,6 @@ public class RotatingLevelScript : MonoBehaviour
         {
             
         }
-        FindObjectOfType<MovementScript>().OnTriggerReset(center);
+        FindObjectOfType<Movement>().OnTriggerReset(center);
     }
 }

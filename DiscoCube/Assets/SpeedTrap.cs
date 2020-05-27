@@ -7,12 +7,12 @@ public class SpeedTrap : MonoBehaviour
     public GameObject player;
     public Transform speedTrap;
     public bool speedTrapTriggerActivated;
-    MovementScript movementScript;
+    Movement movementScript;
     float timer = 0f;
 
     void Start()
     {
-        movementScript = FindObjectOfType<MovementScript>();   
+        movementScript = FindObjectOfType<Movement>();   
     }
     public void OnTriggerEnter(Collider other)
     {

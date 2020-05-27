@@ -11,7 +11,7 @@ using UnityEngine.EventSystems;
 
 public class ControllerSetup : MonoBehaviour
 {
-    MovementScript moveScript;
+    Movement moveScript;
     CameraController cameraScript;
     PauseMenu pauseScript;
 
@@ -41,7 +41,7 @@ public class ControllerSetup : MonoBehaviour
 
     public void Initialize()
     {
-        moveScript = FindObjectOfType<MovementScript>();
+        moveScript = FindObjectOfType<Movement>();
         cameraScript = FindObjectOfType<CameraController>();
         pauseScript = FindObjectOfType<PauseMenu>();
 
