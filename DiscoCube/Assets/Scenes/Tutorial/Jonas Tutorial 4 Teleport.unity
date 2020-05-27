@@ -1737,7 +1737,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &788308578
 PrefabInstance:
@@ -2329,7 +2329,7 @@ PrefabInstance:
     - target: {fileID: 3984638023785882261, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3984638023785882261, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}
@@ -2371,6 +2371,11 @@ PrefabInstance:
       propertyPath: img
       value: 
       objectReference: {fileID: 1931031133}
+    - target: {fileID: 7853452672682805185, guid: a5dc982d3dfea314d8f44a066ee98868,
+        type: 3}
+      propertyPath: musicStop
+      value: BGMusic
+      objectReference: {fileID: 0}
     - target: {fileID: 7853452672682805186, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}
       propertyPath: levelToLoad
@@ -2873,7 +2878,7 @@ PrefabInstance:
     - target: {fileID: 8030556913073582280, guid: a2b1a4096af739a42b92bbfdef5baf07,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8030556913073582280, guid: a2b1a4096af739a42b92bbfdef5baf07,
         type: 3}
@@ -3813,7 +3818,7 @@ PrefabInstance:
     - target: {fileID: 2117922199860957653, guid: 20b48f501e3e9084fbcfcd2a46ca562e,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2117922199860957653, guid: 20b48f501e3e9084fbcfcd2a46ca562e,
         type: 3}
