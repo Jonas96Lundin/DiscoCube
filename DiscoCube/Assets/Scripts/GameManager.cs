@@ -14,11 +14,22 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     SceneFader sceneFader;
     
+    public void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.F5))
+        {
+            NextScene();
+        }
+    }
     public void NextScene()
     {
         sceneFader.FadeTo(levelToLoad);
     }
-
+    public void ToMainMenu()
+    {
+        Debug.Log("Actually going into the method");
+        sceneFader.FadeTo("MainMenu");
+    }
     public void Quit()
     {
         Application.Quit();
