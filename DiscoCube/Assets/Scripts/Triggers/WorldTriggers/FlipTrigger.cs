@@ -10,7 +10,7 @@
 public class FlipTrigger : MonoBehaviour
 {
     [SerializeField]
-    GameObject triggerGameObject, center;
+    GameObject center;
 
     [SerializeField]
     public string triggerColor1, triggerColor2;
