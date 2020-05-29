@@ -3429,6 +3429,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7995789786763071316, guid: f2f4f87d6d224a2499e9da827fae442c,
+        type: 3}
+      propertyPath: winColor
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995789786763071316, guid: f2f4f87d6d224a2499e9da827fae442c,
+        type: 3}
+      propertyPath: completeLevelUI
+      value: 
+      objectReference: {fileID: 1132929032}
     - target: {fileID: 8159917135253647475, guid: f2f4f87d6d224a2499e9da827fae442c,
         type: 3}
       propertyPath: currentWinningColor
@@ -11313,6 +11323,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 395461289, guid: 3a32dbe811c360744880e9f8412d6336, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5201819129159268363, guid: 3a32dbe811c360744880e9f8412d6336,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -15695,6 +15709,11 @@ PrefabInstance:
       propertyPath: teleportTarget
       value: 
       objectReference: {fileID: 44677216}
+    - target: {fileID: 1077874439827675984, guid: f7d3194de6386734aa4b922ee2bec836,
+        type: 3}
+      propertyPath: teleportToColor
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1077874439827675985, guid: f7d3194de6386734aa4b922ee2bec836,
         type: 3}
       propertyPath: m_LocalPosition.x
