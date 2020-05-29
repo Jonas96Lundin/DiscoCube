@@ -15,8 +15,9 @@ public class Movement : MonoBehaviour
     [SerializeField]
     LayerMask obstacleLayer;
 
+    public GameObject center;
     [SerializeField]
-    GameObject center, right, left, up, down;
+    GameObject right, left, up, down;
     
     WinTrigger winTrigger; // For the winning animation. /Jonas
     PauseMenu pauseMenu;

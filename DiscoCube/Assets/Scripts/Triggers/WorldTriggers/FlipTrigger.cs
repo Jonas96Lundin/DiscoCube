@@ -10,9 +10,6 @@
 public class FlipTrigger : MonoBehaviour
 {
     [SerializeField]
-    GameObject center;
-
-    [SerializeField]
     public string triggerColor1, triggerColor2;
     string savedTriggerColor1, savedTriggerColor2, oldLevelColor;
 
@@ -30,6 +27,7 @@ public class FlipTrigger : MonoBehaviour
         savedTriggerColor1 = triggerColor1;
         savedTriggerColor2 = triggerColor2;
         oldLevelColor = colorScript.currentLevelColor.ToString();
+        
     }
 
 
@@ -58,12 +56,12 @@ public class FlipTrigger : MonoBehaviour
         if (colorScript.currentLevelColor.ToString() == triggerColor1)
         {
             rotateScript.rotateToColor = triggerColor2;
-            moveScript.OnTriggerReset(center);   
+            moveScript.OnTriggerReset(moveScript.center);   
         }
         else if(colorScript.currentLevelColor.ToString() == triggerColor2)
         {
             rotateScript.rotateToColor = triggerColor1;
-            moveScript.OnTriggerReset(center);
+            moveScript.OnTriggerReset(moveScript.center);
         }
         triggerActivated = false;
         
