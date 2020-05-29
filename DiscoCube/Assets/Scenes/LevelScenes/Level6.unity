@@ -1385,7 +1385,7 @@ PrefabInstance:
     - target: {fileID: 8337182992013840807, guid: b533a8711f80f4b41bb4b713fe002aad,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8337182992316406382, guid: b533a8711f80f4b41bb4b713fe002aad,
         type: 3}
@@ -1513,6 +1513,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelCodeImage
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464147148687966264, guid: 414d2f4616a65154fb30c0bfdcab8594,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.9098039
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464147148687966264, guid: 414d2f4616a65154fb30c0bfdcab8594,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464147148687966264, guid: 414d2f4616a65154fb30c0bfdcab8594,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3464147148687966264, guid: 414d2f4616a65154fb30c0bfdcab8594,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4808550626369213914, guid: 414d2f4616a65154fb30c0bfdcab8594,
         type: 3}

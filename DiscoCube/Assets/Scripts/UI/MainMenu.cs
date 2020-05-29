@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
 
     public static bool UIExtraMenuActive;
     [SerializeField]
-    GameObject settingsMenuUI, guideMenuUI, codeInputUI;
+    GameObject settingsMenuUI, guideMenuUI, codeInputUI, quitMenuUI;
     [SerializeField]
     Dropdown resolutionDropdown;
     Resolution[] resolutions;
@@ -83,6 +83,12 @@ public class MainMenu : MonoBehaviour
         codeInputUI.SetActive(true);
     }
 
+    public void QuitMenu()
+    {
+        UIExtraMenuActive = true;
+        quitMenuUI.SetActive(true);
+    }
+
     public void GuideMenuReturn()
     {
         UIExtraMenuActive = false;
@@ -99,5 +105,11 @@ public class MainMenu : MonoBehaviour
     {
         UIExtraMenuActive = false;
         codeInputUI.SetActive(false);
+    }
+
+    public void QuitMenuReturn()
+    {
+        UIExtraMenuActive = false;
+        quitMenuUI.SetActive(false);
     }
 }

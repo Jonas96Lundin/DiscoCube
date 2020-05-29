@@ -95,12 +95,10 @@ public class DialogueManager : MonoBehaviour
                     FindObjectOfType<AudioManager>().Play("SenseiTalk");
                 }
                 soundCounter++;
-
             }
             else
             {
                 FindObjectOfType<AudioManager>().Play("SenseiTalkBitDemon");
-
             }
             dialogueText.text += letter;
             yield return null;
@@ -121,7 +119,9 @@ public class DialogueManager : MonoBehaviour
         CountUpTimer.IsCounting = true;
         FindObjectOfType<Movement>().canMove = true;
         wrongColorTutorial.SetActive(true);
+        StopAllCoroutines();
         FindObjectOfType<AudioManager>().Stop("SenseiTalkBitDemon");
+        FindObjectOfType<AudioManager>().Stop("SenseiTalk");
 
     }
 }
