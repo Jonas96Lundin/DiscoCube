@@ -3932,6 +3932,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7995789786763071316, guid: f2f4f87d6d224a2499e9da827fae442c,
+        type: 3}
+      propertyPath: winColor
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7995789786763071316, guid: f2f4f87d6d224a2499e9da827fae442c,
+        type: 3}
+      propertyPath: completeLevelUI
+      value: 
+      objectReference: {fileID: 1132929032}
     - target: {fileID: 8159917135253647475, guid: f2f4f87d6d224a2499e9da827fae442c,
         type: 3}
       propertyPath: currentWinningColor
@@ -13864,19 +13874,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7830879402229090, guid: fdf0e6d6cf8ac924282836665deb0c9b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7830879402229090, guid: fdf0e6d6cf8ac924282836665deb0c9b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7830879402229090, guid: fdf0e6d6cf8ac924282836665deb0c9b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7830879402229090, guid: fdf0e6d6cf8ac924282836665deb0c9b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7830879402229090, guid: fdf0e6d6cf8ac924282836665deb0c9b, type: 3}
       propertyPath: m_RootOrder
@@ -13888,7 +13898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7830879402229090, guid: fdf0e6d6cf8ac924282836665deb0c9b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 7830879402229090, guid: fdf0e6d6cf8ac924282836665deb0c9b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -14754,6 +14764,11 @@ PrefabInstance:
       propertyPath: teleportTarget
       value: 
       objectReference: {fileID: 44677216}
+    - target: {fileID: 1077874439827675984, guid: f7d3194de6386734aa4b922ee2bec836,
+        type: 3}
+      propertyPath: teleportToColor
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1077874439827675985, guid: f7d3194de6386734aa4b922ee2bec836,
         type: 3}
       propertyPath: m_LocalPosition.x
