@@ -8,12 +8,16 @@ using UnityEngine;
 public class StartTutorialDialogue : MonoBehaviour
 {
     // Start is called before the first frame update
-
-    void Start()
+    bool isStarted;
+    void Update()
     {
-        Debug.Log("START TUTORIAL TRIGGERED");
-        FindObjectOfType<ScaleTween>().ScaleUp();
-        FindObjectOfType<DialogueTrigger>().TriggerDialogue();
+        if (!isStarted)
+        {
+            Debug.Log("START TUTORIAL TRIGGERED");
+            FindObjectOfType<ScaleTween>().ScaleUp();
+            FindObjectOfType<DialogueTrigger>().TriggerDialogue();
+            isStarted = true;
+        }
     }
 
 

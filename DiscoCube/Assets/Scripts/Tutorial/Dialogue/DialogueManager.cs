@@ -120,8 +120,8 @@ public class DialogueManager : MonoBehaviour
         FindObjectOfType<Movement>().canMove = true;
         wrongColorTutorial.SetActive(true);
         StopAllCoroutines();
-        FindObjectOfType<AudioManager>().Stop("SenseiTalkBitDemon");
-        FindObjectOfType<AudioManager>().Stop("SenseiTalk");
+        //FindObjectOfType<AudioManager>().Stop("SenseiTalkBitDemon");
+        //FindObjectOfType<AudioManager>().Stop("SenseiTalk");
 
     }
 }
