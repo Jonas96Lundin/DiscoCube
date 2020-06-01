@@ -27,7 +27,7 @@ public class Movement : MonoBehaviour
     private Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
 
     [HideInInspector]
-    public string inputVertical, inputHorizontal; //Gives the ability to change the controller with the ControllerSetup script /Kristian.
+    public static string inputVertical, inputHorizontal; //Gives the ability to change the controller with the ControllerSetup script /Kristian.
     [HideInInspector]
     public bool input = true, canMove = true, moving = false;
     [HideInInspector]
@@ -41,8 +41,11 @@ public class Movement : MonoBehaviour
         winTrigger = GetComponent<WinTrigger>();
         pauseMenu = FindObjectOfType<PauseMenu>();
         stepCounterScript = FindObjectOfType<StepCounter>();
-        inputVertical = "Vertical";
-        inputHorizontal = "Horizontal";
+        if (!ControllerSetup.controllerSelected)
+        {
+            inputVertical = "Vertical";
+            inputHorizontal = "Horizontal";
+        }
     }
 
     void Update()

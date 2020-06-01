@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
     float mouseSensitivity, scrollSensitivity, orbitDampening, scrollDampening;
     private float cameraDistance = 50f;
 
-    public string inputRSVertical, inputRSHorizontal;
+    public static string inputRSVertical, inputRSHorizontal;
 
     public static bool freelookActivated = false;
 
@@ -31,8 +31,11 @@ public class CameraController : MonoBehaviour
         this.cameraTransform = this.transform;
         this.levelCenter = this.levelCenter.transform;
         localRotation = offset;
-        inputRSVertical = "Xbox RS Vertical";
-        inputRSHorizontal = "Xbox RS Horizontal";
+        if (!ControllerSetup.controllerSelected)
+        {
+            inputRSVertical = "Xbox RS Vertical";
+            inputRSHorizontal = "Xbox RS Horizontal";
+        }
     }
 
     private void LateUpdate()
