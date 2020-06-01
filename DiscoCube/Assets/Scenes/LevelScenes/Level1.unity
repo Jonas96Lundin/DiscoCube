@@ -526,8 +526,6 @@ MonoBehaviour:
   scrollSensitivity: 2
   orbitDampening: 10
   scrollDampening: 6
-  inputRSVertical: 
-  inputRSHorizontal: 
 --- !u!114 &526322255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1131,6 +1129,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20b48f501e3e9084fbcfcd2a46ca562e, type: 3}
+--- !u!1 &738437668 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2117922199860957649, guid: 20b48f501e3e9084fbcfcd2a46ca562e,
+    type: 3}
+  m_PrefabInstance: {fileID: 738437667}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &740919238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2494,5 +2498,30 @@ PrefabInstance:
       propertyPath: levelToLoad
       value: Level2
       objectReference: {fileID: 0}
+    - target: {fileID: 8911818814733802723, guid: a5dc982d3dfea314d8f44a066ee98868,
+        type: 3}
+      propertyPath: controllerSelectionOverlay
+      value: 
+      objectReference: {fileID: 738437668}
+    - target: {fileID: 8911818814733802723, guid: a5dc982d3dfea314d8f44a066ee98868,
+        type: 3}
+      propertyPath: controllerSetupUI
+      value: 
+      objectReference: {fileID: 1461711403}
+    - target: {fileID: 8911818814733802723, guid: a5dc982d3dfea314d8f44a066ee98868,
+        type: 3}
+      propertyPath: mouseAndKeyboard
+      value: 
+      objectReference: {fileID: 1003663137}
+    - target: {fileID: 8911818814733802723, guid: a5dc982d3dfea314d8f44a066ee98868,
+        type: 3}
+      propertyPath: xbox
+      value: 
+      objectReference: {fileID: 1892361502}
+    - target: {fileID: 8911818814733802723, guid: a5dc982d3dfea314d8f44a066ee98868,
+        type: 3}
+      propertyPath: ps4
+      value: 
+      objectReference: {fileID: 472036777}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5dc982d3dfea314d8f44a066ee98868, type: 3}

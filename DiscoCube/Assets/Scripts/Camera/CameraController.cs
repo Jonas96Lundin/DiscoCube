@@ -4,8 +4,8 @@
 /// This script enables the player to activate and subsequently take control of the games camera.
 /// This will be activated/deactivated with a button press from the player at any time during the game.
 /// 
-/// Owner: Jonas
-/// Code by: Krisitan
+/// Created by: Jonas
+/// Contribution by: Krisitan
 /// </summary>
 
 public class CameraController : MonoBehaviour
@@ -22,7 +22,7 @@ public class CameraController : MonoBehaviour
     float mouseSensitivity, scrollSensitivity, orbitDampening, scrollDampening;
     private float cameraDistance = 50f;
 
-    public string inputRSVertical, inputRSHorizontal;
+    public static string inputRSVertical, inputRSHorizontal;
 
     public static bool freelookActivated = false;
 
@@ -31,8 +31,11 @@ public class CameraController : MonoBehaviour
         this.cameraTransform = this.transform;
         this.levelCenter = this.levelCenter.transform;
         localRotation = offset;
-        inputRSVertical = "Xbox RS Vertical";
-        inputRSHorizontal = "Xbox RS Horizontal";
+        if (!ControllerSetup.controllerSelected)
+        {
+            inputRSVertical = "Xbox RS Vertical";
+            inputRSHorizontal = "Xbox RS Horizontal";
+        }
     }
 
     private void LateUpdate()
@@ -58,9 +61,7 @@ public class CameraController : MonoBehaviour
                 localRotation.x += Input.GetAxis(inputRSHorizontal) * mouseSensitivity;
                 localRotation.y -= Input.GetAxis(inputRSVertical) * mouseSensitivity;
 
-                //TODO 
-                //Test if Mathf.Clamp works instead.
-                //Clamp the y rotation to horizon and not flipping over at the top.
+                //Makes sure that the camera will not flip around the level.
                 if (localRotation.y < 0f)
                     localRotation.y = 0f;
                 else if (localRotation.y > 90f)
@@ -74,7 +75,7 @@ public class CameraController : MonoBehaviour
 
         this.levelCenter.rotation = Quaternion.Lerp(this.levelCenter.rotation, tempQuaterion, Time.deltaTime * orbitDampening);
         
-        //Optimization: Makes it so that the process doesn't have to be called if there are no changes.
+        
         if(this.cameraTransform.localPosition.z != this.cameraDistance * -1f)
         {
             this.cameraTransform.localPosition = new Vector3(0f, 0f, Mathf.Lerp(this.cameraTransform.localPosition.z, this.cameraDistance * -1f, Time.deltaTime * scrollDampening));

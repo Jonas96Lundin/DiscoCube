@@ -1,9 +1,15 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// 
+/// This script handles all the movement of the Player Cube.
+///
+/// The Movement is dependent on assigned coordinates around the cube that is then used to RotateAround.
+///
+/// The movement itself is not dependent on the level, and can work on any surface or space.
+///
+/// Created by: Kristian
+/// Contribution by: Jonas, Raimon and David.
 /// </summary>
 public class Movement : MonoBehaviour
 {
@@ -18,8 +24,7 @@ public class Movement : MonoBehaviour
     public GameObject center;
     [SerializeField]
     GameObject right, left, up, down;
-    
-    WinTrigger winTrigger; // For the winning animation. /Jonas
+
     PauseMenu pauseMenu;
     StepCounter stepCounterScript;
 
@@ -27,7 +32,7 @@ public class Movement : MonoBehaviour
     private Vector3 rotateUp = new Vector3(1, 0, 0), rotateDown = new Vector3(-1, 0, 0), rotateRight = new Vector3(0, 0, -1), rotateLeft = new Vector3(0, 0, 1);
 
     [HideInInspector]
-    public string inputVertical, inputHorizontal; //Gives the ability to change the controller with the ControllerSetup script /Kristian.
+    public static string inputVertical, inputHorizontal; //Gives the ability to change the controller with the ControllerSetup script /Kristian.
     [HideInInspector]
     public bool input = true, canMove = true, moving = false;
     [HideInInspector]
@@ -38,11 +43,13 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
-        winTrigger = GetComponent<WinTrigger>();
         pauseMenu = FindObjectOfType<PauseMenu>();
         stepCounterScript = FindObjectOfType<StepCounter>();
-        inputVertical = "Vertical";
-        inputHorizontal = "Horizontal";
+        if (!ControllerSetup.controllerSelected)
+        {
+            inputVertical = "Vertical";
+            inputHorizontal = "Horizontal";
+        }
     }
 
     void Update()
@@ -64,7 +71,7 @@ public class Movement : MonoBehaviour
                 {
                     return;
                 }
-                
+
                 StartCoroutine("MoveUp");
                 input = false;
                 stepCounterScript.stepCounter++;
@@ -75,7 +82,7 @@ public class Movement : MonoBehaviour
                 {
                     return;
                 }
-                
+
                 StartCoroutine("MoveDown");
                 input = false;
                 stepCounterScript.stepCounter++;
@@ -128,6 +135,11 @@ public class Movement : MonoBehaviour
         return Physics.Raycast(transform.position, direction, out hit, 4f, obstacleLayer);
     }
 
+    /// <summary>
+    /// The different movement directions are divided into separate coroutines.
+    /// They all work the same except that they use unique coordinates that they use to RotateAround.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator MoveUp()
     {
         moving = true;
@@ -212,8 +224,6 @@ public class Movement : MonoBehaviour
         rotateDown = new Vector3(-1, 0, 0);
         rotateRight = new Vector3(0, 0, -1);
         rotateLeft = new Vector3(0, 0, 1);
-
-        //winTrigger.SetOrientation(new Vector3(0, -4, 0)); // Jonas test
     }
 
 }

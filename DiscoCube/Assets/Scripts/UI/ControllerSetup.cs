@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// This script enables the player to choose which input schematic they want to use.
@@ -7,29 +8,52 @@ using UnityEngine.EventSystems;
 /// and will display a prompt to choose a controller-scheme between Playstation 4's DualShock 4 or Xbox One's Controller.
 ///
 /// Owner: Kristian
+/// Contribution by: Raimon
 /// </summary>
 
 public class ControllerSetup : MonoBehaviour
 {
     Movement moveScript;
-    CameraController cameraScript;
 
     [SerializeField]
-    GameObject controllerSetupUI;
+    GameObject controllerSetupUI, controllerSelectionOverlay;
 
     [SerializeField]
     GameObject menuFirstButton;
 
-    
+    [SerializeField]
+    GameObject mouseAndKeyboard, xbox, ps4;
+    enum inputDevice { noController, xController, pController }
+    static inputDevice currentInputDevice;
 
-    public bool xboxActivated, pS4Activated;
+    public static bool xboxActivated, pS4Activated, controllerSelected = false, controllerDetected;
 
-    private string xboxVertical, xboxHorizontal, xboxRSVertical, xboxRSHorizontal;
-    private string ps4Vertical, ps4Horizontal, ps4RSVertical, ps4RSHorizontal;
-    // Start is called before the first frame update
-    void Start()
+    private static string xboxVertical, xboxHorizontal, xboxRSVertical, xboxRSHorizontal;
+    private static string ps4Vertical, ps4Horizontal, ps4RSVertical, ps4RSHorizontal;
+
+    string startScene = "Jonas Tutorial";
+
+    private void Awake()
     {
-        Time.timeScale = 0f;
+        if (SceneManager.GetActiveScene().name == startScene)
+        {
+            Time.timeScale = 0f;
+            DetectIfControllerIsConnected();
+            if (controllerDetected)
+            {
+                ControllerSelection();
+            }
+        }
+        //This prevents the controller detection from displaying on the main menu.
+        else
+            return;
+    }
+    /// <summary>
+    /// If a controller is detected, then the ControllerSelection Method runs the Initialize method and
+    /// stop the movement so that the Player Cube will not move during menu selection. 
+    /// </summary>
+    private void ControllerSelection()
+    {
         Initialize();
         moveScript.input = false;
         //Clear selected object in event system.
@@ -38,10 +62,16 @@ public class ControllerSetup : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(menuFirstButton);
     }
 
+    /// <summary>
+    /// Initialize activates the UI menu item.
+    /// 
+    /// It also assignes all the controller input variations their respective names.
+    /// </summary>
     public void Initialize()
     {
+        controllerSetupUI.SetActive(true);
+
         moveScript = FindObjectOfType<Movement>();
-        cameraScript = FindObjectOfType<CameraController>();
 
         // This assignes the controller-differences in input. Some inputs are the same between the
         // different controllers, but some are assigned to different functions on the controller.
@@ -58,15 +88,26 @@ public class ControllerSetup : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
+        DisplayCorrectInputOverlay();
+        
+        if (controllerSelected)
+        {
+            return;
+        }
+        
         // If the Xbox controll-scheme is selected, the inputs will be configured for Xbox.
         if (xboxActivated)
         {
             XboxControlConfiguration();
             controllerSetupUI.SetActive(false);
             moveScript.input = true;
+            controllerSelected = true;
+            xbox.SetActive(true);
+            currentInputDevice = inputDevice.xController;
             Time.timeScale = 1f;
+            
         }
         // If the PS4 controll-scheme is selected, the inputs will be configured for PS4.
         else if (pS4Activated)
@@ -74,26 +115,42 @@ public class ControllerSetup : MonoBehaviour
             PS4ControlConfiguration();
             controllerSetupUI.SetActive(false);
             moveScript.input = true;
+            controllerSelected = true;
+            ps4.SetActive(true);
+            currentInputDevice = inputDevice.pController;
             Time.timeScale = 1f;
         }
         else
             return;
-    }
 
+        if (controllerDetected == false)
+        {
+            // If no controller is connected, the game continues with mouse & keyboard settings.
+            mouseAndKeyboard.SetActive(true);
+            currentInputDevice = inputDevice.noController;
+            return;
+        }
+    }
+    /// <summary>
+    /// This method sends the Xbox configured controlls to both the Movement- and CameraControl-scripts.
+    /// </summary>
     public void XboxControlConfiguration()
     {
-        moveScript.inputVertical = xboxVertical;
-        moveScript.inputHorizontal = xboxHorizontal;
-        cameraScript.inputRSVertical = xboxRSVertical;
-        cameraScript.inputRSHorizontal = xboxRSHorizontal;
+        Movement.inputVertical = xboxVertical;
+        Movement.inputHorizontal = xboxHorizontal;
+        CameraController.inputRSVertical = xboxRSVertical;
+        CameraController.inputRSHorizontal = xboxRSHorizontal;
     }
 
+    /// <summary>
+    /// This method sends the Playstation configured controlls to both the Movement- and CameraControl-scripts.
+    /// </summary>
     public void PS4ControlConfiguration()
     {
-        moveScript.inputVertical = ps4Vertical;
-        moveScript.inputHorizontal = ps4Horizontal;
-        cameraScript.inputRSVertical = ps4RSVertical;
-        cameraScript.inputRSHorizontal = ps4RSHorizontal;
+        Movement.inputVertical = ps4Vertical;
+        Movement.inputHorizontal = ps4Horizontal;
+        CameraController.inputRSVertical = ps4RSVertical;
+        CameraController.inputRSHorizontal = ps4RSHorizontal;
     }
 
     public void OnClickActivatePS4()
@@ -112,6 +169,66 @@ public class ControllerSetup : MonoBehaviour
     {
         controllerSetupUI.SetActive(false);
         Time.timeScale = 1f;
+    }
+
+    /// <summary>
+    /// Makes sure that the correct input scheme is showing in the bottom left corner of the screen.
+    /// </summary>
+    private void DisplayCorrectInputOverlay() //Method by: Kristian.
+    {
+        //If an input device has been chosen in Level1, then it shall keep displaying in the following levels.
+        switch (currentInputDevice)
+        {
+            case inputDevice.noController:
+
+                mouseAndKeyboard.SetActive(true);
+
+                break;
+
+            case inputDevice.xController:
+
+                xbox.SetActive(true);
+                mouseAndKeyboard.SetActive(false);
+
+                break;
+
+
+            case inputDevice.pController:
+
+                ps4.SetActive(true);
+                mouseAndKeyboard.SetActive(false);
+                break;
+        }
+    }
+
+    /// <summary>
+    /// Both Playstation's and Xbox's controllers has unique names in Unity's internal controller detection.
+    /// This Method checks if any controller with those names are connected to the PC.
+    /// 
+    /// If any of them are connected, then they signal it by setting controllerDetected to true.
+    /// </summary>
+    private void DetectIfControllerIsConnected() //Method by: Kristian.
+    {
+        string[] names = Input.GetJoystickNames();
+        for (int x = 0; x < names.Length; x++)
+        {
+            print(names[x].Length);
+            if (names[x].Length == 19)//19 equals the number of characters in Playstation 4 controllers Unity name.
+            {
+                controllerDetected = true; 
+            }
+            else if (names[x].Length == 33)//33 equals the number of characters in Xbox One controllers Unity name.
+            {
+                controllerDetected = true;       
+            }
+            else
+            {
+                controllerDetected = false;
+                Time.timeScale = 1f;
+            }
+            return;
+        }
+        
     }
 
 }

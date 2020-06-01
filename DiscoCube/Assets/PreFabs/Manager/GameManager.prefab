@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1896340984}
   - component: {fileID: 1896340985}
   - component: {fileID: 1896340989}
-  - component: {fileID: 5180308760715442669}
+  - component: {fileID: 8911818814733802723}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1caf91893a3b7344990de70e6de0777, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: Level3
+  levelToLoad: Jonas Tutorial 2
   sceneFader: {fileID: 7853452672682805185}
 --- !u!114 &7853452672682805185
 MonoBehaviour:
@@ -142,8 +142,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 318568ade5fa6be43b0eb8b6e4bde861, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music: BGMusic
---- !u!114 &5180308760715442669
+  music: 
+--- !u!114 &8911818814733802723
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,10 +152,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3984638023785882263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3765e3ddb18ad047a6a50f65b3cbb54, type: 3}
+  m_Script: {fileID: 11500000, guid: b020c5b4bbe64d64a819296ca52bf980, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controllerSetupUI: {fileID: 0}
   controllerSelectionOverlay: {fileID: 0}
+  menuFirstButton: {fileID: 0}
   mouseAndKeyboard: {fileID: 0}
   xbox: {fileID: 0}
   ps4: {fileID: 0}

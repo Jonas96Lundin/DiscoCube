@@ -716,7 +716,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1461711404}
+      - m_Target: {fileID: 0}
         m_MethodName: OnClickActivateXbox
         m_Mode: 1
         m_Arguments:
@@ -801,7 +801,6 @@ GameObject:
   - component: {fileID: 5134001137358170921}
   - component: {fileID: 5134001137358170922}
   - component: {fileID: 5134001137358170923}
-  - component: {fileID: 1461711404}
   m_Layer: 5
   m_Name: ControllerSetupUI
   m_TagString: Untagged
@@ -889,22 +888,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1461711404
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5134001137358170925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b020c5b4bbe64d64a819296ca52bf980, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  controllerSetupUI: {fileID: 5134001137358170925}
-  menuFirstButton: {fileID: 5134001137315717498}
-  xboxActivated: 0
-  pS4Activated: 0
 --- !u!1 &5134001137647088941
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,7 +1002,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1461711404}
+      - m_Target: {fileID: 0}
         m_MethodName: OnClickActivatePS4
         m_Mode: 1
         m_Arguments:
@@ -1144,7 +1127,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1461711404}
+      - m_Target: {fileID: 0}
         m_MethodName: BackButton
         m_Mode: 1
         m_Arguments:
