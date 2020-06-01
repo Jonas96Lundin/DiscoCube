@@ -2142,7 +2142,7 @@ PrefabInstance:
     - target: {fileID: 1896340984, guid: a5dc982d3dfea314d8f44a066ee98868, type: 3}
       propertyPath: checkmark
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 414882034}
     - target: {fileID: 1896340985, guid: a5dc982d3dfea314d8f44a066ee98868, type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -4192,7 +4192,11 @@ MonoBehaviour:
   guideMenuUI: {fileID: 161526535}
   codeInputUI: {fileID: 1418302738}
   quitMenuUI: {fileID: 1810179522}
-  resolutionDropdown: {fileID: 0}
+  settingsActiveButton: {fileID: 674980195}
+  guideActiveButton: {fileID: 6093038907288749947}
+  codeInputActiveButton: {fileID: 788838361}
+  quitMenuActiveButton: {fileID: 1044486045}
+  resolutionDropdown: {fileID: 424339348}
 --- !u!1 &1113750077
 GameObject:
   m_ObjectHideFlags: 0
@@ -7115,6 +7119,12 @@ PrefabInstance:
       objectReference: {fileID: 1104969820}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbf52c56f5d6c8f499775cd7c99d64a9, type: 3}
+--- !u!1 &6093038907288749947 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6093038907934361438, guid: dbf52c56f5d6c8f499775cd7c99d64a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 6093038907288749946}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6607157455516178663
 PrefabInstance:
   m_ObjectHideFlags: 0

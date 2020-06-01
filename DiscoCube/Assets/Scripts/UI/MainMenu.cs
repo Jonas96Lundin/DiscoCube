@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 public class MainMenu : MonoBehaviour
 {
     //Owner: Raimon
@@ -9,7 +9,9 @@ public class MainMenu : MonoBehaviour
 
     public static bool UIExtraMenuActive;
     [SerializeField]
-    GameObject settingsMenuUI, guideMenuUI, codeInputUI, quitMenuUI;
+    GameObject settingsMenuUI, guideMenuUI, codeInputUI, quitMenuUI,
+        settingsActiveButton, guideActiveButton, codeInputActiveButton, quitMenuActiveButton;
+
     [SerializeField]
     Dropdown resolutionDropdown;
     Resolution[] resolutions;
@@ -69,24 +71,29 @@ public class MainMenu : MonoBehaviour
     {
         UIExtraMenuActive = true;
         settingsMenuUI.SetActive(true);
+        SetActiveButton(settingsActiveButton);
     }
 
     public void GuideMenu()
     {
         UIExtraMenuActive = true;
         guideMenuUI.SetActive(true);
+        SetActiveButton(guideActiveButton);
+
     }
 
     public void CodeInputMenu()
     {
         UIExtraMenuActive = true;
         codeInputUI.SetActive(true);
+        SetActiveButton(codeInputActiveButton);
     }
 
     public void QuitMenu()
     {
         UIExtraMenuActive = true;
         quitMenuUI.SetActive(true);
+        SetActiveButton(quitMenuActiveButton);
     }
 
     public void GuideMenuReturn()
@@ -111,5 +118,12 @@ public class MainMenu : MonoBehaviour
     {
         UIExtraMenuActive = false;
         quitMenuUI.SetActive(false);
+    }
+    private void SetActiveButton(GameObject button)
+    {
+        //Clear selected object.
+        EventSystem.current.SetSelectedGameObject(null);
+        //Set a new object
+        EventSystem.current.SetSelectedGameObject(button);
     }
 }

@@ -1956,8 +1956,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuUI
       objectReference: {fileID: 0}
+    - target: {fileID: 5201819131150392485, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: guideClosedButton
+      value: 
+      objectReference: {fileID: 1564804421}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a32dbe811c360744880e9f8412d6336, type: 3}
+--- !u!1 &1564804421 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8530166507312036239, guid: 3a32dbe811c360744880e9f8412d6336,
+    type: 3}
+  m_PrefabInstance: {fileID: 1564804420}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1565637889 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5201819129271681404, guid: 3a32dbe811c360744880e9f8412d6336,
