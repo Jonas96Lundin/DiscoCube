@@ -26,20 +26,20 @@ public class TriggerActivator : MonoBehaviour
 
         if (tempbool)
         {
-            //TODO
-            //Gör om till metod
-            GateTrigger t = collider.GetComponent<GateTrigger>();
-            if (collider.gameObject.tag == trigger[0])
-            {
-                if (t.GetTriggerColor() == colorManager.currentColor)
-                {
-                    Debug.Log("Success!! \nTrigger: " + t.GetTriggerColor().ToString() + " ColorManager: " + colorManager.currentColor.ToString());
-                }
-                else
-                {
-                    Debug.Log("Failure!! \nTrigger: " + t.GetTriggerColor().ToString() + " ColorManager: " + colorManager.currentColor.ToString());
-                }
-            }
+            ////TODO
+            ////Gör om till metod
+            //GateTrigger t = collider.GetComponent<GateTrigger>();
+            //if (collider.gameObject.tag == trigger[0])
+            //{
+            //    if (t.GetTriggerColor() == colorManager.currentColor)
+            //    {
+            //        Debug.Log("Success!! \nTrigger: " + t.GetTriggerColor().ToString() + " ColorManager: " + colorManager.currentColor.ToString());
+            //    }
+            //    else
+            //    {
+            //        Debug.Log("Failure!! \nTrigger: " + t.GetTriggerColor().ToString() + " ColorManager: " + colorManager.currentColor.ToString());
+            //    }
+            //}
 
         }
 

@@ -185,6 +185,25 @@ public class Movement : MonoBehaviour
         moving = false;
     }
 
+    IEnumerator WinMove(Vector3 endPos)
+    {
+        float moveSpeed = 0;
+        do
+        {
+            Debug.Log(transform.name);
+            moveSpeed += 0.01f;
+            transform.position = Vector3.Lerp(transform.position, endPos, moveSpeed);
+            yield return new WaitForEndOfFrame();
+        }
+        while (transform.position != endPos);
+        ColorManager.SetGlowingColors();
+    }
+
+    public void WinMovement(Vector3 endPos)
+    {
+        StartCoroutine("WinMove", endPos);
+    }
+
     //Reset all values on direction coorinates around the player cube, when rotation is complete.
     public void OnTriggerReset(GameObject center)
     {
@@ -196,4 +215,5 @@ public class Movement : MonoBehaviour
 
         //winTrigger.SetOrientation(new Vector3(0, -4, 0)); // Jonas test
     }
+
 }

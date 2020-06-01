@@ -18,6 +18,7 @@ TagManager:
   - Teleporter
   - Checkmark
   - InsertCode
+  - PlayerSide
   layers:
   - Default
   - TransparentFX

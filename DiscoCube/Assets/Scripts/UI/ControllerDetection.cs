@@ -40,7 +40,7 @@ public class ControllerDetection : MonoBehaviour
         string[] names = Input.GetJoystickNames();
         for (int x = 0; x < names.Length; x++)
         {
-            print(names[x].Length);
+            Debug.Log(names[x].Length);
             if (names[x].Length == 19)//19 equals the number of characters in Playstation 4 controllers Unity name.
             {
                 controllerDetected = true;
