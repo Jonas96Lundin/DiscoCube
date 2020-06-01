@@ -43,6 +43,10 @@ public class ControllerSetup : MonoBehaviour
             {
                 ControllerSelection();
             }
+            else
+            {
+                Time.timeScale = 1f;
+            }
         }
         //This prevents the controller detection from displaying on the main menu.
         else
