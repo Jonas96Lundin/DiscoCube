@@ -310,6 +310,11 @@ PrefabInstance:
       propertyPath: down
       value: 
       objectReference: {fileID: 7874117756420595778}
+    - target: {fileID: 7769596807030148975, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerSide
+      objectReference: {fileID: 0}
     - target: {fileID: 7769596807035253442, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -370,9 +375,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: GlowingPlayerCube
       objectReference: {fileID: 0}
+    - target: {fileID: 7769596807852510041, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerSide
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769596807910670241, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerSide
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769596807993085960, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerSide
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769596808263286787, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerSide
+      objectReference: {fileID: 0}
+    - target: {fileID: 7769596808333122603, guid: 4eb4803cffc26ba41ac7059145cb6ce4,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerSide
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3483506591436698089, guid: 4eb4803cffc26ba41ac7059145cb6ce4, type: 3}
     - {fileID: 598262174, guid: 4eb4803cffc26ba41ac7059145cb6ce4, type: 3}
+    - {fileID: 1985119817349561235, guid: 4eb4803cffc26ba41ac7059145cb6ce4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4eb4803cffc26ba41ac7059145cb6ce4, type: 3}
 --- !u!1 &2209412162367555073 stripped
 GameObject:

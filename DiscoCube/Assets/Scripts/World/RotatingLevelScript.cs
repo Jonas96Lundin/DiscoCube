@@ -7,6 +7,7 @@ using UnityEngine;
 /// rotateToColor to the name of the color
 /// 
 /// Created by: Jonas
+/// Contribution by: Kristian
 /// </summary>
 public class RotatingLevelScript : MonoBehaviour
 {
@@ -37,7 +38,7 @@ public class RotatingLevelScript : MonoBehaviour
     public void RotateLevel()
     {
 
-        if (/*Input.GetKeyDown(KeyCode.Keypad8) || */rotateToColor == "green") 
+        if (rotateToColor == "green") 
         {
             moveScript.input = false;
             rotateToColor = "green";
@@ -71,7 +72,7 @@ public class RotatingLevelScript : MonoBehaviour
                 }
             }
         }
-        else if (/*Input.GetKeyDown(KeyCode.Keypad6) || */rotateToColor == "purple")
+        else if (rotateToColor == "purple")
         {
             moveScript.input = false;
             rotateToColor = "purple";
@@ -105,7 +106,7 @@ public class RotatingLevelScript : MonoBehaviour
                 }
             }
         }
-        else if (/*Input.GetKeyDown(KeyCode.Keypad4) || */rotateToColor == "yellow")
+        else if (rotateToColor == "yellow")
         {
             moveScript.input = false;
             rotateToColor = "yellow";
@@ -140,7 +141,7 @@ public class RotatingLevelScript : MonoBehaviour
 
             }
         }
-        else if (/*Input.GetKeyDown(KeyCode.Keypad2) || */rotateToColor == "blue")
+        else if (rotateToColor == "blue")
         {
             moveScript.input = false;
             rotateToColor = "blue";
@@ -174,7 +175,7 @@ public class RotatingLevelScript : MonoBehaviour
                 }
             }
         }
-        else if (/*Input.GetKeyDown(KeyCode.Keypad5) || */rotateToColor == "teal")
+        else if (rotateToColor == "teal")
         {
             moveScript.input = false;
             rotateToColor = "teal";
@@ -208,7 +209,7 @@ public class RotatingLevelScript : MonoBehaviour
                 }
             }
         }
-        else if (/*Input.GetKeyDown(KeyCode.Keypad0) || */rotateToColor == "red")
+        else if (rotateToColor == "red")
         {
             moveScript.input = false;
             rotateToColor = "red";

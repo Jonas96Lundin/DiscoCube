@@ -170,4 +170,63 @@ public class ColorManager : MonoBehaviour
         
         
     }
+
+    public static void SetGlowingColors()
+    {
+        GameObject[] cubePlane = GameObject.FindGameObjectsWithTag("ColorPlane");
+        foreach (GameObject go in cubePlane)
+        {
+            if (go.name == "Teal Plane")
+            {
+                go.GetComponent<Renderer>().sharedMaterial = Resources.Load("TealGlow", typeof(Material)) as Material;
+            }
+            else if (go.name == "Red Plane")
+            {
+                go.GetComponent<Renderer>().sharedMaterial = Resources.Load("RedGlow", typeof(Material)) as Material;
+            }
+            else if (go.name == "Blue Plane")
+            {
+                go.GetComponent<Renderer>().sharedMaterial = Resources.Load("BlueGlow", typeof(Material)) as Material;
+            }
+            else if (go.name == "Green Plane")
+            {
+                go.GetComponent<Renderer>().sharedMaterial = Resources.Load("GreenGlow", typeof(Material)) as Material;
+            }
+            else if (go.name == "Yellow Plane")
+            {
+                go.GetComponent<Renderer>().sharedMaterial = Resources.Load("YellowGlow", typeof(Material)) as Material;
+            }
+            else if (go.name == "Purple Plane")
+            {
+                go.GetComponent<Renderer>().sharedMaterial = Resources.Load("PurpleGlow", typeof(Material)) as Material;
+            }
+        }
+    }
+
+    public static CubeColors SetWinColor(CubeColors color)
+    {
+        switch (color)
+        {
+            case CubeColors.blue:
+                color = CubeColors.green;
+                return color;
+            case CubeColors.green:
+                color = CubeColors.blue;
+                return color;
+            case CubeColors.purple:
+                color = CubeColors.yellow;
+                return color;
+            case CubeColors.yellow:
+                color = CubeColors.purple;
+                return color;
+            case CubeColors.red:
+                color = CubeColors.teal;
+                return color;
+            case CubeColors.teal:
+                color = CubeColors.red;
+                return color;
+            default:
+                return color;
+        }
+    }
 }

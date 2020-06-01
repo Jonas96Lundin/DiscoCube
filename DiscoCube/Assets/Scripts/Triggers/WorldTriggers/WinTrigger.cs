@@ -1,141 +1,82 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using System.Threading;
-using UnityEngine.SceneManagement;
+using UnityEngine.Experimental.UIElements;
 
-/// <summary>
-/// This is NOT only a trigger.
-/// </summary>
 public class WinTrigger : MonoBehaviour
 {
-    //TODO
-    //Dela upp i mindre delar
-    //Gör en summary
+    private float winDelay;
+    private bool win;
+    private Vector3 endPos, endPosOrientation = new Vector3(0, -2.2f, 0);
 
-    //Created by: Jonas
-    //Code from Rasmus, Raimon
-
-    GoalSwitch goalSwitchScript;
-    Vector3 endPos, endPosOrientation;
-    float moveSpeed, animationDelay;
-    public bool isWinning, ActivateWinAnimation, steppedOnGoalTrigger;
-    string currentColor, currentWinningColor, oldColor;
+    [Header("The color you want up for the player to win")]
+    [SerializeField]
+    ColorManager.CubeColors winColor;
 
     [SerializeField]
-    ColorManager colorManager;
+    GameObject nextLevelButton, completeLevelUI;
 
-    [SerializeField]
-    GameObject completeLevelUI;
-
-    [SerializeField]
-    ColorManager.LevelColors winColor;
-
-    [SerializeField]
-    GameObject firstButtonSelected;
-
-
-
-
-    // Start is called before the first frame update
-    public void Start()
+    void Start()
     {
-        isWinning = ActivateWinAnimation = false;
-        goalSwitchScript = FindObjectOfType<GoalSwitch>();
-        // Declares start and end position for the cube win movement
-        endPosOrientation = new Vector3(0, -4, 0);
-        endPos = transform.position + endPosOrientation;
-        completeLevelUI.SetActive(false);
+        win = false;
+        winDelay = 0f;
+        //Assign the right wincolor to trigger
+        winColor = ColorManager.SetWinColor(winColor);
     }
-
-    // Update is called once per frame
-    public void Update()
+    void Update()
     {
-        currentColor = colorManager.currentColor.ToString();
-        currentWinningColor = colorManager.currentWinningColor.ToString();
-
-        //Jonas
-        if (steppedOnGoalTrigger)
+        //Failsafe
+        if (win == false)
         {
-            if (colorManager.currentLevelColor == winColor && currentColor == currentWinningColor)
-            {
-                animationDelay = 0;
-                //TODO           
-                //Lås movement så att man inte kan fortsätta röra på sig efter victory animation har påbörjats. Koordinera med Kristians movement script.
-                ActivateWinAnimation = true;
-            }
-            else if(!(colorManager.currentLevelColor == winColor && currentColor == currentWinningColor) && !ActivateWinAnimation)
-            {
-                FindObjectOfType<WrongColorDialogue>().DialoguePopUp();
-            }
+            return;
         }
-        //Jonas
-        if (oldColor != currentColor)
+        else
         {
-            steppedOnGoalTrigger = false;
-        }
-
-        if (!isWinning && ActivateWinAnimation)
-        {
-            endPos = transform.position + endPosOrientation;
-            isWinning = true;
-            //Clear selected object.
-            EventSystem.current.SetSelectedGameObject(null);
-            //Set a new object
-            EventSystem.current.SetSelectedGameObject(firstButtonSelected);
-        }
-        if (isWinning)
-        {            
-            DenyMovement();
-
             CountUpTimer.IsCounting = false;
-            moveSpeed += 0.01f; //Adjust this for how fast you want the cube to fall into the hole.
-            transform.position = Vector3.Lerp(transform.position, endPos, moveSpeed);
-
-            //Rasmus kod:
-            animationDelay += 1 * Time.deltaTime;
-
-            if (transform.position == endPos) // jonas kod
-            {
-                colorManager.SetGlowingColors(winColor);
-            }
-            // Rasmus kod
-            if (ActivateWinAnimation && animationDelay >= 2f)
-            {
-                Win();
-                animationDelay = 0;
-            }
+            WinDelay();
         }
     }
 
-    private void DenyMovement()
+    private void WinDelay()
+    {
+        //Add a delay for winning
+        winDelay += 1 * Time.deltaTime;
+        if (winDelay >= 2f)
+        {
+            ActivateWinUI();
+            winDelay = 0;
+        }
+    }
+
+    private void DenyMovement(Collider collider)
     {
         //Makes it impossible to move.
-        Movement ms = GetComponentInParent<Movement>();
+        Movement ms = collider.GetComponentInParent<Movement>();
         ms.input = false;
     }
 
-    public void SetOrientation(Vector3 orientation)
-    {
-        endPosOrientation = orientation;
-
-    }
-    // Rasmus kod:
-    public void OnTriggerEnter(Collider collision)
-    {
-        //Jonas
-        if (collision.gameObject.tag == "Goal")
-        {         
-            steppedOnGoalTrigger = true;
-            oldColor = currentColor;
-        }
-    }
-
-    public void Win()
+    public void ActivateWinUI()
     {
         completeLevelUI.SetActive(true);
-       
-        
+    }
+    void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.name.ToLower() == winColor.ToString())
+        {
+            endPos = collider.transform.position + endPosOrientation;
+            //Clear selected object.
+            EventSystem.current.SetSelectedGameObject(null);
+            //Set a new object
+            EventSystem.current.SetSelectedGameObject(nextLevelButton);
+            //Set win boolean to true so its possible to win
+            win = true;
+            //Deny movement and stop time from counting
+            DenyMovement(collider);
+            //Make the playerCube move down the hole
+            collider.GetComponentInParent<Movement>().WinMovement(endPos);
+        }
+        else if (collider.gameObject.name.ToLower() != winColor.ToString() && win == false)
+        {
+            FindObjectOfType<WrongColorDialogue>().DialoguePopUp();
+        }
     }
 }
