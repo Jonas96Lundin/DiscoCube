@@ -187,6 +187,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 926812722}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &35867557 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1896340984, guid: a5dc982d3dfea314d8f44a066ee98868,
+    type: 3}
+  m_PrefabInstance: {fileID: 1057421598}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc37580e93fe2734ca52e36a3e1f9da1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &117999795
 GameObject:
   m_ObjectHideFlags: 0
@@ -1896,6 +1908,14 @@ PrefabInstance:
       propertyPath: img
       value: 
       objectReference: {fileID: 1931031133}
+    - target: {fileID: 1978888722, guid: 3a32dbe811c360744880e9f8412d6336, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 35867557}
+    - target: {fileID: 1978888722, guid: 3a32dbe811c360744880e9f8412d6336, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ColorBlindModeSwitch
+      objectReference: {fileID: 0}
     - target: {fileID: 5201819129271681404, guid: 3a32dbe811c360744880e9f8412d6336,
         type: 3}
       propertyPath: m_Text
