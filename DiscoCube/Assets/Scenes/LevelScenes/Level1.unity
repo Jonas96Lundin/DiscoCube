@@ -934,6 +934,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ControlsGuideOverlay
       objectReference: {fileID: 0}
+    - target: {fileID: 2117922199860957650, guid: 20b48f501e3e9084fbcfcd2a46ca562e,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2117922199860957653, guid: 20b48f501e3e9084fbcfcd2a46ca562e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1806,6 +1811,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5201819131150392480, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5201819131150392481, guid: 3a32dbe811c360744880e9f8412d6336,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1915,6 +1925,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PauseMenuUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 8530166507852745388, guid: 3a32dbe811c360744880e9f8412d6336,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a32dbe811c360744880e9f8412d6336, type: 3}
