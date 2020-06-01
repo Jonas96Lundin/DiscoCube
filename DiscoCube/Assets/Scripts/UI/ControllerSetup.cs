@@ -8,12 +8,12 @@ using UnityEngine.SceneManagement;
 /// and will display a prompt to choose a controller-scheme between Playstation 4's DualShock 4 or Xbox One's Controller.
 ///
 /// Owner: Kristian
+/// Contribution by: Raimon
 /// </summary>
 
 public class ControllerSetup : MonoBehaviour
 {
     Movement moveScript;
-    CameraController cameraScript;
 
     [SerializeField]
     GameObject controllerSetupUI, controllerSelectionOverlay;
@@ -48,10 +48,12 @@ public class ControllerSetup : MonoBehaviour
         else
             return;
     }
-
+    /// <summary>
+    /// If a controller is detected, then the ControllerSelection Method runs the Initialize method and
+    /// stop the movement so that the Player Cube will not move during menu selection. 
+    /// </summary>
     private void ControllerSelection()
     {
-        //Time.timeScale = 0f;
         Initialize();
         moveScript.input = false;
         //Clear selected object in event system.
@@ -60,13 +62,16 @@ public class ControllerSetup : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(menuFirstButton);
     }
 
-
+    /// <summary>
+    /// Initialize activates the UI menu item.
+    /// 
+    /// It also assignes all the controller input variations their respective names.
+    /// </summary>
     public void Initialize()
     {
         controllerSetupUI.SetActive(true);
 
         moveScript = FindObjectOfType<Movement>();
-        cameraScript = FindObjectOfType<CameraController>();
 
         // This assignes the controller-differences in input. Some inputs are the same between the
         // different controllers, but some are assigned to different functions on the controller.
@@ -91,10 +96,6 @@ public class ControllerSetup : MonoBehaviour
         {
             return;
         }
-        
-
-
-        
         
         // If the Xbox controll-scheme is selected, the inputs will be configured for Xbox.
         if (xboxActivated)
@@ -124,14 +125,15 @@ public class ControllerSetup : MonoBehaviour
 
         if (controllerDetected == false)
         {
-            Debug.Log("PC OVERLAY!");
             // If no controller is connected, the game continues with mouse & keyboard settings.
             mouseAndKeyboard.SetActive(true);
             currentInputDevice = inputDevice.noController;
             return;
         }
     }
-
+    /// <summary>
+    /// This method sends the Xbox configured controlls to both the Movement- and CameraControl-scripts.
+    /// </summary>
     public void XboxControlConfiguration()
     {
         Movement.inputVertical = xboxVertical;
@@ -140,6 +142,9 @@ public class ControllerSetup : MonoBehaviour
         CameraController.inputRSHorizontal = xboxRSHorizontal;
     }
 
+    /// <summary>
+    /// This method sends the Playstation configured controlls to both the Movement- and CameraControl-scripts.
+    /// </summary>
     public void PS4ControlConfiguration()
     {
         Movement.inputVertical = ps4Vertical;
@@ -166,6 +171,9 @@ public class ControllerSetup : MonoBehaviour
         Time.timeScale = 1f;
     }
 
+    /// <summary>
+    /// Makes sure that the correct input scheme is showing in the bottom left corner of the screen.
+    /// </summary>
     private void DisplayCorrectInputOverlay() //Method by: Kristian.
     {
         //If an input device has been chosen in Level1, then it shall keep displaying in the following levels.
@@ -193,6 +201,12 @@ public class ControllerSetup : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Both Playstation's and Xbox's controllers has unique names in Unity's internal controller detection.
+    /// This Method checks if any controller with those names are connected to the PC.
+    /// 
+    /// If any of them are connected, then they signal it by setting controllerDetected to true.
+    /// </summary>
     private void DetectIfControllerIsConnected() //Method by: Kristian.
     {
         string[] names = Input.GetJoystickNames();
@@ -201,21 +215,17 @@ public class ControllerSetup : MonoBehaviour
             print(names[x].Length);
             if (names[x].Length == 19)//19 equals the number of characters in Playstation 4 controllers Unity name.
             {
-                Debug.Log("19 Detected!");
                 controllerDetected = true; 
             }
             else if (names[x].Length == 33)//33 equals the number of characters in Xbox One controllers Unity name.
             {
-                Debug.Log("33 Detected!");
                 controllerDetected = true;       
             }
             else
             {
-                Debug.Log("0 Detected!");
                 controllerDetected = false;
                 Time.timeScale = 1f;
             }
-            Debug.Log("ControllerDetected = " + controllerDetected);
             return;
         }
         

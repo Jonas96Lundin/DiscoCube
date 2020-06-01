@@ -5,6 +5,7 @@
 /// These triggers makes it so that the player cube can roll over the edges of the level cube.
 /// 
 /// Created by: Kristian & Jonas
+/// Contributed by: 
 /// </summary>
 
 public class FlipTrigger : MonoBehaviour
@@ -27,16 +28,13 @@ public class FlipTrigger : MonoBehaviour
         savedTriggerColor1 = triggerColor1;
         savedTriggerColor2 = triggerColor2;
         oldLevelColor = colorScript.currentLevelColor.ToString();
-        
     }
-
 
     void Update()
     {
         if (triggerActivated && moveScript.moving == false && colorScript.isOnGround == false)
         {
             FlipDirection();
-            
         }
 
         if(oldLevelColor != colorScript.currentLevelColor.ToString())
@@ -46,8 +44,6 @@ public class FlipTrigger : MonoBehaviour
         }
     }
 
-    //TODO
-    //Can we make thís more general so that it is not dependent on colors too much?
     /// <summary>
     /// Flips the level to the other side of the fliptrigger object
     /// </summary>

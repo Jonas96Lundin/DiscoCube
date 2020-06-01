@@ -1,9 +1,15 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
+/// This script handles all the movement of the Player Cube. 
 /// 
+/// The Movement is dependent on assigned coordinates around the cube that is then used to RotateAround.
+///
+/// The movement itself is not dependent on the level, and can work on any surface or space.
+/// 
+/// Created by: Kristian
+/// Contribution by: Jonas, Raimon and David. 
 /// </summary>
 public class Movement : MonoBehaviour
 {
@@ -19,7 +25,6 @@ public class Movement : MonoBehaviour
     [SerializeField]
     GameObject right, left, up, down;
     
-    WinTrigger winTrigger; // For the winning animation. /Jonas
     PauseMenu pauseMenu;
     StepCounter stepCounterScript;
 
@@ -38,7 +43,6 @@ public class Movement : MonoBehaviour
 
     private void Start()
     {
-        winTrigger = GetComponent<WinTrigger>();
         pauseMenu = FindObjectOfType<PauseMenu>();
         stepCounterScript = FindObjectOfType<StepCounter>();
         if (!ControllerSetup.controllerSelected)
@@ -131,6 +135,11 @@ public class Movement : MonoBehaviour
         return Physics.Raycast(transform.position, direction, out hit, 4f, obstacleLayer);
     }
 
+    /// <summary>
+    /// The different movement directions are divided into separate coroutines.
+    /// They all work the same except that they use unique coordinates that they use to RotateAround.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator MoveUp()
     {
         moving = true;
@@ -188,7 +197,11 @@ public class Movement : MonoBehaviour
         moving = false;
     }
 
-    //Reset all values on direction coorinates around the player cube, when rotation is complete.
+    
+    /// <summary>
+    /// Reset all values on direction coorinates around the player cube, when rotation is complete.
+    /// </summary>
+    /// <param name="center">Is a gameobject that hold the center coordinates for the Player Cube</param>
     public void OnTriggerReset(GameObject center)
     {
         center.transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -196,7 +209,5 @@ public class Movement : MonoBehaviour
         rotateDown = new Vector3(-1, 0, 0);
         rotateRight = new Vector3(0, 0, -1);
         rotateLeft = new Vector3(0, 0, 1);
-
-        //winTrigger.SetOrientation(new Vector3(0, -4, 0)); // Jonas test
     }
 }
