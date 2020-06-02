@@ -57,16 +57,16 @@ public class WinTrigger : MonoBehaviour
     public void ActivateWinUI()
     {
         completeLevelUI.SetActive(true);
+        //Clear selected object.
+        EventSystem.current.SetSelectedGameObject(null);
+        //Set a new object
+        EventSystem.current.SetSelectedGameObject(nextLevelButton);
     }
     void OnTriggerEnter(Collider collider)
     {
         if (collider.gameObject.name.ToLower() == winColor.ToString())
         {
             endPos = collider.transform.position + endPosOrientation;
-            //Clear selected object.
-            EventSystem.current.SetSelectedGameObject(null);
-            //Set a new object
-            EventSystem.current.SetSelectedGameObject(nextLevelButton);
             //Set win boolean to true so its possible to win
             win = true;
             //Deny movement and stop time from counting
