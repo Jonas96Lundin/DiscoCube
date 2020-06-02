@@ -41,8 +41,11 @@ public class Movement : MonoBehaviour
     float inputDelay = 5f;
     int step = 9;
 
+    public bool DenyMovement { get; set; }
+
     private void Start()
     {
+        DenyMovement = false;
         pauseMenu = FindObjectOfType<PauseMenu>();
         stepCounterScript = FindObjectOfType<StepCounter>();
         if (!ControllerSetup.controllerSelected)
@@ -60,6 +63,11 @@ public class Movement : MonoBehaviour
         if (pauseMenu.gameIsPaused || CameraController.freelookActivated)
         {
             return;
+        }
+
+        if (DenyMovement == true)
+        {
+            input = false;
         }
 
         //Movement

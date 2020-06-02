@@ -6,7 +6,7 @@ public class WinTrigger : MonoBehaviour
 {
     private float winDelay;
     private bool win;
-    private Vector3 endPos, endPosOrientation = new Vector3(0, -2.2f, 0);
+    private Vector3 endPos, endPosOrientation = new Vector3(0, -2.1f, 0);
 
     [Header("The color you want up for the player to win")]
     [SerializeField]
@@ -51,7 +51,7 @@ public class WinTrigger : MonoBehaviour
     {
         //Makes it impossible to move.
         Movement ms = collider.GetComponentInParent<Movement>();
-        ms.input = false;
+        ms.DenyMovement = true;
     }
 
     public void ActivateWinUI()
