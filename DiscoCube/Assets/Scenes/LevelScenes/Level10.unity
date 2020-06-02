@@ -2328,6 +2328,11 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Restart
       objectReference: {fileID: 0}
+    - target: {fileID: 2252780006840886487, guid: b533a8711f80f4b41bb4b713fe002aad,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 8337182991194996673, guid: b533a8711f80f4b41bb4b713fe002aad,
         type: 3}
       propertyPath: m_Name
@@ -2442,7 +2447,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 25196b6c4cc263b4db25d77ccf1dd6a8,
+      objectReference: {fileID: 21300000, guid: 4c0004990dd8e72429754fa5194f1195,
         type: 3}
     - target: {fileID: 8337182992013840801, guid: b533a8711f80f4b41bb4b713fe002aad,
         type: 3}
