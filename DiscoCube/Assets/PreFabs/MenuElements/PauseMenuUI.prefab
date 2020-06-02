@@ -613,7 +613,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7a5622e8cf9fa694eaeda6808e9df0e8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2e9a6024cccc9d4bb20b39c77459929, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -633,6 +633,7 @@ GameObject:
   - component: {fileID: 2835799110992167228}
   - component: {fileID: 5506455455983680087}
   - component: {fileID: 8184210767269708202}
+  - component: {fileID: 404195789958203074}
   m_Layer: 5
   m_Name: CameraControl
   m_TagString: Untagged
@@ -656,8 +657,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -114.82}
-  m_SizeDelta: {x: -11.3, y: 106.55}
+  m_AnchoredPosition: {x: 0, y: -106.9}
+  m_SizeDelta: {x: -11.3, y: 122.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5506455455983680087
 CanvasRenderer:
@@ -680,14 +681,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.047058824, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: be698c07c99471d4e90da4aae76be780, type: 3}
-    m_FontSize: 15
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -698,9 +699,24 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Camera control:
+  m_Text: 'Control camera:
 
-    Hold down L1 & move the right stick'
+    Hold down L1 and move the right stick'
+--- !u!114 &404195789958203074
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1238695356602025788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1472476595120060962
 GameObject:
   m_ObjectHideFlags: 0
@@ -4539,7 +4555,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!114 &5201819131150392487
 MonoBehaviour:
@@ -4749,6 +4765,7 @@ GameObject:
   - component: {fileID: 743829950287124660}
   - component: {fileID: 7352744682981575928}
   - component: {fileID: 2770766662812069066}
+  - component: {fileID: 833144943136791812}
   m_Layer: 5
   m_Name: CameraControls
   m_TagString: Untagged
@@ -4772,8 +4789,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -118.7}
-  m_SizeDelta: {x: 392.46, y: 107.42}
+  m_AnchoredPosition: {x: 0, y: -94.795}
+  m_SizeDelta: {x: 392.5, y: 155.21}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7352744682981575928
 CanvasRenderer:
@@ -4796,14 +4813,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.06666667, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: be698c07c99471d4e90da4aae76be780, type: 3}
-    m_FontSize: 15
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -4817,6 +4834,21 @@ MonoBehaviour:
   m_Text: 'Control camera:
 
     hold down LB and move the right stick'
+--- !u!114 &833144943136791812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7062131804015706460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7711677942713766797
 GameObject:
   m_ObjectHideFlags: 0
@@ -4828,6 +4860,7 @@ GameObject:
   - component: {fileID: 7711677942713766794}
   - component: {fileID: 7711677942713766792}
   - component: {fileID: 7711677942713766795}
+  - component: {fileID: 5090393499212420496}
   m_Layer: 5
   m_Name: PSController
   m_TagString: Untagged
@@ -4851,8 +4884,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000085831, y: 8.3}
-  m_SizeDelta: {x: 263.8, y: 139.7}
+  m_AnchoredPosition: {x: -0.0000085831, y: 34.499992}
+  m_SizeDelta: {x: 196, y: 111.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7711677942713766792
 CanvasRenderer:
@@ -4875,7 +4908,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.047058824, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -4889,6 +4922,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &5090393499212420496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711677942713766797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7711677942821159545
 GameObject:
   m_ObjectHideFlags: 0
@@ -4975,6 +5023,7 @@ GameObject:
   - component: {fileID: 7711677942848662932}
   - component: {fileID: 7711677942848662930}
   - component: {fileID: 7711677942848662933}
+  - component: {fileID: 5397659157109780004}
   m_Layer: 5
   m_Name: XController
   m_TagString: Untagged
@@ -4998,8 +5047,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000021935, y: 12.4}
-  m_SizeDelta: {x: 252.67, y: 144.78}
+  m_AnchoredPosition: {x: 0.000021935, y: 39.33}
+  m_SizeDelta: {x: 188.87, y: 113.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7711677942848662930
 CanvasRenderer:
@@ -5022,7 +5071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.065164566, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5036,6 +5085,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &5397659157109780004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711677942848662935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7711677942889237134
 GameObject:
   m_ObjectHideFlags: 0
@@ -5148,6 +5212,7 @@ GameObject:
   - component: {fileID: 7711677943148263592}
   - component: {fileID: 7711677943148263590}
   - component: {fileID: 7711677943148263593}
+  - component: {fileID: 5149096756983416189}
   m_Layer: 5
   m_Name: Arrowkeys
   m_TagString: Untagged
@@ -5195,7 +5260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5209,6 +5274,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &5149096756983416189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711677943148263595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7711677943211466504
 GameObject:
   m_ObjectHideFlags: 0
@@ -5267,14 +5347,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: be698c07c99471d4e90da4aae76be780, type: 3}
-    m_FontSize: 17
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -5374,6 +5454,7 @@ GameObject:
   - component: {fileID: 7711677943269370638}
   - component: {fileID: 7711677943269370636}
   - component: {fileID: 7711677943269370639}
+  - component: {fileID: 8605952100670180222}
   m_Layer: 5
   m_Name: Mouse
   m_TagString: Untagged
@@ -5421,7 +5502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5435,6 +5516,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &8605952100670180222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711677943269370641}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7711677943277968653
 GameObject:
   m_ObjectHideFlags: 0
@@ -5446,6 +5542,7 @@ GameObject:
   - component: {fileID: 7711677943277968650}
   - component: {fileID: 7711677943277968648}
   - component: {fileID: 7711677943277968651}
+  - component: {fileID: 3672773934212493631}
   m_Layer: 5
   m_Name: WASD
   m_TagString: Untagged
@@ -5493,7 +5590,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -5507,6 +5604,21 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &3672773934212493631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711677943277968653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7711677943423014014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5518,6 +5630,7 @@ GameObject:
   - component: {fileID: 7711677943423014015}
   - component: {fileID: 7711677943423014013}
   - component: {fileID: 7711677943423014012}
+  - component: {fileID: 2106326687957801378}
   m_Layer: 5
   m_Name: MoveControlsText
   m_TagString: Untagged
@@ -5541,8 +5654,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 135.3}
-  m_SizeDelta: {x: 384.36, y: 63.34}
+  m_AnchoredPosition: {x: 0, y: 131.4}
+  m_SizeDelta: {x: 384.4, y: 71.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7711677943423014013
 CanvasRenderer:
@@ -5565,14 +5678,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.06666667, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: be698c07c99471d4e90da4aae76be780, type: 3}
-    m_FontSize: 15
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -5584,6 +5697,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Move Cube with either \nLeft stick or D-Pad"
+--- !u!114 &2106326687957801378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711677943423014014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &7711677943449270628
 GameObject:
   m_ObjectHideFlags: 0
@@ -5642,14 +5770,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: be698c07c99471d4e90da4aae76be780, type: 3}
-    m_FontSize: 25
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -5747,6 +5875,7 @@ GameObject:
   - component: {fileID: 7711677944360239894}
   - component: {fileID: 7711677944360239892}
   - component: {fileID: 7711677944360239895}
+  - component: {fileID: 6137407228821271522}
   m_Layer: 5
   m_Name: MoveControlsText
   m_TagString: Untagged
@@ -5770,8 +5899,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 136.3}
-  m_SizeDelta: {x: 388.7, y: 62.4}
+  m_AnchoredPosition: {x: -0, y: 128.8}
+  m_SizeDelta: {x: 388.7, y: 77.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7711677944360239892
 CanvasRenderer:
@@ -5794,14 +5923,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.045587063, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: be698c07c99471d4e90da4aae76be780, type: 3}
-    m_FontSize: 15
+    m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -5813,6 +5942,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Move Cube with either \nLeft stick or D-Pad"
+--- !u!114 &6137407228821271522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7711677944360239897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectDistance: {x: 2, y: -2}
+  m_UseGraphicAlpha: 1
 --- !u!1 &8530166506051681051
 GameObject:
   m_ObjectHideFlags: 0
@@ -5996,7 +6140,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -40.000008, y: 345.20004}
+  m_AnchoredPosition: {x: -0.0000076293945, y: 365}
   m_SizeDelta: {x: 1066, y: 680.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8530166506343726156

@@ -89,6 +89,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stepScore: {fileID: 3757173030873389787}
   timeScore: {fileID: 6863791271412334472}
+  gm: {fileID: 0}
 --- !u!1 &5705241733044101299
 GameObject:
   m_ObjectHideFlags: 0
