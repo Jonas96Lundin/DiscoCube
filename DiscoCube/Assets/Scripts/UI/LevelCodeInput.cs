@@ -43,6 +43,18 @@ public class LevelCodeInput : MonoBehaviour
             case "cubelord":
                 fader.FadeTo("Level7");
                 break;
+            case "wrdchamp":
+                fader.FadeTo("Level8");
+                break;
+            case "holddoor":
+                fader.FadeTo("Level9");
+                break;
+            case "nowalls":
+                fader.FadeTo("Level10");
+                break;
+            case "nospoon":
+                fader.FadeTo("Level11");
+                break;
             default:
                 break;
         }
