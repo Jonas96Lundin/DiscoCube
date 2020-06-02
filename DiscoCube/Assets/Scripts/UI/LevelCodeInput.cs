@@ -55,6 +55,9 @@ public class LevelCodeInput : MonoBehaviour
             case "nospoon":
                 fader.FadeTo("Level11");
                 break;
+            case "buttons!":
+                fader.FadeTo("Level11");
+                break;
             default:
                 break;
         }
