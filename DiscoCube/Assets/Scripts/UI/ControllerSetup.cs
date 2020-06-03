@@ -60,10 +60,6 @@ public class ControllerSetup : MonoBehaviour
     {
         Initialize();
         moveScript.input = false;
-        //Clear selected object in event system.
-        EventSystem.current.SetSelectedGameObject(null);
-        //Set a new object in event system.
-        EventSystem.current.SetSelectedGameObject(menuFirstButton);
     }
 
     /// <summary>
@@ -75,6 +71,10 @@ public class ControllerSetup : MonoBehaviour
     {
         controllerSetupUI.SetActive(true);
 
+        //Clear selected object in event system.
+        EventSystem.current.SetSelectedGameObject(null);
+        //Set a new object in event system.
+        EventSystem.current.SetSelectedGameObject(menuFirstButton);
         moveScript = FindObjectOfType<Movement>();
 
         // This assignes the controller-differences in input. Some inputs are the same between the
