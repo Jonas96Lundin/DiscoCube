@@ -28,7 +28,6 @@ public class GameManager : MonoBehaviour
     }
     public void ToMainMenu()
     {
-        Debug.Log("Actually going into the method");
         sceneFader.FadeTo("MainMenu");
     }
     public void Quit()

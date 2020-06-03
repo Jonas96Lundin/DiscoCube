@@ -10,12 +10,15 @@ public class GateTrigger : MonoBehaviour
     Vector3 dir;
 
     private bool triggerActivated = false, currentlyOnTrigger = false;
-    Renderer renderer;
+    private Renderer renderer;
+    public Renderer capsule;
 
     void Start()
     {
         renderer = this.GetComponent<Renderer>();
         renderer.material.SetColor("_Color", Color.red);
+        //capsule = GetComponentInChildren<Renderer>();
+        //Debug.Log(capsule.name);
     }
 
     public void OnTriggerEnter(Collider collider)
@@ -36,6 +39,7 @@ public class GateTrigger : MonoBehaviour
                 rightGate.transform.Translate(dir);
                 //Sett color to green on activation
                 renderer.material.SetColor("_Color", Color.green);
+                capsule.enabled = false;
             }
             else if (triggerActivated == false)
             {   
@@ -44,6 +48,7 @@ public class GateTrigger : MonoBehaviour
                 rightGate.transform.Translate(-dir);
                 //Sett color to red on deactivation
                 renderer.material.SetColor("_Color", Color.red);
+                capsule.enabled = true;
             }
 
             currentlyOnTrigger = true;
