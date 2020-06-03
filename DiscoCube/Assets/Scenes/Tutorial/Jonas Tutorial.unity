@@ -298,7 +298,7 @@ PrefabInstance:
         type: 3}
       propertyPath: menuFirstButton
       value: 
-      objectReference: {fileID: 201998064}
+      objectReference: {fileID: 610087683}
     - target: {fileID: 8911818814733802723, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}
       propertyPath: mouseAndKeyboard
@@ -1334,6 +1334,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2f4f87d6d224a2499e9da827fae442c, type: 3}
+--- !u!1 &610087683 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5134001137315717498, guid: 32101cd839288a6439b9c5ec8abf0ade,
+    type: 3}
+  m_PrefabInstance: {fileID: 588819929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &676681648
 PrefabInstance:
   m_ObjectHideFlags: 0
