@@ -45,11 +45,65 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mixerGroup: {fileID: 0}
   sounds:
+  - name: MenuMusic
+    clip: {fileID: 8300000, guid: 205f75e126123314786bb0e526907947, type: 3}
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: BGMusic
+    clip: {fileID: 8300000, guid: 00f3590cfe28233419deabc96f5ad705, type: 3}
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 1
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
   - name: ChestDrawer
     clip: {fileID: 8300000, guid: d58cc437c81749f46a25ee278d61f8e3, type: 3}
     volume: 0.5
     volumeVariance: 0
     pitch: 3
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: SenseiTalk
+    clip: {fileID: 8300000, guid: 82c53474184b70c4281eb2e6582c2cbe, type: 3}
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 0.5
+    pitchVariance: 0.5
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: EndMusic
+    clip: {fileID: 8300000, guid: d5e31f9e2c68245428869c3331c1c4e5, type: 3}
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: Switch
+    clip: {fileID: 8300000, guid: 0bf4bfd085aefd246a340297257106be, type: 3}
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    source: {fileID: 0}
+  - name: GateFX
+    clip: {fileID: 8300000, guid: 79c25a0bba7e86b41a5f0aac5430d942, type: 3}
+    volume: 0.5
+    volumeVariance: 0
+    pitch: 1
     pitchVariance: 0
     loop: 0
     mixerGroup: {fileID: 0}

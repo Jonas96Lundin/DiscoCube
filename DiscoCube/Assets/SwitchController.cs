@@ -23,6 +23,7 @@ public class SwitchController : MonoBehaviour
         if (switchInt == switches.Length)
         {
             allSwitchesTrue = true;
+            AudioManager.instance.Play("GateFX");
         }
         else
         {
