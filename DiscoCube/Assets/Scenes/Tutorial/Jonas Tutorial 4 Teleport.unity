@@ -2279,17 +2279,17 @@ PrefabInstance:
     - target: {fileID: 7853452672682805185, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}
       propertyPath: musicStop
-      value: BGMusic
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7853452672682805185, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}
       propertyPath: musicStart
-      value: EndMusic
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7853452672682805186, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}
       propertyPath: levelToLoad
-      value: EndScene
+      value: Level8
       objectReference: {fileID: 0}
     - target: {fileID: 8911818814733802723, guid: a5dc982d3dfea314d8f44a066ee98868,
         type: 3}
