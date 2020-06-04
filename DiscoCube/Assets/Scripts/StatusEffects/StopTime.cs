@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StopTime : MonoBehaviour
 {
+    
     public GameObject player;
     public Transform time;
     public bool stopTimeTriggerActivated;

@@ -71,6 +71,7 @@ public class WinTrigger : MonoBehaviour
             //Deny movement and stop time from counting
             DenyMovement(collider);
             //Make the playerCube move down the hole
+            Debug.Log(this.name);
             collider.GetComponentInParent<Movement>().WinMovement(endPos);
         }
         else if (collider.gameObject.name.ToLower() != winColor.ToString() && win == false)
