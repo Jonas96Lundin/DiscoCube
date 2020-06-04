@@ -4,7 +4,7 @@ public class OpenExit : MonoBehaviour
 {
 	private bool hasMoved;
 	[SerializeField]
-	SwitchController sc;
+	SwitchController switchcontroller;
 
 	[SerializeField]
 	GameObject[] objectsToMove;
@@ -15,7 +15,7 @@ public class OpenExit : MonoBehaviour
         {
 			return;
         }
-		if (sc.allSwitchesTrue)
+		if (switchcontroller.allSwitchesTrue)
 		{
             for (int i = 0; i < objectsToMove.Length; i++)
             {

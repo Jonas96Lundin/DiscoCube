@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 
 public class SwitchController : MonoBehaviour
-{
-    public ColorSwitch[] switches;
+{ 
+    private ColorSwitch[] switches;
+    [HideInInspector]
     public bool allSwitchesTrue;
     void Start()
     {
