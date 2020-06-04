@@ -18,16 +18,12 @@ public class HighScore : MonoBehaviour
         SetTimeHighScore(ct);
     }
 
-    public void Remove()
-    {
-        PlayerPrefs.DeleteAll();
-    }
     public void SetStepHighScore(StepCounter stepCounter)
     {
         int steps = stepCounter.stepCounter;
        
 
-        if (steps < PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "Steps", 99))
+        if (steps < PlayerPrefs.GetInt(SceneManager.GetActiveScene().name + "Steps", 9999))
         {
             PlayerPrefs.SetInt(SceneManager.GetActiveScene().name + "Steps", steps);
             stepScore.text = "Steps: " + steps.ToString();
@@ -42,7 +38,7 @@ public class HighScore : MonoBehaviour
     {
         float time = timer.Timer + 0.001f;
 
-        if (time < PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Time", 999))
+        if (time < PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Time", 9999))
         {
             PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name + "Time", time);
             timeScore.text = "Time: " + time.ToString("0.000");
