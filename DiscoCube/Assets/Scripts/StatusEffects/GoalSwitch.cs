@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class GoalSwitch : MonoBehaviour
 {
-    WinTrigger winTriggerScrippt;
+    [SerializeField]
+    BoxCollider boxCollider;
+
     public GameObject player;
     public Transform switchTrigger;
     public bool trigger;
@@ -18,7 +20,7 @@ public class GoalSwitch : MonoBehaviour
 
     void Start()
     {
-        winTriggerScrippt = FindObjectOfType<WinTrigger>();
+        
         currentColor = red;
     }
     public void OnTriggerEnter(Collider other)
@@ -35,11 +37,11 @@ public class GoalSwitch : MonoBehaviour
         {
             currentColor = green;
             this.GetComponent<Renderer>().sharedMaterial = currentColor;
-            winTriggerScrippt.enabled = true;
+            boxCollider.enabled = true;
         }
         else
         {
-            winTriggerScrippt.enabled = false;
+            boxCollider.enabled = false;
         }
     }
 }
