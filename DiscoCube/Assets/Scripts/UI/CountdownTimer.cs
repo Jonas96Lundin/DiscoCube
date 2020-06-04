@@ -13,7 +13,12 @@ public class CountdownTimer : MonoBehaviour
     [HideInInspector]
     public bool isActive; // Jonas kod
 
-    PauseMenu pauseMenuScript;
+    public float Timer
+    {
+        get { return currentTime; }
+    }
+
+    private PauseMenu pauseMenuScript;
 
     void Start()
     {
