@@ -12,10 +12,18 @@ public class HighScore : MonoBehaviour
 
     private void OnEnable()
     {
-        StepCounter sc = gm.GetComponent<StepCounter>();
-        CountUpTimer ct = gm.GetComponent<CountUpTimer>();
-        SetStepHighScore(sc);
-        SetTimeHighScore(ct);
+        StepCounter stepCounter = gm.GetComponent<StepCounter>();
+        CountUpTimer countUpTimer = gm.GetComponent<CountUpTimer>();
+        CountdownTimer countdownTimer = gm.GetComponent<CountdownTimer>();
+        if (countUpTimer == null)
+        {
+            SetTimeHighScore(countdownTimer);
+        }
+        else
+        {
+            SetTimeHighScore(countUpTimer);
+        }
+        SetStepHighScore(stepCounter);
     }
 
     public void SetStepHighScore(StepCounter stepCounter)
@@ -39,6 +47,21 @@ public class HighScore : MonoBehaviour
         float time = timer.Timer + 0.001f;
 
         if (time < PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Time", 9999))
+        {
+            PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name + "Time", time);
+            timeScore.text = "Time: " + time.ToString("0.000");
+        }
+        else
+        {
+            timeScore.text = "Time: " + PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Time").ToString("0.000");
+        }
+    }
+
+    public void SetTimeHighScore(CountdownTimer timer)
+    {
+        float time = timer.Timer + 0.001f;
+
+        if (time > PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Time", 0))
         {
             PlayerPrefs.SetFloat(SceneManager.GetActiveScene().name + "Time", time);
             timeScore.text = "Time: " + time.ToString("0.000");

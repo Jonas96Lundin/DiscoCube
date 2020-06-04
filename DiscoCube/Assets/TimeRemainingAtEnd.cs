@@ -18,13 +18,13 @@ public class TimeRemainingAtEnd : MonoBehaviour
 
     IEnumerator AnimateText()
     {
-        timerText.text = "in: 0 seconds!";
+        timerText.text = "0 seconds left!";
         float time = 0f;
         yield return new WaitForSeconds(0.5f);
         while (time <= timeCounter.Timer)
         {
             time += 0.1f;
-            timerText.text = "with: " + time.ToString("0.0") + " seconds left!";
+            timerText.text = time.ToString("0.0") + " seconds left!";
             if (time <= 2)
             {
                 waitTime -= 0.05f;
