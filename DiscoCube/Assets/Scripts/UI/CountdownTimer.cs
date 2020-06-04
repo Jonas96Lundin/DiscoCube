@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CountdownTimer : MonoBehaviour
 {
+    private WinTrigger winTrigger;
     float currentTime = 0f;
     [SerializeField] 
     float totalTime;
@@ -17,6 +18,7 @@ public class CountdownTimer : MonoBehaviour
 
     void Start()
     {
+        winTrigger = FindObjectOfType<WinTrigger>();
         isActive = true;
         currentTime = totalTime;
         pauseMenuScript = FindObjectOfType<PauseMenu>();
@@ -36,6 +38,10 @@ public class CountdownTimer : MonoBehaviour
                 isActive = false;
                 pauseMenuScript.Restart();
             }
+        }
+        if (winTrigger.win)
+        {
+            isActive = false;
         }
     }
 }
