@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class StopTime : MonoBehaviour
 {
+    private WinTrigger winTrigger;
     public GameObject player;
     public Transform time;
     public bool stopTimeTriggerActivated;
@@ -12,6 +13,7 @@ public class StopTime : MonoBehaviour
 
     void Start()
     {
+        winTrigger = FindObjectOfType<WinTrigger>();
         countDownTimer = FindObjectOfType<CountdownTimer>();
     }
     public void OnTriggerEnter(Collider other)
@@ -32,6 +34,11 @@ public class StopTime : MonoBehaviour
                 countDownTimer.isActive = true;
                 stopTimeCounter = 0f;
             }
+        }
+
+        if (winTrigger.win)
+        {
+            countDownTimer.isActive = false;
         }
     }
 }
