@@ -4,9 +4,10 @@ using UnityEngine.EventSystems;
 public class WinTrigger : MonoBehaviour
 {
     private float winDelay;
-    private bool win;
     private Vector3 endPos, endPosOrientation = new Vector3(0, -2.1f, 0);
 
+    [HideInInspector]
+    public bool win;
     [Header("The color you want up for the player to win")]
     [SerializeField]
     ColorManager.CubeColors winColor;

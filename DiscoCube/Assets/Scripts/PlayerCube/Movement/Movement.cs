@@ -210,7 +210,6 @@ public class Movement : MonoBehaviour
         float moveSpeed = 0;
         do
         {
-            Debug.Log(transform.name);
             moveSpeed += 0.01f;
             transform.position = Vector3.Lerp(transform.position, endPos, moveSpeed);
             yield return new WaitForEndOfFrame();
