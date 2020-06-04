@@ -19,7 +19,7 @@ public class OpenExit : MonoBehaviour
 		{
             for (int i = 0; i < objectsToMove.Length; i++)
             {
-				objectsToMove[i].transform.Translate(new Vector3(0, -5, 0));
+				objectsToMove[i].transform.Translate(new Vector3(0, -6, 0));
             }
 			hasMoved = true;
 		}

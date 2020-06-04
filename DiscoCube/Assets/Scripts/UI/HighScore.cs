@@ -52,4 +52,10 @@ public class HighScore : MonoBehaviour
             timeScore.text = "Time: " + PlayerPrefs.GetFloat(SceneManager.GetActiveScene().name + "Time").ToString("0.000");
         }
     }
+
+    //For dev
+    public void ResetHighScore()
+    {
+        PlayerPrefs.DeleteAll();
+    }
 }
