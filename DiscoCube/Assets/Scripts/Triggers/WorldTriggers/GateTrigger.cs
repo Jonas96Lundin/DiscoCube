@@ -2,6 +2,7 @@
 
 public class GateTrigger : MonoBehaviour
 {
+    //Creator Raimon
     [SerializeField]
     GameObject leftGate, rightGate;
 
@@ -17,8 +18,6 @@ public class GateTrigger : MonoBehaviour
     {
         renderer = this.GetComponent<Renderer>();
         renderer.material.SetColor("_Color", Color.red);
-        //capsule = GetComponentInChildren<Renderer>();
-        //Debug.Log(capsule.name);
     }
 
     public void OnTriggerEnter(Collider collider)

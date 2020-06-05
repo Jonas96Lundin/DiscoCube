@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class CountUpTimer : MonoBehaviour
 {
+    //Creator Raimon
     private static bool isCounting = true;
 
     private float timer = 0f;

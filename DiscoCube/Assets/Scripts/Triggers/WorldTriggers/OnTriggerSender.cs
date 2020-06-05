@@ -2,6 +2,7 @@
 
 public class OnTriggerSender : MonoBehaviour
 {
+    //Creator Raimon
     private ColorSwitch parent;
     Renderer renderer;
 

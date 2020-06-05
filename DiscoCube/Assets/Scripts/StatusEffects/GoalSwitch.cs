@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class GoalSwitch : MonoBehaviour
 {
+    //Creator David
+    //Contributors Raimon
     [SerializeField]
     BoxCollider boxCollider;
 

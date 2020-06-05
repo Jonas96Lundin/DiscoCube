@@ -3163,7 +3163,7 @@ PrefabInstance:
     - target: {fileID: 1077874439827675984, guid: f7d3194de6386734aa4b922ee2bec836,
         type: 3}
       propertyPath: triggerActivated
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1077874439827675985, guid: f7d3194de6386734aa4b922ee2bec836,
         type: 3}
@@ -4819,17 +4819,17 @@ PrefabInstance:
     - target: {fileID: 7874117754991771319, guid: f2f4f87d6d224a2499e9da827fae442c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 7874117754991771319, guid: f2f4f87d6d224a2499e9da827fae442c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -14
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7874117754991771319, guid: f2f4f87d6d224a2499e9da827fae442c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -6
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 7874117754991771319, guid: f2f4f87d6d224a2499e9da827fae442c,
         type: 3}
@@ -6651,7 +6651,7 @@ PrefabInstance:
     - target: {fileID: 3431506072200027784, guid: cf8f21b89bd631f40ace5c3a2539756b,
         type: 3}
       propertyPath: trigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3431506072200027785, guid: cf8f21b89bd631f40ace5c3a2539756b,
         type: 3}

@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class HighScore : MonoBehaviour
 {
+    //Creator Raimon
+
     [SerializeField]
     Text stepScore, timeScore;
     [SerializeField]

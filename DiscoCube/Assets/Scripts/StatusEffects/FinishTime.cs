@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class FinishTime : MonoBehaviour
 {
+    //Creator Raimon
     [SerializeField]
     Text timerText;
     [SerializeField]

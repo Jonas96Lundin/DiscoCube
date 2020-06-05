@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 
 public class LevelCodeInput : MonoBehaviour
 {
+    //Creator Raimon
     [SerializeField]
     SceneFader fader;
     [SerializeField]
@@ -56,7 +57,22 @@ public class LevelCodeInput : MonoBehaviour
                 fader.FadeTo("Level11");
                 break;
             case "buttons!":
-                fader.FadeTo("Level11");
+                fader.FadeTo("Level12");
+                break;
+            case "kekwlul":
+                fader.FadeTo("Level13");
+                break;
+            case "funkey":
+                fader.FadeTo("Level14");
+                break;
+            case "btnhell":
+                fader.FadeTo("Level15");
+                break;
+            case "forgods":
+                fader.FadeTo("Level16");
+                break;
+            case "realhell":
+                fader.FadeTo("Level17");
                 break;
             default:
                 break;

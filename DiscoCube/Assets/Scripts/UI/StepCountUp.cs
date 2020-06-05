@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class StepCountUp : MonoBehaviour
 {
+    //Creator Raimon
+
     [SerializeField]
     Text stepsText;
     [SerializeField]

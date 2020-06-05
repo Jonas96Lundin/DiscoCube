@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Freeze : MonoBehaviour
 {
-    public GameObject player;
-    public Transform trap;
-    public bool freezeTrapTriggerActivated;
+    //Creator David
+    //Contributors Raimon
+    private bool freezeTrapTriggerActivated;
     Movement movementScript;
     float freezeTimer = 0f;
 
