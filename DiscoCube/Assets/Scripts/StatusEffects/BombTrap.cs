@@ -5,16 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class BombTrap : MonoBehaviour
 {
-    public GameObject player;
-    public Transform trap;
     public bool trapTriggerActivated;
-    SceneFader sceneFader;
-    StepCounter stepCounterScript;
     PauseMenu pauseMenuScript;
 
     void Start()
     {
-        stepCounterScript = FindObjectOfType<StepCounter>();
         pauseMenuScript = FindObjectOfType<PauseMenu>();
     }
 

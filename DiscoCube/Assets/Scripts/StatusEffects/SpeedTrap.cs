@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class SpeedTrap : MonoBehaviour
 {
-    public GameObject player;
-    public Transform speedTrap;
-    public bool speedTrapTriggerActivated;
+    private bool speedTrapTriggerActivated;
     Movement movementScript;
     float timer = 0f;
 

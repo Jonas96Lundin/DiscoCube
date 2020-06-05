@@ -2,9 +2,7 @@
 
 public class StopTime : MonoBehaviour
 {
-    public GameObject player;
-    public Transform time;
-    public bool stopTimeTriggerActivated;
+    private bool stopTimeTriggerActivated;
     CountdownTimer countDownTimer;
     float stopTimeCounter = 0;
 
