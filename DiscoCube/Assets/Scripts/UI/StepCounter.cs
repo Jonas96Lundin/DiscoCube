@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class StepCounter : MonoBehaviour
 {
-    //Owner: David
+    //Creator David
     //Code from Raimon
 
     [HideInInspector]
