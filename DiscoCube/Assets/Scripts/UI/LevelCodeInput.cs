@@ -44,35 +44,41 @@ public class LevelCodeInput : MonoBehaviour
             case "cubelord":
                 fader.FadeTo("Level7");
                 break;
-            case "wrdchamp":
+            case "Snnnake":
                 fader.FadeTo("Level8");
                 break;
-            case "holddoor":
+            case "Corn":
                 fader.FadeTo("Level9");
                 break;
-            case "nowalls":
+            case "wrdchamp":
                 fader.FadeTo("Level10");
                 break;
-            case "nospoon":
+            case "holddoor":
                 fader.FadeTo("Level11");
                 break;
-            case "buttons!":
+            case "nowalls":
                 fader.FadeTo("Level12");
                 break;
-            case "kekwlul":
+            case "nospoon":
                 fader.FadeTo("Level13");
                 break;
-            case "funkey":
+            case "buttons!":
                 fader.FadeTo("Level14");
                 break;
-            case "btnhell":
+            case "kekwlul":
                 fader.FadeTo("Level15");
                 break;
-            case "forgods":
+            case "funkey":
                 fader.FadeTo("Level16");
                 break;
-            case "iddqd":
+            case "btnhell":
                 fader.FadeTo("Level17");
+                break;
+            case "forgods":
+                fader.FadeTo("Level18");
+                break;
+            case "iddqd":
+                fader.FadeTo("Level19");
                 break;
             default:
                 break;
