@@ -71,7 +71,7 @@ public class LevelCodeInput : MonoBehaviour
             case "forgods":
                 fader.FadeTo("Level16");
                 break;
-            case "realhell":
+            case "iddqd":
                 fader.FadeTo("Level17");
                 break;
             default:
