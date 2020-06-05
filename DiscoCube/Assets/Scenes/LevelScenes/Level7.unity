@@ -2532,13 +2532,13 @@ PrefabInstance:
     m_TransformParent: {fileID: 200621798}
     m_Modifications:
     - target: {fileID: 1809187239, guid: ffebfb6613e0e324fa6741a24c4a7a3b, type: 3}
-      propertyPath: completeLevelUI
-      value: 
-      objectReference: {fileID: 1132929032}
-    - target: {fileID: 1809187239, guid: ffebfb6613e0e324fa6741a24c4a7a3b, type: 3}
       propertyPath: nextLevelButton
       value: 
       objectReference: {fileID: 1099031635}
+    - target: {fileID: 1809187239, guid: ffebfb6613e0e324fa6741a24c4a7a3b, type: 3}
+      propertyPath: completeLevelUI
+      value: 
+      objectReference: {fileID: 1132929032}
     - target: {fileID: 8957391586968769750, guid: ffebfb6613e0e324fa6741a24c4a7a3b,
         type: 3}
       propertyPath: m_Name
