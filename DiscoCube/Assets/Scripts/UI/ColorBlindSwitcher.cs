@@ -2,6 +2,7 @@
 
 public class ColorBlindSwitcher : MonoBehaviour
 {
+    //Creator Raimon
     GameObject[] symbols;
 
     [SerializeField]

@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class BombTrap : MonoBehaviour
 {
+    //Creator David
+    //Contributors Raimon
     public bool trapTriggerActivated;
     PauseMenu pauseMenuScript;
 

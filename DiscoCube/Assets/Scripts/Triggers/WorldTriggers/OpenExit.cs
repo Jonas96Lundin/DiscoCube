@@ -2,6 +2,7 @@
 
 public class OpenExit : MonoBehaviour
 {
+	//Creator Raimon
 	private bool hasMoved;
 	[SerializeField]
 	SwitchController switchcontroller;

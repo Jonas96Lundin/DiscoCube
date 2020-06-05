@@ -2,6 +2,7 @@
 
 public class SwitchController : MonoBehaviour
 { 
+    //Creator Raimon
     private ColorSwitch[] switches;
     [HideInInspector]
     public bool allSwitchesTrue;

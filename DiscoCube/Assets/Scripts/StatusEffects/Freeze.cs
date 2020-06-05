@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Freeze : MonoBehaviour
 {
+    //Creator David
+    //Contributors Raimon
     private bool freezeTrapTriggerActivated;
     Movement movementScript;
     float freezeTimer = 0f;

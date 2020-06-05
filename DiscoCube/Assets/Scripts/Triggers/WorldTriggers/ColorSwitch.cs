@@ -2,6 +2,8 @@
 
 public class ColorSwitch : MonoBehaviour
 {
+    //Creator Raimon
+
     [HideInInspector]
     public bool triggerActivated = false, currentlyOnTrigger = false;
     public ColorManager.CubeColors triggerColor;
