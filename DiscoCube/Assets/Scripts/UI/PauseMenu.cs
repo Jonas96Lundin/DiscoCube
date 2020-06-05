@@ -9,6 +9,8 @@ using UnityEditor;
 
 public class PauseMenu : MonoBehaviour
 {
+    //Creator David
+
     [HideInInspector]
     public bool gameIsPaused = false;
 

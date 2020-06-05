@@ -2,6 +2,8 @@
 
 public class StopTime : MonoBehaviour
 {
+    //Creator David
+
     private bool stopTimeTriggerActivated;
     CountdownTimer countDownTimer;
     float stopTimeCounter = 0;

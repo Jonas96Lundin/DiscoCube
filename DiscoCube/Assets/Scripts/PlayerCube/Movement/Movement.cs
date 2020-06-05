@@ -156,11 +156,11 @@ public class Movement : MonoBehaviour
             player.transform.RotateAround(up.transform.position, rotateUp, step);
             yield return new WaitForSeconds(speed);
         }
+        player.transform.position = new Vector3(Mathf.Round(player.transform.position.x), Mathf.Round(player.transform.position.y), Mathf.Round(player.transform.position.z));
         center.transform.position = player.transform.position;
         inputDelay = 0f;
         input = true;
         moving = false;
-
     }
 
     IEnumerator MoveDown()
@@ -171,6 +171,7 @@ public class Movement : MonoBehaviour
             player.transform.RotateAround(down.transform.position, rotateDown, step);
             yield return new WaitForSeconds(speed);
         }
+        player.transform.position = new Vector3(Mathf.Round(player.transform.position.x), Mathf.Round(player.transform.position.y), Mathf.Round(player.transform.position.z));
         center.transform.position = player.transform.position;
         inputDelay = 0f;
         input = true;
@@ -185,6 +186,7 @@ public class Movement : MonoBehaviour
             player.transform.RotateAround(right.transform.position, rotateRight, step);
             yield return new WaitForSeconds(speed);
         }
+        player.transform.position = new Vector3(Mathf.Round(player.transform.position.x), Mathf.Round(player.transform.position.y), Mathf.Round(player.transform.position.z));
         center.transform.position = player.transform.position;
         inputDelay = 0f;
         input = true;
@@ -199,6 +201,7 @@ public class Movement : MonoBehaviour
             player.transform.RotateAround(left.transform.position, rotateLeft, step);
             yield return new WaitForSeconds(speed);
         }
+        player.transform.position = new Vector3(Mathf.Round(player.transform.position.x), Mathf.Round(player.transform.position.y), Mathf.Round(player.transform.position.z));
         center.transform.position = player.transform.position;
         inputDelay = 0f;
         input = true;
