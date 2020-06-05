@@ -243,10 +243,6 @@ public class RotatingLevelScript : MonoBehaviour
                 }
             }
         }
-        else if (Input.GetKeyDown(KeyCode.Space))
-        {
-            
-        }
         FindObjectOfType<Movement>().OnTriggerReset(center);
     }
 }
