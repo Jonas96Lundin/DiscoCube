@@ -3,6 +3,7 @@
 /// <summary>
 /// Holds the current color for the playercube and the levelcube. Also holds the winningcolor.
 /// Created by: Jonas
+/// Contribution by: Raimon
 /// </summary>
 public class ColorManager : MonoBehaviour
 {

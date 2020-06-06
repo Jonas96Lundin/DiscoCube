@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 /// At the start of the game, the game will detect if there are any gamepad/controllers plugged in,
 /// and will display a prompt to choose a controller-scheme between Playstation 4's DualShock 4 or Xbox One's Controller.
 ///
-/// Owner: Kristian
+/// Creator: Kristian
 /// Contribution by: Raimon
 /// </summary>
 

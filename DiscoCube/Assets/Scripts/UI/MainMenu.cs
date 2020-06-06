@@ -4,8 +4,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 public class MainMenu : MonoBehaviour
 {
-    //Owner: Raimon
-    //Code from: David
+    //Creator: Raimon
+    //Contribution by: David
 
     public static bool UIExtraMenuActive;
     [SerializeField]

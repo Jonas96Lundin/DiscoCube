@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 public class LevelCodeInput : MonoBehaviour
 {
     //Creator Raimon
+
     [SerializeField]
     SceneFader fader;
     [SerializeField]
@@ -44,39 +45,51 @@ public class LevelCodeInput : MonoBehaviour
             case "cubelord":
                 fader.FadeTo("Level7");
                 break;
+            //Level8
             case "Snnnake":
                 fader.FadeTo("Level8");
                 break;
+            //Level9
             case "Corn":
                 fader.FadeTo("Level9");
                 break;
+            //Level10
             case "wrdchamp":
                 fader.FadeTo("Level10");
                 break;
+            //Level11
             case "holddoor":
                 fader.FadeTo("Level11");
                 break;
+            //Level12
             case "nowalls":
                 fader.FadeTo("Level12");
                 break;
+            //Level13
             case "nospoon":
                 fader.FadeTo("Level13");
                 break;
+            //Level14
             case "buttons!":
                 fader.FadeTo("Level14");
                 break;
+            //Level15
             case "kekwlul":
                 fader.FadeTo("Level15");
                 break;
+            //Level16
             case "funkey":
                 fader.FadeTo("Level16");
                 break;
+            //Level17
             case "btnhell":
                 fader.FadeTo("Level17");
                 break;
+            //Level18
             case "forgods":
                 fader.FadeTo("Level18");
                 break;
+            //Secret Level
             case "iddqd":
                 fader.FadeTo("Level19");
                 break;

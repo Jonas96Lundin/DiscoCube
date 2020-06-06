@@ -3,8 +3,8 @@ using UnityEngine.UI;
 
 public class StepCounter : MonoBehaviour
 {
-    //Creator David
-    //Code from Raimon
+    //Creator: David
+    //Contribution by: Raimon
 
     [HideInInspector]
     public int stepCounter = 0;

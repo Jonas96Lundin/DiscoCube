@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class ClickableObject : MonoBehaviour
 {
-    //Owner: Raimon
+    //Creator: Raimon
 
     [SerializeField]
     private ParticleSystem particleSystemToUse;

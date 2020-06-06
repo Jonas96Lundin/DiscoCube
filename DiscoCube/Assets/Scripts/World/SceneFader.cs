@@ -5,7 +5,8 @@ using System.Collections;
 
 public class SceneFader : MonoBehaviour
 {
-    //Owner: Raimon 
+    //Creator: Raimon 
+
     [SerializeField]
     Image img;
     [SerializeField]

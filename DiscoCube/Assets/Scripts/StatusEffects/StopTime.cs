@@ -2,7 +2,8 @@
 
 public class StopTime : MonoBehaviour
 {
-    //Creator David
+    //Creator: David
+    //Contribution by: Raimon
 
     private bool stopTimeTriggerActivated;
     CountdownTimer countDownTimer;
